@@ -1,7 +1,9 @@
 {
-    "name": "FurkanKambay",
+    "name": "FurkanKambay.Deckbuilding",
     "rootNamespace": "FurkanKambay",
-    "references": [],
+    "references": [
+        "GUID:7263b6e754f57404faf2d70c7536d4ad"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
