@@ -118,7 +118,7 @@ namespace FurkanKambay.Deckbuilding
 
             foreach (Card card in config.StarterDeck)
             {
-                var cardCopy = new Card(card);
+                var cardCopy = new Card(card.CardSO, this);
                 DrawPile.Add(cardCopy);
                 cardCopy.SetPile(Pile.DrawPile, DrawPile.Count - 1);
             }

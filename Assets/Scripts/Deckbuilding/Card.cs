@@ -19,16 +19,12 @@ namespace FurkanKambay.Deckbuilding
 
         public Deck Deck      { get; protected set; }
         public Pile Pile      { get; protected set; }
-        public int  PileIndex { get; protected set; }
+        public int  PileIndex { get; protected set; } = -1;
 
-        public Card(CardSO cardSO)
+        public Card(CardSO cardSO, Deck ownerDeck)
         {
             this.cardSO = cardSO;
-        }
-
-        public Card(Card previousCard)
-        {
-            cardSO = previousCard.CardSO;
+            Deck        = ownerDeck;
         }
 
         internal void SetPile(Pile pile, int pileIndex)
