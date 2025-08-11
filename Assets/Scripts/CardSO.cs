@@ -19,11 +19,13 @@ namespace FurkanKambay
         [SerializeField] private string displayName;
         [SerializeField] private Sprite icon;
         [SerializeField] private string description;
+        [SerializeField] private int    cost;
 
         public int    Id          => id;
         public string DisplayName => displayName;
         public Sprite Icon        => icon;
         public string Description => description;
+        public int    Cost        => cost;
 
         public static CardBase CreateInstance()
         {

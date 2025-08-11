@@ -16,3 +16,4 @@ MonoBehaviour:
   displayName: Medium Unit
   icon: {fileID: 21300000, guid: 28dfe709076a3cc4c8f99d168d67208c, type: 3}
   description: A medium ground unit.
+  cost: 20
