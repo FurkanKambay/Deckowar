@@ -1,7 +1,9 @@
 {
     "name": "FurkanKambay",
     "rootNamespace": "FurkanKambay",
-    "references": [],
+    "references": [
+        "GUID:28c52d323384e4e408a05cb3afe28445"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

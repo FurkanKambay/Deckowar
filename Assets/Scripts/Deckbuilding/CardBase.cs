@@ -10,7 +10,7 @@ namespace FurkanKambay.Deckbuilding
     }
 
     [Serializable]
-    public class CardInstance
+    public class CardBase
     {
         public Pile Pile      { get; protected set; }
         public int  PileIndex { get; protected set; }
