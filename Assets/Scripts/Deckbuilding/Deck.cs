@@ -140,10 +140,10 @@ namespace FurkanKambay.Deckbuilding
 
         protected CardBase MoveCard(CardBase card, Pile targetPile)
         {
-            if (TryGetList(card.Pile, out List<CardBase> sourceList))
+            if (!TryGetList(card.Pile, out List<CardBase> sourceList))
                 return null;
 
-            if (TryGetList(targetPile, out List<CardBase> targetList))
+            if (!TryGetList(targetPile, out List<CardBase> targetList))
                 return null;
 
             sourceList.RemoveAt(card.PileIndex);
