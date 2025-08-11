@@ -1,4 +1,6 @@
-﻿namespace FurkanKambay.Deckbuilding
+﻿using System;
+
+namespace FurkanKambay.Deckbuilding
 {
     public enum Pile
     {
@@ -7,13 +9,13 @@
         DiscardPile
     }
 
-    public interface ICardInstance
+    [Serializable]
+    public class CardInstance
     {
-        public Deck Deck      { get; protected internal set; }
         public Pile Pile      { get; protected set; }
         public int  PileIndex { get; protected set; }
 
-        protected internal void SetPile(Pile pile, int pileIndex)
+        internal void SetPile(Pile pile, int pileIndex)
         {
             Pile      = pile;
             PileIndex = pileIndex;

@@ -3,20 +3,13 @@ using UnityEngine;
 
 namespace FurkanKambay.Deckbuilding
 {
-    public class CardInstance : ICardInstance
-    {
-        Deck ICardInstance.Deck      { get; set; }
-        Pile ICardInstance.Pile      { get; set; }
-        int ICardInstance. PileIndex { get; set; }
-    }
-
     [Serializable]
-    public class DeckConfig : IDeckConfig
+    public class DeckConfig
     {
-        [SerializeField] private int             handSize = 5;
-        [SerializeField] private ICardInstance[] starterDeck;
+        [SerializeField] private int            handSize = 5;
+        [SerializeField] private CardInstance[] starterDeck;
 
-        public int             HandSize    => handSize;
-        public ICardInstance[] StarterDeck => starterDeck;
+        public int            HandSize    => handSize;
+        public CardInstance[] StarterDeck => starterDeck;
     }
 }
