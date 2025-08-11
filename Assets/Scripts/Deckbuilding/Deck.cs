@@ -19,8 +19,6 @@ namespace FurkanKambay.Deckbuilding
         public CardPile HandPile    { get; private set; }
         public CardPile DiscardPile { get; private set; }
 
-        public bool IsValid { get; private set; }
-
         private DeckConfigSO config;
 
         public Deck(DeckConfigSO config)
@@ -29,7 +27,6 @@ namespace FurkanKambay.Deckbuilding
                 throw new ArgumentNullException(nameof(config));
 
             this.config = config;
-            IsValid     = false;
 
             DrawPile    = new CardPile(Pile.DrawPile);
             HandPile    = new CardPile(Pile.HandPile);
@@ -38,15 +35,14 @@ namespace FurkanKambay.Deckbuilding
             ResetToStarterDeck_WithoutNotify();
         }
 
-#region Draw Cards
         public void FillUpHand()
         {
             bool hasDrawn     = false;
-            int  missingCount = config.HandSize - HandPile.Count;
+            int  missingCount = config.HandSize - HandPile.CardCount;
 
             for (int i = 0; i < missingCount; i++)
             {
-                if (HandPile.Count >= config.HandSize)
+                if (HandPile.CardCount >= config.HandSize)
                     break;
 
                 if (!TryDrawCard(out Card drawnCard))
@@ -62,17 +58,17 @@ namespace FurkanKambay.Deckbuilding
 
         private bool TryDrawCard(out Card drawnCard)
         {
-            if (DrawPile.Count == 0)
+            if (DrawPile.CardCount == 0)
                 ReshuffleDrawPile();
 
-            if (DrawPile.Count == 0)
+            if (DrawPile.CardCount == 0)
             {
                 drawnCard = null;
                 return false;
             }
 
-            Card card     = DrawPile.Last;
-            bool hasDrawn = card?.MoveTo(HandPile) ?? false;
+            Card card     = DrawPile.LastCard;
+            bool hasDrawn = HandPile.Take(card);
 
             drawnCard = hasDrawn ? card : null;
 
@@ -84,32 +80,28 @@ namespace FurkanKambay.Deckbuilding
 
         private void ReshuffleDrawPile()
         {
-            DiscardPile.DumpAllInto(DrawPile);
+            DrawPile.TakeAllFrom(DiscardPile);
             DrawPile.Shuffle();
         }
-#endregion
 
-#region Discard Cards
         public void DiscardHand()
         {
-            HandPile.DumpAllInto(DiscardPile);
+            DiscardPile.TakeAllFrom(HandPile);
             OnHandDiscarded?.Invoke();
         }
 
         private void DiscardCard(Card card)
         {
-            if (card == null)
+            if (card is null)
                 return;
 
-            if (card.PileIndex < 0 || card.PileIndex >= HandPile.Count)
+            if (card.PileIndex < 0 || card.PileIndex >= HandPile.CardCount)
                 return;
 
-            if (card.MoveTo(DiscardPile))
+            if (DiscardPile.Take(card))
                 OnCardDiscarded?.Invoke(card);
         }
-#endregion
 
-#region Reset Deck
         public void ResetToStarterDeck()
         {
             ResetToStarterDeck_WithoutNotify();
@@ -122,21 +114,15 @@ namespace FurkanKambay.Deckbuilding
 
             // Copy cards from the starter deck
             foreach (Card card in config.StarterDeck)
-            {
-                var cardInstance = new Card(card.CardSO, this);
-                cardInstance.MoveTo(DrawPile);
-            }
+                DrawPile.Take(new Card(card.CardSO, this));
 
             // DrawPile.TrimExcess();
 
             HandPile.Clear();
             DiscardPile.Clear();
-
-            IsValid = true;
         }
-#endregion
 
         public override string ToString() =>
-            $"{DrawPile.Count} in Draw Pile | {HandPile.Count} in Hand | {DiscardPile.Count} in Discard Pile";
+            $"⬆️ {DrawPile.CardCount} | 🤚 {HandPile.CardCount} | 🗑️ {DiscardPile.CardCount}";
     }
 }

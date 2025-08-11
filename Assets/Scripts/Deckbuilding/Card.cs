@@ -5,6 +5,7 @@ namespace FurkanKambay.Deckbuilding
 {
     public enum Pile
     {
+        Invalid,
         DrawPile,
         HandPile,
         DiscardPile
@@ -31,14 +32,6 @@ namespace FurkanKambay.Deckbuilding
         {
             CardPile  = cardPile;
             PileIndex = pileIndex;
-        }
-
-        public bool MoveTo(CardPile targetPile)
-        {
-            targetPile?.Add(this);
-            CardPile?.Remove(this);
-
-            return CardPile == targetPile;
         }
 
         public override string ToString() =>

@@ -9,8 +9,8 @@ namespace FurkanKambay.Deckbuilding
         public Pile                     PileType { get; }
         public ReadOnlyCollection<Card> ListRO   { get; }
 
-        public int  Count => list.Count;
-        public Card Last  => list[^1];
+        public int  CardCount => list.Count;
+        public Card LastCard  => list.Count == 0 ? null : list[^1];
 
         private readonly List<Card> list;
 
@@ -21,40 +21,22 @@ namespace FurkanKambay.Deckbuilding
             ListRO   = list.AsReadOnly();
         }
 
-        public void DumpAllInto(CardPile targetPile)
+        public void TakeAllFrom(CardPile sourcePile)
         {
-            foreach (Card card in list)
-                targetPile.Add(card);
+            if (sourcePile is null || sourcePile == this)
+                return;
 
+            foreach (Card card in sourcePile.ListRO)
+                AddCard(card, move: false);
+
+            sourcePile.Clear();
+        }
+
+        internal bool Take(Card card) =>
+            AddCard(card, move: true);
+
+        internal void Clear() =>
             list.Clear();
-        }
-
-        internal bool Add(Card card)
-        {
-            if (card.CardPile == this)
-                return false;
-
-            card.SetPile(this, Count);
-            list.Add(card);
-
-            return true;
-        }
-
-        internal bool Remove(Card card)
-        {
-            if (PileType != card.CardPile?.PileType)
-                return false;
-
-            list.RemoveAt(card.PileIndex);
-            card.SetPile(null, -1);
-
-            return true;
-        }
-
-        internal void Clear()
-        {
-            list.Clear();
-        }
 
         internal void Shuffle()
         {
@@ -83,5 +65,34 @@ namespace FurkanKambay.Deckbuilding
                 targetCard.SetPile(this, sourceIndex);
             }
         }
+
+        private bool AddCard(Card card, bool move)
+        {
+            if (card is null || card.CardPile == this)
+                return false;
+
+            if (move)
+                card.CardPile?.RemoveCard(card);
+
+            card.SetPile(this, pileIndex: CardCount);
+            list.Add(card);
+
+            return true;
+        }
+
+        private void RemoveCard(Card card)
+        {
+            if (card is null || card.CardPile != this)
+                return;
+
+            list.RemoveAt(card.PileIndex);
+
+            // Cascade down to adjust pile indexes
+            for (int i = card.PileIndex; i < CardCount; i++)
+                list[i].SetPile(this, i);
+        }
+
+        public override string ToString() =>
+            $"{PileType}: {CardCount} Cards";
     }
 }

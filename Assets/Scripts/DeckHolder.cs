@@ -14,7 +14,6 @@ namespace FurkanKambay
         private void Awake()
         {
             Deck = new Deck(deckConfigSO);
-            PrintDeck();
 
             Deck.ResetToStarterDeck();
             PrintDeck();
