@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: 4 Turret S
   m_EditorClassIdentifier: 
   id: 4
+  cardType: 2
   displayName: Turret S
-  icon: {fileID: 21300000, guid: 29d31f3e6a5408446b3c444eaef5a3a8, type: 3}
+  icon: {fileID: -2947512549201926108, guid: aa83405dacc347f46b8a8b635abc74ff, type: 3}
   description: A small turret.
   cost: 35

@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: 5 Turret M
   m_EditorClassIdentifier: 
   id: 5
+  cardType: 2
   displayName: Turret M
-  icon: {fileID: 21300000, guid: 28dfe709076a3cc4c8f99d168d67208c, type: 3}
+  icon: {fileID: 6894799577325481888, guid: aa83405dacc347f46b8a8b635abc74ff, type: 3}
   description: A medium turret.
   cost: 60

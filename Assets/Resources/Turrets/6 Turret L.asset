@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: 6 Turret L
   m_EditorClassIdentifier: 
   id: 6
+  cardType: 2
   displayName: Turret L
-  icon: {fileID: 21300000, guid: adc3a0862fdc47946a60c17ddf9c36c6, type: 3}
+  icon: {fileID: 5067570440815600943, guid: aa83405dacc347f46b8a8b635abc74ff, type: 3}
   description: A large turret.
   cost: 90

@@ -3,20 +3,13 @@ using UnityEngine;
 
 namespace FurkanKambay.Deckbuilding
 {
-    public enum Pile
-    {
-        Invalid,
-        DrawPile,
-        HandPile,
-        DiscardPile
-    }
-
     [Serializable]
     public class Card
     {
         [SerializeField] private CardSO cardSO;
 
-        public CardSO CardSO => cardSO;
+        public CardSO CardSO  => cardSO;
+        public bool   IsValid => CardPile is not null;
 
         public Deck     Deck      { get; protected set; }
         public CardPile CardPile  { get; protected set; }

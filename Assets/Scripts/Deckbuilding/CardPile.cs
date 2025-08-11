@@ -4,6 +4,14 @@ using System.Security.Cryptography;
 
 namespace FurkanKambay.Deckbuilding
 {
+    public enum Pile
+    {
+        Invalid,
+        DrawPile,
+        HandPile,
+        DiscardPile
+    }
+
     public class CardPile
     {
         public Pile                     PileType { get; }
