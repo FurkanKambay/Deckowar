@@ -70,16 +70,14 @@ namespace FurkanKambay.Deckbuilding
                 return false;
             }
 
-            drawnCard = Hand.TakeItemFrom(DrawPile, DrawPile.Count - 1);
-            drawnCard.SetPile(Pile.Hand, Hand.Count - 1);
-
+            drawnCard = MoveCard(DrawPile[^1], Pile.Hand);
             OnCardDrawn?.Invoke(drawnCard);
             return true;
         }
 
         private void ReshuffleDrawPile()
         {
-            DiscardPile.DumpInto(DrawPile);
+            DumpAll(Pile.DiscardPile, Pile.DrawPile);
             DrawPile.Shuffle();
         }
 #endregion
@@ -87,8 +85,7 @@ namespace FurkanKambay.Deckbuilding
 #region Discard Cards
         public void DiscardHand()
         {
-            // TODO: Retained cards
-            Hand.DumpInto(DiscardPile);
+            DumpAll(Pile.Hand, Pile.DiscardPile);
             OnHandDiscarded?.Invoke();
         }
 
@@ -100,12 +97,7 @@ namespace FurkanKambay.Deckbuilding
             if (card.PileIndex < 0 || card.PileIndex >= Hand.Count)
                 return;
 
-            ICardInstance discardedCard = DiscardPile[card.PileIndex];
-            Hand.Remove(discardedCard);
-
-            // ICardInstance discardedCard = DiscardPile.TakeItemFrom(Hand, card.PileIndex);
-            discardedCard.SetPile(Pile.DiscardPile, DiscardPile.Count - 1);
-
+            ICardInstance discardedCard = MoveCard(Hand[^1], Pile.DiscardPile);
             OnCardDiscarded?.Invoke(discardedCard);
         }
 #endregion
@@ -130,13 +122,53 @@ namespace FurkanKambay.Deckbuilding
         }
 #endregion
 
-        protected void AddCardToPile(ICardInstance card, Pile pile)
+#region List Operations
+        protected void Shuffle(Pile pile)
         {
-            if (TryGetList(pile, out List<ICardInstance> list))
+            if (!TryGetList(pile, out List<ICardInstance> list))
                 return;
 
-            card.SetPile(pile, pileIndex: list.Count);
-            list.Add(card);
+            list.Shuffle();
+
+            // Fix PileIndex values
+            for (int i = 0; i < list.Count; i++)
+            {
+                ICardInstance card = list[i];
+                card.SetPile(pile, i);
+            }
+        }
+
+        protected void DumpAll(Pile sourcePile, Pile targetPile)
+        {
+            if (!TryGetList(sourcePile, out List<ICardInstance> sourceList))
+                return;
+
+            if (!TryGetList(targetPile, out List<ICardInstance> targetList))
+                return;
+
+            foreach (ICardInstance card in sourceList)
+            {
+                // TODO: Retained Cards
+                targetList.Add(card);
+                card.SetPile(targetPile, targetList.Count - 1);
+            }
+
+            sourceList.Clear();
+        }
+
+        protected ICardInstance MoveCard(ICardInstance card, Pile targetPile)
+        {
+            if (TryGetList(card.Pile, out List<ICardInstance> sourceList))
+                return null;
+
+            if (TryGetList(targetPile, out List<ICardInstance> targetList))
+                return null;
+
+            sourceList.RemoveAt(card.PileIndex);
+            targetList.Add(card);
+
+            card.SetPile(targetPile, targetList.Count - 1);
+            return card;
         }
 
         protected bool TryGetList(Pile pile, out List<ICardInstance> list)
@@ -151,10 +183,9 @@ namespace FurkanKambay.Deckbuilding
 
             return list != null;
         }
+#endregion
 
-        public override string ToString()
-        {
-            return $"{DrawPile.Count} in Draw Pile | {Hand.Count} in Hand | {DiscardPile.Count} in Discard Pile";
-        }
+        public override string ToString() =>
+            $"{DrawPile.Count} in Draw Pile | {Hand.Count} in Hand | {DiscardPile.Count} in Discard Pile";
     }
 }
