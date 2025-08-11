@@ -35,7 +35,7 @@ namespace FurkanKambay.Deckbuilding
             DiscardPile = new CardPile(Pile.DiscardPile);
         }
 
-        public void FillUpHand()
+        public void DrawHand()
         {
             bool hasDrawn     = false;
             int  missingCount = config.HandSize - HandPile.CardCount;

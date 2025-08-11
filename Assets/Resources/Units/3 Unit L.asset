@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 3 Unit L
   m_EditorClassIdentifier: 
   id: 3
-  displayName: Large Unit
+  displayName: Unit L
   icon: {fileID: 21300000, guid: adc3a0862fdc47946a60c17ddf9c36c6, type: 3}
   description: A large ground unit.
   cost: 40

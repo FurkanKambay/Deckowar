@@ -27,9 +27,9 @@ namespace FurkanKambay.Editor
             var buttons = new VisualElement { enabledSelf = Application.isPlaying };
             root.Add(buttons);
 
-            buttons.Add(new Button(ResetDeck_Clicked) { text   = "Reset Deck" });
             buttons.Add(new Button(DrawHand_Clicked) { text    = "Draw Hand" });
             buttons.Add(new Button(DiscardHand_Clicked) { text = "Discard Hand" });
+            buttons.Add(new Button(ResetDeck_Clicked) { text   = "Reset Deck" });
 
             var state = new VisualElement { enabledSelf = Application.isPlaying };
 
@@ -76,7 +76,7 @@ namespace FurkanKambay.Editor
         private void DrawHand_Clicked()
         {
             if (deckHolder)
-                deckHolder.FillUpHand();
+                deckHolder.DrawHand();
         }
 
         private void DiscardHand_Clicked()

@@ -17,15 +17,12 @@ namespace FurkanKambay
 
             Deck.ResetToStarterDeck();
             PrintDeck();
-
-            Deck.FillUpHand();
-            PrintDeck();
         }
 
-        [ContextMenu("Fill Up Hand")]
-        public void FillUpHand()
+        [ContextMenu("Draw Hand")]
+        public void DrawHand()
         {
-            Deck.FillUpHand();
+            Deck.DrawHand();
             PrintDeck();
         }
 
