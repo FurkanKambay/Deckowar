@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using FurkanKambay.Extensions;
 
 namespace FurkanKambay.Deckbuilding
 {
@@ -17,9 +15,9 @@ namespace FurkanKambay.Deckbuilding
         public event Action<Card> OnCardDiscarded;
 #endregion
 
-        public List<Card> DrawPile    { get; private set; }
-        public List<Card> Hand        { get; private set; }
-        public List<Card> DiscardPile { get; private set; }
+        public CardPile DrawPile    { get; private set; }
+        public CardPile HandPile    { get; private set; }
+        public CardPile DiscardPile { get; private set; }
 
         public bool IsValid { get; private set; }
 
@@ -31,11 +29,11 @@ namespace FurkanKambay.Deckbuilding
                 throw new ArgumentNullException(nameof(config));
 
             this.config = config;
-
             IsValid     = false;
-            DrawPile    = new List<Card>();
-            Hand        = new List<Card>();
-            DiscardPile = new List<Card>();
+
+            DrawPile    = new CardPile(Pile.DrawPile);
+            HandPile    = new CardPile(Pile.HandPile);
+            DiscardPile = new CardPile(Pile.DiscardPile);
 
             ResetToStarterDeck_WithoutNotify();
         }
@@ -44,11 +42,11 @@ namespace FurkanKambay.Deckbuilding
         public void FillUpHand()
         {
             bool hasDrawn     = false;
-            int  missingCount = config.HandSize - Hand.Count;
+            int  missingCount = config.HandSize - HandPile.Count;
 
             for (int i = 0; i < missingCount; i++)
             {
-                if (Hand.Count >= config.HandSize)
+                if (HandPile.Count >= config.HandSize)
                     break;
 
                 if (!TryDrawCard(out Card drawnCard))
@@ -73,14 +71,20 @@ namespace FurkanKambay.Deckbuilding
                 return false;
             }
 
-            drawnCard = MoveCard(DrawPile[^1], Pile.Hand);
-            OnCardDrawn?.Invoke(drawnCard);
-            return true;
+            Card card     = DrawPile.Last;
+            bool hasDrawn = card?.MoveTo(HandPile) ?? false;
+
+            drawnCard = hasDrawn ? card : null;
+
+            if (hasDrawn)
+                OnCardDrawn?.Invoke(drawnCard);
+
+            return hasDrawn;
         }
 
         private void ReshuffleDrawPile()
         {
-            MoveAll(Pile.DiscardPile, Pile.DrawPile);
+            DiscardPile.DumpAllInto(DrawPile);
             DrawPile.Shuffle();
         }
 #endregion
@@ -88,7 +92,7 @@ namespace FurkanKambay.Deckbuilding
 #region Discard Cards
         public void DiscardHand()
         {
-            MoveAll(Pile.Hand, Pile.DiscardPile);
+            HandPile.DumpAllInto(DiscardPile);
             OnHandDiscarded?.Invoke();
         }
 
@@ -97,11 +101,11 @@ namespace FurkanKambay.Deckbuilding
             if (card == null)
                 return;
 
-            if (card.PileIndex < 0 || card.PileIndex >= Hand.Count)
+            if (card.PileIndex < 0 || card.PileIndex >= HandPile.Count)
                 return;
 
-            Card discardedCard = MoveCard(Hand[^1], Pile.DiscardPile);
-            OnCardDiscarded?.Invoke(discardedCard);
+            if (card.MoveTo(DiscardPile))
+                OnCardDiscarded?.Invoke(card);
         }
 #endregion
 
@@ -116,86 +120,23 @@ namespace FurkanKambay.Deckbuilding
         {
             DrawPile.Clear();
 
+            // Copy cards from the starter deck
             foreach (Card card in config.StarterDeck)
             {
-                var cardCopy = new Card(card.CardSO, this);
-                DrawPile.Add(cardCopy);
-                cardCopy.SetPile(Pile.DrawPile, DrawPile.Count - 1);
+                var cardInstance = new Card(card.CardSO, this);
+                cardInstance.MoveTo(DrawPile);
             }
 
-            DrawPile.TrimExcess();
+            // DrawPile.TrimExcess();
 
-            Hand.Clear();
+            HandPile.Clear();
             DiscardPile.Clear();
 
             IsValid = true;
         }
 #endregion
 
-#region List Operations
-        protected void Shuffle(Pile pile)
-        {
-            if (!TryGetList(pile, out List<Card> list))
-                return;
-
-            list.Shuffle();
-
-            // Fix PileIndex values
-            for (int i = 0; i < list.Count; i++)
-            {
-                Card card = list[i];
-                card.SetPile(pile, i);
-            }
-        }
-
-        protected Card MoveCard(Card card, Pile targetPile)
-        {
-            if (!TryGetList(card.Pile, out List<Card> sourceList))
-                return null;
-
-            if (!TryGetList(targetPile, out List<Card> targetList))
-                return null;
-
-            sourceList.RemoveAt(card.PileIndex);
-            targetList.Add(card);
-
-            card.SetPile(targetPile, targetList.Count - 1);
-            return card;
-        }
-
-        protected void MoveAll(Pile sourcePile, Pile targetPile)
-        {
-            if (!TryGetList(sourcePile, out List<Card> sourceList))
-                return;
-
-            if (!TryGetList(targetPile, out List<Card> targetList))
-                return;
-
-            foreach (Card card in sourceList)
-            {
-                // TODO: Retained Cards
-                targetList.Add(card);
-                card.SetPile(targetPile, targetList.Count - 1);
-            }
-
-            sourceList.Clear();
-        }
-
-        protected bool TryGetList(Pile pile, out List<Card> list)
-        {
-            list = pile switch
-            {
-                Pile.DrawPile    => DrawPile,
-                Pile.Hand        => Hand,
-                Pile.DiscardPile => DiscardPile,
-                _                => null
-            };
-
-            return list != null;
-        }
-#endregion
-
         public override string ToString() =>
-            $"{DrawPile.Count} in Draw Pile | {Hand.Count} in Hand | {DiscardPile.Count} in Discard Pile";
+            $"{DrawPile.Count} in Draw Pile | {HandPile.Count} in Hand | {DiscardPile.Count} in Discard Pile";
     }
 }

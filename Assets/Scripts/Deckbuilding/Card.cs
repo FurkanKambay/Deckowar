@@ -6,7 +6,7 @@ namespace FurkanKambay.Deckbuilding
     public enum Pile
     {
         DrawPile,
-        Hand,
+        HandPile,
         DiscardPile
     }
 
@@ -17,9 +17,9 @@ namespace FurkanKambay.Deckbuilding
 
         public CardSO CardSO => cardSO;
 
-        public Deck Deck      { get; protected set; }
-        public Pile Pile      { get; protected set; }
-        public int  PileIndex { get; protected set; } = -1;
+        public Deck     Deck      { get; protected set; }
+        public CardPile CardPile  { get; protected set; }
+        public int      PileIndex { get; protected set; } = -1;
 
         public Card(CardSO cardSO, Deck ownerDeck)
         {
@@ -27,10 +27,21 @@ namespace FurkanKambay.Deckbuilding
             Deck        = ownerDeck;
         }
 
-        internal void SetPile(Pile pile, int pileIndex)
+        internal void SetPile(CardPile cardPile, int pileIndex)
         {
-            Pile      = pile;
+            CardPile  = cardPile;
             PileIndex = pileIndex;
         }
+
+        public bool MoveTo(CardPile targetPile)
+        {
+            targetPile?.Add(this);
+            CardPile?.Remove(this);
+
+            return CardPile == targetPile;
+        }
+
+        public override string ToString() =>
+            $"{CardPile?.PileType}[{PileIndex}]: {cardSO.DisplayName}";
     }
 }

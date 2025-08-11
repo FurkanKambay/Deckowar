@@ -1,8 +1,13 @@
 {
-    "name": "FurkanKambay.Extensions",
+    "name": "FurkanKambay.Editor",
     "rootNamespace": "FurkanKambay",
-    "references": [],
-    "includePlatforms": [],
+    "references": [
+        "GUID:6efb3ea524f53ae4297493d54e49d0f4",
+        "GUID:28c52d323384e4e408a05cb3afe28445"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
