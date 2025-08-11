@@ -17,9 +17,7 @@ namespace FurkanKambay.Deckbuilding
         public string Description => description;
         public int    Cost        => cost;
 
-        public Card CreateInstance(Deck ownerDeck)
-        {
-            return new Card(this, ownerDeck);
-        }
+        public Card CreateInstance(Deck ownerDeck) =>
+            new(this, ownerDeck);
     }
 }

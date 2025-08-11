@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace FurkanKambay.Deckbuilding
 {
@@ -10,6 +11,7 @@ namespace FurkanKambay.Deckbuilding
 
         public event Action OnHandDrawn;
         public event Action OnHandDiscarded;
+        public event Action OnDrawPileReshuffled;
 
         public event Action<Card> OnCardDrawn;
         public event Action<Card> OnCardDiscarded;
@@ -31,8 +33,6 @@ namespace FurkanKambay.Deckbuilding
             DrawPile    = new CardPile(Pile.DrawPile);
             HandPile    = new CardPile(Pile.HandPile);
             DiscardPile = new CardPile(Pile.DiscardPile);
-
-            ResetToStarterDeck_WithoutNotify();
         }
 
         public void FillUpHand()
@@ -82,6 +82,7 @@ namespace FurkanKambay.Deckbuilding
         {
             DrawPile.TakeAllFrom(DiscardPile);
             DrawPile.Shuffle();
+            OnDrawPileReshuffled?.Invoke();
         }
 
         public void DiscardHand()
@@ -112,17 +113,30 @@ namespace FurkanKambay.Deckbuilding
         {
             DrawPile.Clear();
 
-            // Copy cards from the starter deck
-            foreach (Card card in config.StarterDeck)
-                DrawPile.Take(new Card(card.CardSO, this));
+            foreach (DeckConfigSO.Set cardSet in config.StarterDeck)
+            {
+                for (int i = 0; i < cardSet.amount; i++)
+                    DrawPile.Take(cardSet.cardSO.CreateInstance(this));
+            }
 
             // DrawPile.TrimExcess();
+            DrawPile.Shuffle();
 
             HandPile.Clear();
             DiscardPile.Clear();
         }
 
-        public override string ToString() =>
-            $"⬆️ {DrawPile.CardCount} | 🤚 {HandPile.CardCount} | 🗑️ {DiscardPile.CardCount}";
+        public override string ToString()
+        {
+            int drawCount    = DrawPile.CardCount;
+            int handCount    = HandPile.CardCount;
+            int discardCount = DiscardPile.CardCount;
+
+            string draws    = string.Concat(Enumerable.Repeat("⬆️",  drawCount));
+            string hands    = string.Concat(Enumerable.Repeat("🤚",  handCount));
+            string discards = string.Concat(Enumerable.Repeat("🗑️", discardCount));
+
+            return $"{drawCount,2} {handCount,2} {discardCount,2} | {draws} | {hands} | {discards} |";
+        }
     }
 }
