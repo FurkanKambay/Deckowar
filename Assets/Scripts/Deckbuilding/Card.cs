@@ -21,6 +21,11 @@ namespace FurkanKambay.Deckbuilding
         public Pile Pile      { get; protected set; }
         public int  PileIndex { get; protected set; }
 
+        internal Card(Card previousCard)
+        {
+            cardSO = previousCard.CardSO;
+        }
+
         internal void SetPile(Pile pile, int pileIndex)
         {
             Pile      = pile;
