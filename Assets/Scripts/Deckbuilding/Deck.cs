@@ -115,7 +115,14 @@ namespace FurkanKambay.Deckbuilding
         private void ResetToStarterDeck_WithoutNotify()
         {
             DrawPile.Clear();
-            DrawPile.AddRange(config.StarterDeck);
+
+            foreach (Card card in config.StarterDeck)
+            {
+                var cardCopy = new Card(card);
+                DrawPile.Add(cardCopy);
+                cardCopy.SetPile(Pile.DrawPile, DrawPile.Count - 1);
+            }
+
             DrawPile.TrimExcess();
 
             Hand.Clear();
