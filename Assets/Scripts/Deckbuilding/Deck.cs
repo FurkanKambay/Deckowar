@@ -13,26 +13,29 @@ namespace FurkanKambay.Deckbuilding
         public event Action OnHandDrawn;
         public event Action OnHandDiscarded;
 
-        public event Action<CardBase> OnCardDrawn;
-        public event Action<CardBase> OnCardDiscarded;
+        public event Action<Card> OnCardDrawn;
+        public event Action<Card> OnCardDiscarded;
 #endregion
 
-        public List<CardBase> DrawPile    { get; private set; }
-        public List<CardBase> Hand        { get; private set; }
-        public List<CardBase> DiscardPile { get; private set; }
+        public List<Card> DrawPile    { get; private set; }
+        public List<Card> Hand        { get; private set; }
+        public List<Card> DiscardPile { get; private set; }
 
         public bool IsValid { get; private set; }
 
-        private DeckConfigBase config;
+        private DeckConfigSO config;
 
-        public Deck(DeckConfigBase config)
+        public Deck(DeckConfigSO config)
         {
-            this.config = config ?? throw new ArgumentNullException(nameof(config));
+            if (!config)
+                throw new ArgumentNullException(nameof(config));
+
+            this.config = config;
 
             IsValid     = false;
-            DrawPile    = new List<CardBase>();
-            Hand        = new List<CardBase>();
-            DiscardPile = new List<CardBase>();
+            DrawPile    = new List<Card>();
+            Hand        = new List<Card>();
+            DiscardPile = new List<Card>();
 
             ResetToStarterDeck_WithoutNotify();
         }
@@ -48,7 +51,7 @@ namespace FurkanKambay.Deckbuilding
                 if (Hand.Count >= config.HandSize)
                     break;
 
-                if (!TryDrawCard(out CardBase drawnCard))
+                if (!TryDrawCard(out Card drawnCard))
                     continue;
 
                 hasDrawn = true;
@@ -59,7 +62,7 @@ namespace FurkanKambay.Deckbuilding
                 OnHandDrawn?.Invoke();
         }
 
-        private bool TryDrawCard(out CardBase drawnCard)
+        private bool TryDrawCard(out Card drawnCard)
         {
             if (DrawPile.Count == 0)
                 ReshuffleDrawPile();
@@ -89,7 +92,7 @@ namespace FurkanKambay.Deckbuilding
             OnHandDiscarded?.Invoke();
         }
 
-        private void DiscardCard(CardBase card)
+        private void DiscardCard(Card card)
         {
             if (card == null)
                 return;
@@ -97,7 +100,7 @@ namespace FurkanKambay.Deckbuilding
             if (card.PileIndex < 0 || card.PileIndex >= Hand.Count)
                 return;
 
-            CardBase discardedCard = MoveCard(Hand[^1], Pile.DiscardPile);
+            Card discardedCard = MoveCard(Hand[^1], Pile.DiscardPile);
             OnCardDiscarded?.Invoke(discardedCard);
         }
 #endregion
@@ -125,7 +128,7 @@ namespace FurkanKambay.Deckbuilding
 #region List Operations
         protected void Shuffle(Pile pile)
         {
-            if (!TryGetList(pile, out List<CardBase> list))
+            if (!TryGetList(pile, out List<Card> list))
                 return;
 
             list.Shuffle();
@@ -133,17 +136,17 @@ namespace FurkanKambay.Deckbuilding
             // Fix PileIndex values
             for (int i = 0; i < list.Count; i++)
             {
-                CardBase card = list[i];
+                Card card = list[i];
                 card.SetPile(pile, i);
             }
         }
 
-        protected CardBase MoveCard(CardBase card, Pile targetPile)
+        protected Card MoveCard(Card card, Pile targetPile)
         {
-            if (!TryGetList(card.Pile, out List<CardBase> sourceList))
+            if (!TryGetList(card.Pile, out List<Card> sourceList))
                 return null;
 
-            if (!TryGetList(targetPile, out List<CardBase> targetList))
+            if (!TryGetList(targetPile, out List<Card> targetList))
                 return null;
 
             sourceList.RemoveAt(card.PileIndex);
@@ -155,13 +158,13 @@ namespace FurkanKambay.Deckbuilding
 
         protected void MoveAll(Pile sourcePile, Pile targetPile)
         {
-            if (!TryGetList(sourcePile, out List<CardBase> sourceList))
+            if (!TryGetList(sourcePile, out List<Card> sourceList))
                 return;
 
-            if (!TryGetList(targetPile, out List<CardBase> targetList))
+            if (!TryGetList(targetPile, out List<Card> targetList))
                 return;
 
-            foreach (CardBase card in sourceList)
+            foreach (Card card in sourceList)
             {
                 // TODO: Retained Cards
                 targetList.Add(card);
@@ -171,7 +174,7 @@ namespace FurkanKambay.Deckbuilding
             sourceList.Clear();
         }
 
-        protected bool TryGetList(Pile pile, out List<CardBase> list)
+        protected bool TryGetList(Pile pile, out List<Card> list)
         {
             list = pile switch
             {

@@ -1,18 +1,8 @@
-using System;
-using FurkanKambay.Deckbuilding;
 using UnityEngine;
 
-namespace FurkanKambay
+namespace FurkanKambay.Deckbuilding
 {
-    [Serializable]
-    public class Card : CardBase
-    {
-        [SerializeField] private CardSO cardSO;
-
-        public CardSO CardSO => cardSO;
-    }
-
-    [CreateAssetMenu]
+    [CreateAssetMenu(menuName = "Card")]
     public class CardSO : ScriptableObject
     {
         [SerializeField] private int    id;
@@ -27,9 +17,9 @@ namespace FurkanKambay
         public string Description => description;
         public int    Cost        => cost;
 
-        public static CardBase CreateInstance()
+        public static Card CreateInstance()
         {
-            return new CardBase();
+            return new Card();
         }
     }
 }

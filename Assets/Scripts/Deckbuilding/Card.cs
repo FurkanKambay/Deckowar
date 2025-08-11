@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 namespace FurkanKambay.Deckbuilding
 {
@@ -10,8 +11,13 @@ namespace FurkanKambay.Deckbuilding
     }
 
     [Serializable]
-    public class CardBase
+    public class Card
     {
+        [SerializeField] private CardSO cardSO;
+
+        public CardSO CardSO => cardSO;
+
+        public Deck Deck      { get; protected set; }
         public Pile Pile      { get; protected set; }
         public int  PileIndex { get; protected set; }
 
