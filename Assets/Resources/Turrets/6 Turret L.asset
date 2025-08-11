@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 65bc1f5b815d432ea541f97de2848c0b, type: 3}
-  m_Name: 2 Unit Large
+  m_Name: 6 Turret L
   m_EditorClassIdentifier: 
-  id: 2
-  displayName: Large Unit
+  id: 6
+  displayName: Large Turret
   icon: {fileID: 21300000, guid: adc3a0862fdc47946a60c17ddf9c36c6, type: 3}
-  description: A large ground unit.
-  cost: 40
+  description: A large turret.
+  cost: 90

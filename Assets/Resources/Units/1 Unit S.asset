@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 65bc1f5b815d432ea541f97de2848c0b, type: 3}
-  m_Name: 1 Unit Medium
+  m_Name: 1 Unit S
   m_EditorClassIdentifier: 
   id: 1
-  displayName: Medium Unit
-  icon: {fileID: 21300000, guid: 28dfe709076a3cc4c8f99d168d67208c, type: 3}
-  description: A medium ground unit.
-  cost: 20
+  displayName: Small Unit
+  icon: {fileID: 21300000, guid: 29d31f3e6a5408446b3c444eaef5a3a8, type: 3}
+  description: A small ground unit.
+  cost: 10
