@@ -46,6 +46,9 @@ namespace FurkanKambay
 
         void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
         {
+            if (eventData.button != PointerEventData.InputButton.Left)
+                return;
+
             bool used = deckHolder.TryUseCard(card);
         }
     }

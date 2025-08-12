@@ -430,7 +430,7 @@ GameObject:
   - component: {fileID: 729450562}
   - component: {fileID: 729450563}
   m_Layer: 0
-  m_Name: Hand UI
+  m_Name: "\U0001F0CF Hand UI"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -526,7 +526,7 @@ GameObject:
   - component: {fileID: 1370546021}
   - component: {fileID: 1370546020}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: "\U0001F5BC\uFE0F Canvas"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
