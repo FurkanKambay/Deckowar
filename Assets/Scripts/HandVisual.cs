@@ -17,8 +17,11 @@ namespace FurkanKambay
 
         private void Start()
         {
-            deckHolder.Deck.OnHandDrawn     += DeckHand_Updated;
-            deckHolder.Deck.OnHandDiscarded += DeckHand_Updated;
+            deckHolder.Deck.OnHandDrawn          += Hand_Updated;
+            deckHolder.Deck.OnHandDiscarded      += Hand_Updated;
+            deckHolder.Deck.OnResetToStarterDeck += Hand_Updated;
+            deckHolder.Deck.OnCardDrawn          += Card_Updated;
+            deckHolder.Deck.OnCardDiscarded      += Card_Updated;
 
             InitializeCards();
             UpdateCards();
@@ -26,8 +29,11 @@ namespace FurkanKambay
 
         private void OnDestroy()
         {
-            deckHolder.Deck.OnHandDrawn     -= DeckHand_Updated;
-            deckHolder.Deck.OnHandDiscarded -= DeckHand_Updated;
+            deckHolder.Deck.OnHandDrawn          -= Hand_Updated;
+            deckHolder.Deck.OnHandDiscarded      -= Hand_Updated;
+            deckHolder.Deck.OnResetToStarterDeck -= Hand_Updated;
+            deckHolder.Deck.OnCardDrawn          -= Card_Updated;
+            deckHolder.Deck.OnCardDiscarded      -= Card_Updated;
         }
 
         private void InitializeCards()
@@ -44,7 +50,10 @@ namespace FurkanKambay
             }
         }
 
-        private void DeckHand_Updated() =>
+        private void Hand_Updated() =>
+            UpdateCards();
+
+        private void Card_Updated(Card card) =>
             UpdateCards();
 
         private void UpdateCards()

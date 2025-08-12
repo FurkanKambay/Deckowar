@@ -46,8 +46,7 @@ namespace FurkanKambay
 
         void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
         {
-            Debug.Log("OnPointerClick");
-            deckHolder.TryUseCard(card);
+            bool used = deckHolder.TryUseCard(card);
         }
     }
 }

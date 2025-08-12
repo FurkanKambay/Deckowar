@@ -47,7 +47,7 @@ namespace FurkanKambay.Deckbuilding
                 if (HandPile.CardCount >= config.HandSize)
                     break;
 
-                if (!TryDrawCard(out Card drawnCard))
+                if (!TryDrawCard_WithoutNotify(out Card drawnCard))
                     continue;
 
                 hasDrawn = true;
@@ -57,7 +57,16 @@ namespace FurkanKambay.Deckbuilding
                 OnHandDrawn?.Invoke();
         }
 
-        private bool TryDrawCard(out Card drawnCard)
+        public bool TryDrawCard(out Card drawnCard)
+        {
+            if (!TryDrawCard_WithoutNotify(out drawnCard))
+                return false;
+
+            OnCardDrawn?.Invoke(drawnCard);
+            return true;
+        }
+
+        private bool TryDrawCard_WithoutNotify(out Card drawnCard)
         {
             if (DrawPile.CardCount == 0)
                 ReshuffleDrawPile();

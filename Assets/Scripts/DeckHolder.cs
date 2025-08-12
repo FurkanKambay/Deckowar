@@ -60,6 +60,10 @@ namespace FurkanKambay
             // TODO: card effect
 
             Deck.DiscardCard(card);
+
+            if (Deck.HandPile.CardCount == 0)
+                Deck.DrawHand();
+
             return true;
         }
 
