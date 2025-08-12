@@ -127,8 +127,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   background: {fileID: 7648583514047549840}
   icon: {fileID: 4605534543148600252}
-  unitBackgroundColor: {r: 0.23529412, g: 0.23529412, b: 0.23529412, a: 1}
-  turretBackgroundColor: {r: 0.25872198, g: 0.33979148, b: 0.3584906, a: 1}
+  unitBackgroundColor: {r: 0.503, g: 0.260051, b: 0.260051, a: 1}
+  turretBackgroundColor: {r: 0.172104, g: 0.36689657, b: 0.404, a: 1}
   deckHolder: {fileID: 0}
   card:
     cardSO: {fileID: 0}
