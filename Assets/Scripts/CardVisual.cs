@@ -1,4 +1,5 @@
 using FurkanKambay.Deckbuilding;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -9,7 +10,10 @@ namespace FurkanKambay
     {
         [Header("Prefab References")]
         [SerializeField] private Image background;
-        [SerializeField] private Image icon;
+        [SerializeField] private Image    icon;
+        [SerializeField] private TMP_Text title;
+        [SerializeField] private TMP_Text cost;
+        [SerializeField] private TMP_Text description;
 
         [Header("Config")]
         [SerializeField] private Color unitBackgroundColor;
@@ -41,7 +45,10 @@ namespace FurkanKambay
                 _                => Color.black
             };
 
-            icon.sprite = card.CardSO.Icon;
+            icon.sprite      = card.CardSO.Icon;
+            title.text       = card.CardSO.DisplayName;
+            description.text = card.CardSO.Description;
+            cost.text        = card.CardSO.Cost.ToString();
         }
 
         void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
