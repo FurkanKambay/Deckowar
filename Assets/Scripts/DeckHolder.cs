@@ -7,6 +7,7 @@ namespace FurkanKambay
 {
     public class DeckHolder : MonoBehaviour
     {
+        [Header("Config")]
         [SerializeField] private DeckConfigSO deckConfigSO;
 
         public Deck Deck { get; private set; }
@@ -16,6 +17,8 @@ namespace FurkanKambay
             Deck = new Deck(deckConfigSO);
 
             Deck.ResetToStarterDeck();
+            Deck.DrawHand();
+
             PrintDeck();
         }
 
