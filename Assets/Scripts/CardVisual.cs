@@ -17,6 +17,12 @@ namespace FurkanKambay
         [Header("State")]
         [SerializeField] private Card card;
 
+        public void SetCard(Card newCard)
+        {
+            card = newCard;
+            UpdateCard();
+        }
+
         [ContextMenu("Update Card")]
         public void UpdateCard()
         {

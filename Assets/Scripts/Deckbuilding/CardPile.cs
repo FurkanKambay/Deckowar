@@ -29,6 +29,18 @@ namespace FurkanKambay.Deckbuilding
             ListRO   = list.AsReadOnly();
         }
 
+        public bool TryPeek(int index, out Card card)
+        {
+            if (!HasIndex(index))
+            {
+                card = null;
+                return false;
+            }
+
+            card = list[index];
+            return true;
+        }
+
         public void TakeAllFrom(CardPile sourcePile)
         {
             if (sourcePile is null || sourcePile == this)
@@ -39,6 +51,9 @@ namespace FurkanKambay.Deckbuilding
 
             sourcePile.Clear();
         }
+
+        public bool HasIndex(int index) =>
+            index >= 0 && index < list.Count;
 
         internal bool Take(Card card) =>
             AddCard(card, move: true);

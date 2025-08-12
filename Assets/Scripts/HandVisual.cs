@@ -21,6 +21,7 @@ namespace FurkanKambay
             deckHolder.Deck.OnHandDiscarded += DeckHand_Updated;
 
             InitializeCards();
+            UpdateCards();
         }
 
         private void OnDestroy()
@@ -38,26 +39,26 @@ namespace FurkanKambay
 
             for (int i = 0; i < deckHolder.Deck.HandSize; i++)
             {
-                CardVisual instance = Instantiate(cardVisualPrefab, cardParent);
-                cardVisuals[i] = instance;
-
-                instance.name = $"Card {i + 1}";
+                cardVisuals[i]      = Instantiate(cardVisualPrefab, cardParent);
+                cardVisuals[i].name = $"Card {i + 1}";
             }
         }
 
-        private void DeckHand_Updated()
+        private void DeckHand_Updated() =>
+            UpdateCards();
+
+        private void UpdateCards()
         {
-            CardPile hand = deckHolder.Deck.HandPile;
+            Deck     deck = deckHolder.Deck;
+            CardPile hand = deck.HandPile;
 
-            int missing = hand.CardCount - cardVisuals.Length;
-
-            for (int i = 0; i < missing; i++)
+            for (int i = 0; i < deck.HandSize; i++)
             {
-                CardVisual instance = Instantiate(cardVisualPrefab, cardParent);
-            }
+                CardVisual visual = cardVisuals[i];
+                visual.gameObject.SetActive(hand.HasIndex(i));
 
-            foreach (Card card in hand.ListRO)
-            {
+                if (hand.TryPeek(i, out Card card))
+                    visual.SetCard(card);
             }
         }
     }
