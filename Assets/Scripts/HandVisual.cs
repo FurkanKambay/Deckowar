@@ -58,7 +58,7 @@ namespace FurkanKambay
                 visual.gameObject.SetActive(hand.HasIndex(i));
 
                 if (hand.TryPeek(i, out Card card))
-                    visual.SetCard(card);
+                    visual.SetState(deckHolder, card);
             }
         }
     }

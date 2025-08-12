@@ -10,6 +10,9 @@ namespace FurkanKambay
         [Header("Config")]
         [SerializeField] private DeckConfigSO deckConfigSO;
 
+        [Header("State")]
+        [SerializeField] private int money;
+
         public Deck Deck { get; private set; }
 
         private void Awake()
@@ -46,5 +49,21 @@ namespace FurkanKambay
         [Conditional("UNITY_EDITOR")]
         private void PrintDeck() =>
             Debug.Log($"Deck: {Deck}");
+
+        public bool TryUseCard(Card card)
+        {
+            if (!CanUseCard(card))
+                return false;
+
+            money -= card.CardSO.Cost;
+
+            // TODO: card effect
+
+            Deck.DiscardCard(card);
+            return true;
+        }
+
+        public bool CanUseCard(Card card) =>
+            card.CardSO.Cost <= money;
     }
 }

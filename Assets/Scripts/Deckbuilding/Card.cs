@@ -15,7 +15,7 @@ namespace FurkanKambay.Deckbuilding
         public CardPile CardPile  { get; protected set; }
         public int      PileIndex { get; protected set; } = -1;
 
-        public Card(CardSO cardSO, Deck ownerDeck)
+        internal Card(CardSO cardSO, Deck ownerDeck)
         {
             this.cardSO = cardSO;
             Deck        = ownerDeck;

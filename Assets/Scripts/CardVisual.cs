@@ -1,12 +1,13 @@
 using FurkanKambay.Deckbuilding;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace FurkanKambay
 {
-    public class CardVisual : MonoBehaviour
+    public class CardVisual : MonoBehaviour, IPointerClickHandler
     {
-        [Header("References")]
+        [Header("Prefab References")]
         [SerializeField] private Image background;
         [SerializeField] private Image icon;
 
@@ -15,16 +16,19 @@ namespace FurkanKambay
         [SerializeField] private Color turretBackgroundColor;
 
         [Header("State")]
+        [SerializeField] private DeckHolder deckHolder;
         [SerializeField] private Card card;
 
-        public void SetCard(Card newCard)
+        internal void SetState(DeckHolder newDeckHolder, Card newCard)
         {
-            card = newCard;
+            deckHolder = newDeckHolder;
+            card       = newCard;
+
             UpdateCard();
         }
 
         [ContextMenu("Update Card")]
-        public void UpdateCard()
+        private void UpdateCard()
         {
             if (card is null || !card.IsValid)
                 return;
@@ -38,6 +42,12 @@ namespace FurkanKambay
             };
 
             icon.sprite = card.CardSO.Icon;
+        }
+
+        void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
+        {
+            Debug.Log("OnPointerClick");
+            deckHolder.TryUseCard(card);
         }
     }
 }
