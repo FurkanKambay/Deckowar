@@ -28,6 +28,6 @@ namespace FurkanKambay.Deckbuilding
         }
 
         public override string ToString() =>
-            $"{CardPile?.PileType}[{PileIndex}]: {cardSO.DisplayName}";
+            $"[{PileIndex}] {cardSO.DisplayName}";
     }
 }

@@ -21,6 +21,8 @@ namespace FurkanKambay.Deckbuilding
         public CardPile HandPile    { get; private set; }
         public CardPile DiscardPile { get; private set; }
 
+        public int HandSize => config.HandSize;
+
         private DeckConfigSO config;
 
         public Deck(DeckConfigSO config)
@@ -49,7 +51,6 @@ namespace FurkanKambay.Deckbuilding
                     continue;
 
                 hasDrawn = true;
-                OnCardDrawn?.Invoke(drawnCard);
             }
 
             if (hasDrawn)
@@ -91,7 +92,7 @@ namespace FurkanKambay.Deckbuilding
             OnHandDiscarded?.Invoke();
         }
 
-        private void DiscardCard(Card card)
+        public void DiscardCard(Card card)
         {
             if (card is null)
                 return;
