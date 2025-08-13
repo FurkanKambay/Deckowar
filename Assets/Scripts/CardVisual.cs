@@ -16,8 +16,8 @@ namespace FurkanKambay
         [SerializeField] private TMP_Text description;
 
         [Header("Config")]
-        [SerializeField] private Color unitBackgroundColor;
-        [SerializeField] private Color turretBackgroundColor;
+        [SerializeField] private Sprite unitBackground;
+        [SerializeField] private Sprite turretBackground;
 
         [Header("State")]
         [SerializeField] private DeckHolder deckHolder;
@@ -37,12 +37,12 @@ namespace FurkanKambay
             if (card is null || !card.IsValid)
                 return;
 
-            background.color = card.CardSO.CardType switch
+            background.sprite = card.CardSO.CardType switch
             {
-                CardType.Invalid => Color.black,
-                CardType.Unit    => unitBackgroundColor,
-                CardType.Turret  => turretBackgroundColor,
-                _                => Color.black
+                CardType.Invalid => unitBackground,
+                CardType.Unit    => unitBackground,
+                CardType.Turret  => turretBackground,
+                _                => unitBackground
             };
 
             icon.sprite      = card.CardSO.Icon;
