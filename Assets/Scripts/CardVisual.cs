@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace FurkanKambay
 {
-    public class CardVisual : MonoBehaviour, IPointerClickHandler
+    public sealed class CardVisual : MonoBehaviour, IPointerClickHandler
     {
         [Header("Prefab References")]
         [SerializeField] private Image background;

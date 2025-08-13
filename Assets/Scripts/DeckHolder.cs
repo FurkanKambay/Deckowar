@@ -5,7 +5,7 @@ using Debug = UnityEngine.Debug;
 
 namespace FurkanKambay
 {
-    public class DeckHolder : MonoBehaviour
+    public sealed class DeckHolder : MonoBehaviour
     {
         [Header("Config")]
         [SerializeField] private DeckConfigSO deckConfigSO;

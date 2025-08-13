@@ -12,7 +12,7 @@ namespace FurkanKambay.Deckbuilding
         DiscardPile
     }
 
-    public class CardPile
+    public sealed class CardPile
     {
         public Pile                     PileType { get; }
         public ReadOnlyCollection<Card> ListRO   { get; }
