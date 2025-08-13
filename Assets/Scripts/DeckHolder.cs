@@ -11,7 +11,8 @@ namespace FurkanKambay
         [SerializeField] private DeckConfigSO deckConfigSO;
 
         [Header("State")]
-        [SerializeField] private int money;
+        [SerializeField, Min(0)] private float moneyGainPerSecond;
+        [SerializeField, Min(0)] private float money;
 
         public Deck Deck { get; private set; }
 
@@ -23,6 +24,11 @@ namespace FurkanKambay
             Deck.DrawHand();
 
             PrintDeck();
+        }
+
+        private void Update()
+        {
+            money += moneyGainPerSecond * Time.deltaTime;
         }
 
         [ContextMenu("Draw Hand")]

@@ -578,7 +578,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deckConfigSO: {fileID: 11400000, guid: f26a0cdab84024743b984e3f458880c6, type: 2}
-  money: 500
+  moneyGainPerSecond: 10
+  money: 0
 --- !u!1001 &935708306
 PrefabInstance:
   m_ObjectHideFlags: 0
