@@ -2,20 +2,44 @@ using UnityEngine;
 
 namespace FurkanKambay
 {
-    public class Unit : MonoBehaviour
+    public sealed class Unit : MonoBehaviour
     {
-        [SerializeField] private float moveSpeed;
-        [SerializeField] private bool  shouldMoveRight;
+        [Header("References")]
+        [SerializeField] private Rigidbody2D body;
 
-        private void Update()
+        [Header("Config")]
+        [SerializeField] private float moveSpeed;
+        [SerializeField] private bool shouldMoveRight;
+
+        private bool      hasTarget;
+        private Transform target;
+        private Vector2   moveDirection;
+
+        private void Awake()
         {
-            Vector2 direction = shouldMoveRight ? Vector2.right : Vector2.left;
-            transform.Translate(Time.deltaTime * moveSpeed * direction);
+            moveDirection = shouldMoveRight ? Vector2.right : Vector2.left;
+        }
+
+        private void FixedUpdate()
+        {
+            if (hasTarget)
+                return;
+
+            Vector2 moveDelta = Time.deltaTime * moveSpeed * moveDirection;
+            body.MovePosition(body.position + moveDelta);
         }
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            Destroy(gameObject);
+            Debug.Log($"{name}: OnTriggerEnter2D. other: {other.name}");
+
+            hasTarget = true;
+            target    = other.transform;
+        }
+
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            Debug.Log($"{name}: OnTriggerExit2D. other: {other.name}");
         }
     }
 }
