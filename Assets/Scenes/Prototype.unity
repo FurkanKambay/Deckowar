@@ -257,12 +257,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 242441916}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 3.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 729450562}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &417334728
 GameObject:
@@ -274,7 +274,7 @@ GameObject:
   m_Component:
   - component: {fileID: 417334729}
   m_Layer: 0
-  m_Name: Environment
+  m_Name: "\U0001F304 Environment"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -545,7 +545,9 @@ Transform:
   m_LocalPosition: {x: 0, y: -3.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1370546023}
+  - {fileID: 242441919}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &729450563
@@ -732,7 +734,7 @@ GameObject:
   - component: {fileID: 1370546021}
   - component: {fileID: 1370546020}
   m_Layer: 5
-  m_Name: "\U0001F5BC\uFE0F Canvas"
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -814,7 +816,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1400948889}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 729450562}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1134,6 +1136,4 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 752937553}
   - {fileID: 729450562}
-  - {fileID: 1370546023}
-  - {fileID: 242441919}
   - {fileID: 417334729}
