@@ -11,8 +11,13 @@ namespace FurkanKambay
 
         [Header("Config")]
         [SerializeField, Min(0)] private int initialHealth;
+        private int health;
 
-        public int Health { get; private set; }
+        public int Health
+        {
+            get => health;
+            private set => health = Mathf.Clamp(value, 0, initialHealth);
+        }
 
         private void Awake()
         {

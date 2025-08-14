@@ -13,6 +13,8 @@ namespace FurkanKambay
         [SerializeField, Min(0)] private float attackRange = 1f;
         [SerializeField, Min(0)] private float attackDelay = 1f;
 
+        public bool HasTarget => (bool)Target;
+
         public Vitality Target
         {
             get => target;
@@ -22,8 +24,6 @@ namespace FurkanKambay
                 unit.CanMove = !value;
             }
         }
-
-        public bool HasTarget => (bool)Target;
 
         private Vitality target;
         private float    attackTimer;
@@ -42,7 +42,6 @@ namespace FurkanKambay
 
             if (!hit)
             {
-                Debug.Log($"{name} has no target");
                 Target = null;
                 return;
             }
