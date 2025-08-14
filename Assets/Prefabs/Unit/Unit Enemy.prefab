@@ -20,6 +20,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -30
       objectReference: {fileID: 0}
+    - target: {fileID: 607795297357717955, guid: 1750281a84fe3624cbefda897ef4df61, type: 3}
+      propertyPath: shouldMoveRight
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1406589936298192355, guid: 1750281a84fe3624cbefda897ef4df61, type: 3}
       propertyPath: m_Name
       value: Unit Enemy
@@ -27,6 +31,10 @@ PrefabInstance:
     - target: {fileID: 1406589936298192355, guid: 1750281a84fe3624cbefda897ef4df61, type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099496320509844371, guid: 1750281a84fe3624cbefda897ef4df61, type: 3}
+      propertyPath: attackLayers.m_Bits
+      value: 320
       objectReference: {fileID: 0}
     - target: {fileID: 5305273800628855937, guid: 1750281a84fe3624cbefda897ef4df61, type: 3}
       propertyPath: m_Color.b
@@ -40,10 +48,6 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.49056602
       objectReference: {fileID: 0}
-    - target: {fileID: 7643453291097124788, guid: 1750281a84fe3624cbefda897ef4df61, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.35
-      objectReference: {fileID: 0}
     - target: {fileID: 7761560519218001547, guid: 1750281a84fe3624cbefda897ef4df61, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
@@ -54,10 +58,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7761560519218001547, guid: 1750281a84fe3624cbefda897ef4df61, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8941248248501055336, guid: 1750281a84fe3624cbefda897ef4df61, type: 3}
-      propertyPath: shouldMoveRight
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

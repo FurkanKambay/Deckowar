@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 1757477750334953315, guid: 21a1fd1905f092b40b91223f887e6aa4, type: 3}
       propertyPath: unitPrefab
       value: 
-      objectReference: {fileID: 3175440730358707252, guid: 48de511acb3f8f644b3d7d0b01d443f8, type: 3}
+      objectReference: {fileID: 6371342192744839839, guid: 48de511acb3f8f644b3d7d0b01d443f8, type: 3}
     - target: {fileID: 1757477750334953315, guid: 21a1fd1905f092b40b91223f887e6aa4, type: 3}
       propertyPath: spawnDelta.x
       value: -1

@@ -11,40 +11,30 @@ namespace FurkanKambay
         [SerializeField] private float moveSpeed;
         [SerializeField] private bool shouldMoveRight;
 
-        private bool     hasTarget;
-        private Vitality target;
-        private Vector2  moveDirection;
+        public   bool    CanMove       { get; internal set; }
+        internal Vector2 MoveDirection { get; set; }
+
+        public Rigidbody2D Body => body;
 
         private void Awake()
         {
-            moveDirection = shouldMoveRight ? Vector2.right : Vector2.left;
+            CanMove       = true;
+            MoveDirection = shouldMoveRight ? Vector2.right : Vector2.left;
         }
 
         private void FixedUpdate()
         {
-            if (hasTarget)
+            if (!CanMove)
+            {
+                body.linearVelocity = Vector2.zero;
                 return;
+            }
 
-            Vector2 moveDelta = Time.deltaTime * moveSpeed * moveDirection;
+            Vector2 moveVector = moveSpeed * MoveDirection;
+            // body.linearVelocity = moveVector;
+
+            Vector2 moveDelta = Time.deltaTime * moveVector;
             body.MovePosition(body.position + moveDelta);
-        }
-
-        private void OnTriggerEnter2D(Collider2D other)
-        {
-            Debug.Log($"{name}: OnTriggerEnter2D. other: {other.name}");
-
-            if (!other.TryGetComponent(out Vitality health))
-                return;
-
-            hasTarget = true;
-            target    = health;
-
-            health.TakeDamage(1);
-        }
-
-        private void OnTriggerExit2D(Collider2D other)
-        {
-            Debug.Log($"{name}: OnTriggerExit2D. other: {other.name}");
         }
     }
 }
