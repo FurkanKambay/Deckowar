@@ -40,6 +40,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.49056602
       objectReference: {fileID: 0}
+    - target: {fileID: 7643453291097124788, guid: 1750281a84fe3624cbefda897ef4df61, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.35
+      objectReference: {fileID: 0}
     - target: {fileID: 7761560519218001547, guid: 1750281a84fe3624cbefda897ef4df61, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
