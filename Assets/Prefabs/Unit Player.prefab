@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Unit Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1406589936298192355, guid: 1750281a84fe3624cbefda897ef4df61, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5305273800628855937, guid: 1750281a84fe3624cbefda897ef4df61, type: 3}
       propertyPath: m_Color.b
       value: 0.74509805
