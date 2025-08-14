@@ -131,10 +131,12 @@ MonoBehaviour:
   background: {fileID: 7648583514047549840}
   icon: {fileID: 4605534543148600252}
   title: {fileID: 5329391806737752033}
-  cost: {fileID: 6537111623568746512}
+  costLabel: {fileID: 6537111623568746512}
   description: {fileID: 313984442460155842}
   unitBackground: {fileID: -1491576221, guid: e981c1c5e7f641d40bd4258a847ed9ed, type: 3}
   turretBackground: {fileID: 299177164, guid: e981c1c5e7f641d40bd4258a847ed9ed, type: 3}
+  costColor: {r: 1, g: 0.85490197, b: 0.13725491, a: 1}
+  costColorInsufficient: {r: 0.53900003, g: 0.07398039, b: 0.07398039, a: 1}
   deckHolder: {fileID: 0}
   card:
     cardSO: {fileID: 0}

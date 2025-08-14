@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Color = UnityEngine.Color;
 
 namespace FurkanKambay
 {
@@ -12,16 +13,23 @@ namespace FurkanKambay
         [SerializeField] private Image background;
         [SerializeField] private Image    icon;
         [SerializeField] private TMP_Text title;
-        [SerializeField] private TMP_Text cost;
+        [SerializeField] private TMP_Text costLabel;
         [SerializeField] private TMP_Text description;
 
         [Header("Config")]
         [SerializeField] private Sprite unitBackground;
         [SerializeField] private Sprite turretBackground;
+        [SerializeField] private Color  costColor;
+        [SerializeField] private Color  costColorInsufficient;
 
         [Header("State")]
         [SerializeField] private DeckHolder deckHolder;
         [SerializeField] private Card card;
+
+        private void Update()
+        {
+            UpdateCostLabel();
+        }
 
         internal void SetState(DeckHolder newDeckHolder, Card newCard)
         {
@@ -31,7 +39,6 @@ namespace FurkanKambay
             UpdateCard();
         }
 
-        [ContextMenu("Update Card")]
         private void UpdateCard()
         {
             if (card is null || !card.IsValid)
@@ -48,7 +55,18 @@ namespace FurkanKambay
             icon.sprite      = card.CardSO.Icon;
             title.text       = card.CardSO.DisplayName;
             description.text = card.CardSO.Description;
-            cost.text        = card.CardSO.Cost.ToString();
+        }
+
+        private void UpdateCostLabel()
+        {
+            if (card is null || !card.IsValid)
+                return;
+
+            int    cost  = card.CardSO.Cost;
+            Color  color = cost <= deckHolder.Gold ? costColor : costColorInsufficient;
+            string hex   = ColorUtility.ToHtmlStringRGB(color);
+
+            costLabel.text = $"<color=#{hex}>{cost}</color>";
         }
 
         void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
