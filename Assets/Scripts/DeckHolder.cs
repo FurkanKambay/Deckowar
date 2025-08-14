@@ -9,6 +9,7 @@ namespace FurkanKambay
     {
         [Header("Config")]
         [SerializeField] private DeckConfigSO deckConfigSO;
+        [SerializeField] private Castle castle;
 
         [Header("State")]
         [SerializeField, Min(0)] private float moneyGainPerSecond;
@@ -63,7 +64,11 @@ namespace FurkanKambay
 
             money -= card.CardSO.Cost;
 
-            // TODO: card effect
+            // TODO: other unit types
+            if (card.CardSO.CardType == CardType.Unit)
+                castle.SpawnUnit();
+
+            // TODO: other card effects
 
             Deck.DiscardCard(card);
 
