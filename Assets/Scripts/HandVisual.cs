@@ -1,4 +1,5 @@
 using FurkanKambay.Deckbuilding;
+using TMPro;
 using UnityEngine;
 
 namespace FurkanKambay
@@ -11,6 +12,7 @@ namespace FurkanKambay
         [Header("References - Scene")]
         [SerializeField] private DeckHolder deckHolder;
         [SerializeField] private Transform cardParent;
+        [SerializeField] private TMP_Text  goldLabel;
 
         [Header("State")]
         [SerializeField] private CardVisual[] cardVisuals;
@@ -34,6 +36,11 @@ namespace FurkanKambay
             deckHolder.Deck.OnResetToStarterDeck -= Hand_Updated;
             deckHolder.Deck.OnCardDrawn          -= Card_Updated;
             deckHolder.Deck.OnCardDiscarded      -= Card_Updated;
+        }
+
+        private void Update()
+        {
+            goldLabel.text = $"{deckHolder.Gold:N0}";
         }
 
         private void InitializeCards()

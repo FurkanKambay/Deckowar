@@ -11,11 +11,11 @@ namespace FurkanKambay
         [SerializeField] private DeckConfigSO deckConfigSO;
         [SerializeField] private Castle castle;
 
-        [Header("State")]
-        [SerializeField, Min(0)] private float moneyGainPerSecond;
-        [SerializeField, Min(0)] private float money;
+        [Header("Config")]
+        [SerializeField, Min(0)] private float goldGainPerSecond;
 
-        public Deck Deck { get; private set; }
+        public Deck  Deck { get; private set; }
+        public float Gold { get; private set; }
 
         private void Awake()
         {
@@ -29,7 +29,7 @@ namespace FurkanKambay
 
         private void Update()
         {
-            money += moneyGainPerSecond * Time.deltaTime;
+            Gold += goldGainPerSecond * Time.deltaTime;
         }
 
         [ContextMenu("Draw Hand")]
@@ -62,7 +62,7 @@ namespace FurkanKambay
             if (!CanUseCard(card))
                 return false;
 
-            money -= card.CardSO.Cost;
+            Gold -= card.CardSO.Cost;
 
             // TODO: other unit types
             if (card.CardSO.CardType == CardType.Unit)
@@ -79,6 +79,6 @@ namespace FurkanKambay
         }
 
         public bool CanUseCard(Card card) =>
-            card.CardSO.Cost <= money;
+            card.CardSO.Cost <= Gold;
     }
 }
