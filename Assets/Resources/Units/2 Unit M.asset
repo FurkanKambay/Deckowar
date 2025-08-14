@@ -15,6 +15,6 @@ MonoBehaviour:
   id: 2
   cardType: 1
   displayName: Unit M
-  icon: {fileID: 6265020341572762547, guid: aa83405dacc347f46b8a8b635abc74ff, type: 3}
+  icon: {fileID: 1534710841, guid: 2c4e8497bccdcf24cb5c0307ace534ea, type: 3}
   description: A medium ground unit.
   cost: 20
