@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b074d813d82b4d94a9f2690989b6a3ac, type: 3}
   m_Name: Main Deck Config
   m_EditorClassIdentifier: 
-  handSize: 6
+  handSize: 5
   starterDeck:
   - cardSO: {fileID: 11400000, guid: a1c318f3ad5e26d45ab0b1346fd5d96d, type: 2}
     amount: 6
