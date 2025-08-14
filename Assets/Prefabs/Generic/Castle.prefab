@@ -221,5 +221,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a600f949c9d41e1a1c6dff17934d8dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitPrefab: {fileID: 8941248248501055336, guid: 1750281a84fe3624cbefda897ef4df61, type: 3}
+  unitPrefab: {fileID: 0}
   spawnDelta: {x: 0, y: 0}
