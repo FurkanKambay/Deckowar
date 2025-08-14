@@ -11,9 +11,9 @@ namespace FurkanKambay
         [SerializeField] private float moveSpeed;
         [SerializeField] private bool shouldMoveRight;
 
-        private bool         hasTarget;
-        private EntityHealth target;
-        private Vector2      moveDirection;
+        private bool     hasTarget;
+        private Vitality target;
+        private Vector2  moveDirection;
 
         private void Awake()
         {
@@ -33,7 +33,7 @@ namespace FurkanKambay
         {
             Debug.Log($"{name}: OnTriggerEnter2D. other: {other.name}");
 
-            if (!other.TryGetComponent(out EntityHealth health))
+            if (!other.TryGetComponent(out Vitality health))
                 return;
 
             hasTarget = true;

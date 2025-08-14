@@ -4,7 +4,7 @@ using UnityEngine;
 namespace FurkanKambay
 {
     [SelectionBase]
-    internal sealed class EntityHealth : MonoBehaviour
+    public sealed class Vitality : MonoBehaviour
     {
         public event Action OnDamageTaken;
         public event Action OnDied;
