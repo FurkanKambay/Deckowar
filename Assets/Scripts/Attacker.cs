@@ -1,9 +1,13 @@
+using System;
 using UnityEngine;
 
 namespace FurkanKambay
 {
     public sealed class Attacker : MonoBehaviour
     {
+        public event Action OnAttackStarted;
+        public event Action OnAttackProcced;
+
         [Header("References")]
         [SerializeField] private Unit unit;
 
@@ -13,13 +17,16 @@ namespace FurkanKambay
         [SerializeField, Min(0)] private float attackRange = 1f;
         [SerializeField, Min(0)] private float attackDelay = 1f;
 
-        public bool HasTarget => (bool)Target;
+        public bool HasTarget => (bool)target;
 
         public Vitality Target
         {
             get => target;
             private set
             {
+                if (target == value)
+                    return;
+
                 target       = value;
                 unit.CanMove = !value;
             }
@@ -27,6 +34,7 @@ namespace FurkanKambay
 
         private Vitality target;
         private float    attackTimer;
+        private bool     isAttacking;
 
         private void Update()
         {
@@ -49,19 +57,26 @@ namespace FurkanKambay
             if (!hit.collider.TryGetComponent(out Vitality hitTarget))
                 return;
 
-            Debug.Log($"{name} targeting {hit.collider.name}");
-
             Target = hitTarget;
             TryAttack();
         }
 
+        internal void ProcAttack()
+        {
+            isAttacking = false;
+            attackTimer = 0;
+
+            Target.TakeDamage(damage);
+            OnAttackProcced?.Invoke();
+        }
+
         private void TryAttack()
         {
-            if (attackTimer < attackDelay)
+            if (isAttacking || attackTimer < attackDelay)
                 return;
 
-            attackTimer = 0;
-            Target.TakeDamage(damage);
+            OnAttackStarted?.Invoke();
+            isAttacking = true;
         }
 
         private void OnDrawGizmosSelected()
