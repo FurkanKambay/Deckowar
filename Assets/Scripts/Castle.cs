@@ -15,6 +15,7 @@ namespace FurkanKambay
             spawnPosition = transform.position + (Vector3)spawnDelta;
         }
 
+        [ContextMenu("Spawn Unit")]
         public void SpawnUnit()
         {
             Unit unit = Instantiate(unitPrefab, spawnPosition, Quaternion.identity, transform);

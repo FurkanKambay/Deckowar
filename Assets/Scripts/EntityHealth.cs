@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace FurkanKambay
 {
+    [SelectionBase]
     internal sealed class EntityHealth : MonoBehaviour
     {
         public event Action OnDamageTaken;
