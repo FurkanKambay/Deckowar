@@ -13,9 +13,19 @@ namespace FurkanKambay
 
         [Header("Config")]
         [SerializeField, Min(0)] private float goldGainPerSecond;
+        [SerializeField, Min(10)] private float maxGoldAmount = 200;
 
-        public Deck  Deck { get; private set; }
-        public float Gold { get; private set; }
+        public Deck Deck { get; private set; }
+
+        public float MaxGoldAmount => maxGoldAmount;
+
+        public float Gold
+        {
+            get => gold;
+            private set => gold = Mathf.Clamp(value, 0, maxGoldAmount);
+        }
+
+        private float gold;
 
         private void Awake()
         {

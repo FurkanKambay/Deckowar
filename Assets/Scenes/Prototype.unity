@@ -774,6 +774,7 @@ MonoBehaviour:
   deckConfigSO: {fileID: 11400000, guid: f26a0cdab84024743b984e3f458880c6, type: 2}
   castle: {fileID: 1823492435}
   goldGainPerSecond: 10
+  maxGoldAmount: 200
 --- !u!1001 &935708306
 PrefabInstance:
   m_ObjectHideFlags: 0
