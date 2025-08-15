@@ -3,6 +3,12 @@ using UnityEngine;
 
 namespace FurkanKambay
 {
+    public enum Faction
+    {
+        Player,
+        Enemy
+    }
+
     [SelectionBase]
     public sealed class Vitality : MonoBehaviour
     {
@@ -10,7 +16,10 @@ namespace FurkanKambay
         public event Action OnDied;
 
         [Header("Config")]
+        [SerializeField] private Faction faction;
         [SerializeField, Min(0)] private int initialHealth;
+
+        public Faction Faction => faction;
 
         public int Health
         {
