@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace FurkanKambay
 {
-    public class UnitAttackVisual : MonoBehaviour
+    public class UnitAnimator : MonoBehaviour
     {
         [Header("References")]
         [SerializeField] private SpriteRenderer spriteRenderer;
