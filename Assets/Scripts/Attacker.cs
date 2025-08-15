@@ -66,6 +66,9 @@ namespace FurkanKambay
             isAttacking = false;
             attackTimer = 0;
 
+            if (!Target)
+                return;
+
             Target.TakeDamage(damage);
             OnAttackProcced?.Invoke();
         }

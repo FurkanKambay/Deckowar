@@ -11,13 +11,14 @@ namespace FurkanKambay
 
         [Header("Config")]
         [SerializeField, Min(0)] private int initialHealth;
-        private int health;
 
         public int Health
         {
             get => health;
             private set => health = Mathf.Clamp(value, 0, initialHealth);
         }
+
+        private int health;
 
         private void Awake()
         {
@@ -26,7 +27,7 @@ namespace FurkanKambay
 
         public void TakeDamage(int amount)
         {
-            if (amount <= 0)
+            if (amount <= 0 || health <= 0)
                 return;
 
             Health -= amount;
