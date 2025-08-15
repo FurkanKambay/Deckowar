@@ -24,7 +24,7 @@ namespace FurkanKambay
             get => target;
             private set
             {
-                if (target == value)
+                if (ReferenceEquals(target, value))
                     return;
 
                 target       = value;

@@ -30,12 +30,14 @@ namespace FurkanKambay
         {
             attacker.OnAttackStarted += Attacker_AttackStarted;
             vitality.OnDamageTaken   += Vitality_DamageTaken;
+            vitality.OnDied          += Vitality_Died;
         }
 
         private void OnDisable()
         {
             attacker.OnAttackStarted -= Attacker_AttackStarted;
             vitality.OnDamageTaken   -= Vitality_DamageTaken;
+            vitality.OnDied          -= Vitality_Died;
         }
 
         private void Vitality_DamageTaken() =>
@@ -49,6 +51,11 @@ namespace FurkanKambay
 
             propertyBlock.SetInt(ShaderHurt, 0);
             spriteRenderer.SetPropertyBlock(propertyBlock);
+        }
+
+        private void Vitality_Died()
+        {
+            Destroy(vitality.gameObject, t: 0f);
         }
 
         private void Attacker_AttackStarted()
