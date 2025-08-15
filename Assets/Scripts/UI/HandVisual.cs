@@ -2,7 +2,7 @@ using FurkanKambay.Deckbuilding;
 using TMPro;
 using UnityEngine;
 
-namespace FurkanKambay
+namespace FurkanKambay.UI
 {
     public class HandVisual : MonoBehaviour
     {

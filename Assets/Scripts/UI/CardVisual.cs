@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Color = UnityEngine.Color;
 
-namespace FurkanKambay
+namespace FurkanKambay.UI
 {
     public sealed class CardVisual : MonoBehaviour, IPointerClickHandler
     {
