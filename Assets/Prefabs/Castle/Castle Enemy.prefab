@@ -25,17 +25,9 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8186544284419793225, guid: 21a1fd1905f092b40b91223f887e6aa4, type: 3}
-      propertyPath: m_Color.b
-      value: 0.39607844
-      objectReference: {fileID: 0}
-    - target: {fileID: 8186544284419793225, guid: 21a1fd1905f092b40b91223f887e6aa4, type: 3}
-      propertyPath: m_Color.g
-      value: 0.16470589
-      objectReference: {fileID: 0}
-    - target: {fileID: 8186544284419793225, guid: 21a1fd1905f092b40b91223f887e6aa4, type: 3}
-      propertyPath: m_Color.r
-      value: 0.39607844
-      objectReference: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -590827726, guid: 24ad799f38ad4a54395892effb886fdb, type: 3}
     - target: {fileID: 8873518191012979440, guid: 21a1fd1905f092b40b91223f887e6aa4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0

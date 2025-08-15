@@ -155,9 +155,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5258725174942468911}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.2588191, w: 0.9659258}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7761560519218001547}
@@ -174,8 +174,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fac587df6bc44d9b82ca8b7757a79afb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: FurkanKambay::FurkanKambay.UnitAttackVisual
-  attacker: {fileID: 3099496320509844371}
+  spriteRenderer: {fileID: 5305273800628855937}
   animator: {fileID: 6928965159040168754}
+  attacker: {fileID: 3099496320509844371}
+  vitality: {fileID: 2389452148729163374}
+  hurtDuration: 0.2
 --- !u!212 &5305273800628855937
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -201,7 +204,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 77af2ea4526891b4d963824412f8b034, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -224,7 +227,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
