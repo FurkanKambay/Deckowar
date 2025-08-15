@@ -211,6 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5876e402cba444edb454479d1689af03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  faction: 0
   initialHealth: 20
 --- !u!114 &1757477750334953315
 MonoBehaviour:

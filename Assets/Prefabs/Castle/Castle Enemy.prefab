@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: spawnDelta.x
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 4372466536989279257, guid: 21a1fd1905f092b40b91223f887e6aa4, type: 3}
+      propertyPath: faction
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7048790437238751503, guid: 21a1fd1905f092b40b91223f887e6aa4, type: 3}
       propertyPath: m_Name
       value: Castle Enemy
