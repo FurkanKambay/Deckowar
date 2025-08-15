@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7761560519218001547}
   - component: {fileID: 607795297357717955}
   - component: {fileID: 2389452148729163374}
-  - component: {fileID: 2099057562051684550}
+  - component: {fileID: 1910006505231164769}
   - component: {fileID: 4248065838496262726}
   m_Layer: 0
   m_Name: Unit
@@ -66,8 +66,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   faction: 0
   initialHealth: 5
---- !u!58 &2099057562051684550
-CircleCollider2D:
+--- !u!61 &1910006505231164769
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -101,7 +101,17 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.3
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.4, y: 1}
+  m_EdgeRadius: 0
 --- !u!50 &4248065838496262726
 Rigidbody2D:
   serializedVersion: 5
@@ -227,7 +237,7 @@ SpriteRenderer:
   m_SortingLayerID: -42114143
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: -1459238769, guid: 24ad799f38ad4a54395892effb886fdb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -305,9 +315,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: FurkanKambay::FurkanKambay.Attacker
   unit: {fileID: 607795297357717955}
+  vitality: {fileID: 2389452148729163374}
+  selfCollider: {fileID: 1910006505231164769}
   attackLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 768
   damage: 2
   attackRange: 0.6
   attackDelay: 1

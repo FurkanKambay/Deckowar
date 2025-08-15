@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3099496320509844371, guid: 1750281a84fe3624cbefda897ef4df61, type: 3}
       propertyPath: attackLayers.m_Bits
-      value: 320
+      value: 832
       objectReference: {fileID: 0}
     - target: {fileID: 5305273800628855937, guid: 1750281a84fe3624cbefda897ef4df61, type: 3}
       propertyPath: m_Sprite
