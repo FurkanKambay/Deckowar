@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faction: 0
-  initialHealth: 20
+  maxHealth: 20
 --- !u!114 &1757477750334953315
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -17,21 +17,24 @@ namespace FurkanKambay
 
         [Header("Config")]
         [SerializeField] private Faction faction;
-        [SerializeField, Min(0)] private int initialHealth;
+        [SerializeField, Min(0)] private int maxHealth;
 
-        public Faction Faction => faction;
+        public Faction Faction   => faction;
+        public int     MaxHealth => maxHealth;
+
+        public float HealthNormalized => Mathf.InverseLerp(0, maxHealth, health);
 
         public int Health
         {
             get => health;
-            private set => health = Mathf.Clamp(value, 0, initialHealth);
+            private set => health = Mathf.Clamp(value, 0, maxHealth);
         }
 
         private int health;
 
         private void Awake()
         {
-            Health = initialHealth;
+            Health = maxHealth;
         }
 
         public void TakeDamage(int amount)

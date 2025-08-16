@@ -9,10 +9,15 @@
   - [x] auto-attack
   - [ ] check spawn for obstructions
   - [ ] diff unit types (+ adapt Queue)
-- [ ] Characters
-  - [x] card piles, hand
-  - [ ] health
-  - [x] money, gain rate
+- [ ] Castles
+  - [x] card deck
+    - [x] deck system
+    - [x] hand UI
+  - [x] health
+    - [x] health UI
+  - [x] gold
+    - [x] gain rate + max
+    - [x] UI
 - [ ] Turrets
   - [ ] placements
   - [ ] aim
