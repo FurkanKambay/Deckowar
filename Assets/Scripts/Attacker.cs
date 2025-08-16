@@ -37,7 +37,7 @@ namespace FurkanKambay
         private float    attackTimer;
         private bool     isAttacking;
 
-        private RaycastHit2D[] hits = new RaycastHit2D[1];
+        private readonly RaycastHit2D[] hits = new RaycastHit2D[1];
 
         private void Update()
         {

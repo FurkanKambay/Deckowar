@@ -76,7 +76,7 @@ namespace FurkanKambay
 
             // TODO: other unit types
             if (card.CardSO.CardType == CardType.Unit)
-                castle.SpawnUnit();
+                castle.EnqueueSpawnUnit();
 
             // TODO: other card effects
 

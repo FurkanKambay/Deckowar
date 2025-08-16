@@ -3,10 +3,12 @@
 ## Game Mechanics
 
 - [ ] Units
-  - [ ] spawn
-  - [ ] spawn queue
-  - [ ] move
-  - [ ] auto-attack
+  - [x] spawn
+  - [x] spawn queue
+  - [x] move
+  - [x] auto-attack
+  - [ ] check spawn for obstructions
+  - [ ] diff unit types (+ adapt Queue)
 - [ ] Characters
   - [x] card piles, hand
   - [ ] health

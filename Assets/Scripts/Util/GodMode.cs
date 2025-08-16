@@ -12,10 +12,10 @@ namespace FurkanKambay.Util
         private void Update()
         {
             if (Keyboard.current.jKey.wasPressedThisFrame)
-                playerCastle.SpawnUnit();
+                playerCastle.EnqueueSpawnUnit();
 
             if (Keyboard.current.kKey.wasPressedThisFrame)
-                enemyCastle.SpawnUnit();
+                enemyCastle.EnqueueSpawnUnit();
 
             if (Keyboard.current.dKey.wasPressedThisFrame)
             {

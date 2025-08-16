@@ -227,3 +227,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitPrefab: {fileID: 0}
   spawnDelta: {x: 0, y: 0}
+  spawnDelay: 1

@@ -12,7 +12,7 @@ namespace FurkanKambay
         [SerializeField] private bool shouldMoveRight;
 
         public   bool    CanMove       { get; internal set; }
-        internal Vector2 MoveDirection { get; set; }
+        internal Vector2 MoveDirection { get; private set; }
 
         public Rigidbody2D Body => body;
 
