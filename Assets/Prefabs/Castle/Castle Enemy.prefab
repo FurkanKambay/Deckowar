@@ -24,10 +24,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Castle Enemy
       objectReference: {fileID: 0}
-    - target: {fileID: 7048790437238751503, guid: 21a1fd1905f092b40b91223f887e6aa4, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 8186544284419793225, guid: 21a1fd1905f092b40b91223f887e6aa4, type: 3}
       propertyPath: m_Sprite
       value: 
