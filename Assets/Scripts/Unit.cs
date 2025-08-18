@@ -1,3 +1,4 @@
+using FurkanKambay.Data;
 using UnityEngine;
 
 namespace FurkanKambay
@@ -8,7 +9,7 @@ namespace FurkanKambay
         [SerializeField] private Rigidbody2D body;
 
         [Header("Config")]
-        [SerializeField] private float moveSpeed;
+        [SerializeField] private UnitSO unitSO;
         [SerializeField] private bool shouldMoveRight;
 
         public   bool    CanMove       { get; internal set; }
@@ -22,15 +23,21 @@ namespace FurkanKambay
             MoveDirection = shouldMoveRight ? Vector2.right : Vector2.left;
         }
 
+        public void SetData(UnitSO data) =>
+            unitSO = data;
+
         private void FixedUpdate()
         {
+            if (!unitSO)
+                return;
+
             if (!CanMove)
             {
                 body.linearVelocity = Vector2.zero;
                 return;
             }
 
-            Vector2 moveVector = moveSpeed * MoveDirection;
+            Vector2 moveVector = unitSO.MoveSpeed * MoveDirection;
             // body.linearVelocity = moveVector;
 
             Vector2 moveDelta = Time.deltaTime * moveVector;

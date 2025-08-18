@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 4248065838496262726}
-  moveSpeed: 2
+  unitSO: {fileID: 11400000, guid: e574959cec86d5540891095c4310249f, type: 2}
   shouldMoveRight: 1
 --- !u!114 &2389452148729163374
 MonoBehaviour:

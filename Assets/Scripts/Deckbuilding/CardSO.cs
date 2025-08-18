@@ -1,3 +1,4 @@
+using FurkanKambay.Data;
 using UnityEngine;
 
 namespace FurkanKambay.Deckbuilding
@@ -18,6 +19,9 @@ namespace FurkanKambay.Deckbuilding
         [SerializeField] private Sprite   icon;
         [SerializeField] private string   description;
         [SerializeField] private int      cost;
+
+        // only when CardType.Unit
+        [SerializeField] private UnitSO unitSO;
 
         public int      Id          => id;
         public CardType CardType    => cardType;

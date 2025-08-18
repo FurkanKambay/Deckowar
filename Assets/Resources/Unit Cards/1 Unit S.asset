@@ -18,3 +18,4 @@ MonoBehaviour:
   icon: {fileID: 1595667167, guid: 2c4e8497bccdcf24cb5c0307ace534ea, type: 3}
   description: A small ground unit.
   cost: 10
+  unitSO: {fileID: 11400000, guid: e574959cec86d5540891095c4310249f, type: 2}
