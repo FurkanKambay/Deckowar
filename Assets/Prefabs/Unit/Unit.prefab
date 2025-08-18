@@ -320,6 +320,3 @@ MonoBehaviour:
   attackLayers:
     serializedVersion: 2
     m_Bits: 192
-  damage: 2
-  attackRange: 0.6
-  attackDelay: 1

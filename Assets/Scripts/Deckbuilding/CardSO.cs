@@ -20,7 +20,7 @@ namespace FurkanKambay.Deckbuilding
         [SerializeField] private string   description;
         [SerializeField] private int      cost;
 
-        // only when CardType.Unit
+        // only show when CardType.Unit
         [SerializeField] private UnitSO unitSO;
 
         public int      Id          => id;
@@ -29,6 +29,8 @@ namespace FurkanKambay.Deckbuilding
         public Sprite   Icon        => icon;
         public string   Description => description;
         public int      Cost        => cost;
+
+        public UnitSO UnitSO => unitSO;
 
         public Card CreateInstance(Deck ownerDeck) =>
             new(this, ownerDeck);

@@ -15,9 +15,6 @@ namespace FurkanKambay
 
         [Header("Config")]
         [SerializeField] private LayerMask attackLayers;
-        [SerializeField, Min(0)] private int   damage      = 1;
-        [SerializeField, Min(0)] private float attackRange = 1f;
-        [SerializeField, Min(0)] private float attackDelay = 1f;
 
         public bool HasTarget => (bool)target;
 
@@ -26,10 +23,8 @@ namespace FurkanKambay
             get => target;
             private set
             {
-                if (ReferenceEquals(target, value))
-                    return;
-
-                target = value;
+                if (!ReferenceEquals(target, value))
+                    target = value;
             }
         }
 
@@ -46,7 +41,7 @@ namespace FurkanKambay
 
         private void FixedUpdate()
         {
-            int hitCount = selfCollider.Raycast(unit.MoveDirection, hits, attackRange, attackLayers);
+            int hitCount = selfCollider.Raycast(unit.MoveDirection, hits, unit.UnitSO.AttackRange, attackLayers);
 
             if (hitCount == 0 || !hits[0].collider.TryGetComponent(out Vitality hitTarget))
             {
@@ -76,13 +71,13 @@ namespace FurkanKambay
             if (!Target)
                 return;
 
-            Target.TakeDamage(damage);
+            Target.TakeDamage(unit.UnitSO.Damage);
             OnAttackProcced?.Invoke();
         }
 
         private void TryAttack()
         {
-            if (isAttacking || attackTimer < attackDelay)
+            if (isAttacking || attackTimer < unit.UnitSO.AttackDelay)
                 return;
 
             OnAttackStarted?.Invoke();
@@ -92,7 +87,7 @@ namespace FurkanKambay
         private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawRay(unit.Body.position, unit.MoveDirection * attackRange);
+            Gizmos.DrawRay(unit.Body.position, unit.MoveDirection * unit.UnitSO.AttackRange);
         }
     }
 }

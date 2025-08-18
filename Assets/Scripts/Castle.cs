@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using FurkanKambay.Data;
 using UnityEditor;
 using UnityEngine;
 
@@ -12,9 +14,12 @@ namespace FurkanKambay
         [SerializeField] private Vector2 spawnDelta;
         [SerializeField] private float spawnDelay = 1f;
 
+        public int SpawnQueueCount => spawnQueue.Count;
+
         private Vector3 spawnPosition;
         private float   spawnTimer;
-        private int     spawnQueueCount;
+
+        private readonly Queue<UnitSO> spawnQueue = new();
 
         private void Awake()
         {
@@ -28,18 +33,19 @@ namespace FurkanKambay
         }
 
         [ContextMenu("Spawn Unit")]
-        public void EnqueueSpawnUnit() =>
-            spawnQueueCount++;
+        public void EnqueueSpawnUnit(UnitSO unit) =>
+            spawnQueue.Enqueue(unit);
 
         private void MaybeSpawn()
         {
-            if (spawnQueueCount == 0 || spawnTimer < spawnDelay)
+            if (SpawnQueueCount == 0 || spawnTimer < spawnDelay)
                 return;
 
             spawnTimer = 0;
-            spawnQueueCount--;
+            UnitSO queuedUnitSO = spawnQueue.Dequeue();
 
-            Unit unit = Instantiate(unitPrefab, spawnPosition, Quaternion.identity, transform);
+            Unit spawnedUnit = Instantiate(unitPrefab, spawnPosition, Quaternion.identity, transform);
+            spawnedUnit.SetData(queuedUnitSO);
         }
 
         private void OnDrawGizmosSelected()

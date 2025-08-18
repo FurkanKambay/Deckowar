@@ -15,7 +15,8 @@ namespace FurkanKambay
         public   bool    CanMove       { get; internal set; }
         internal Vector2 MoveDirection { get; private set; }
 
-        public Rigidbody2D Body => body;
+        public Rigidbody2D Body   => body;
+        public UnitSO      UnitSO => unitSO;
 
         private void Awake()
         {

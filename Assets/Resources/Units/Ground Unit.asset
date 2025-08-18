@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: Ground Unit
   m_EditorClassIdentifier: FurkanKambay::FurkanKambay.Data.UnitSO
   moveSpeed: 2
+  damage: 2
+  attackRange: 0.6
+  attackDelay: 1

@@ -5,8 +5,17 @@ namespace FurkanKambay.Data
     [CreateAssetMenu]
     public class UnitSO : ScriptableObject
     {
+        [Header("Movement")]
         [SerializeField] private float moveSpeed;
 
-        public float MoveSpeed => moveSpeed;
+        [Header("Attack")]
+        [SerializeField, Min(0)] private int damage = 1;
+        [SerializeField, Min(0)] private float attackRange = 1f;
+        [SerializeField, Min(0)] private float attackDelay = 1f;
+
+        public float MoveSpeed   => moveSpeed;
+        public int   Damage      => damage;
+        public float AttackRange => attackRange;
+        public float AttackDelay => attackDelay;
     }
 }
