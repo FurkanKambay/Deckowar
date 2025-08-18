@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32aff96edc89436dac76aed1c3b9f011, type: 3}
   m_Name: Ground Unit
   m_EditorClassIdentifier: FurkanKambay::FurkanKambay.Data.UnitSO
+  spawnDelay: 3
   moveSpeed: 2
   damage: 2
   attackRange: 0.6

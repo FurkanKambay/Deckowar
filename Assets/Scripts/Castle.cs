@@ -13,9 +13,12 @@ namespace FurkanKambay
 
         [Header("Config")]
         [SerializeField] private Vector2 spawnDelta;
-        [SerializeField] private float spawnDelay = 1f;
 
-        public int SpawnQueueCount => spawnQueue.Count;
+        public Vitality Vitality        => vitality;
+        public int      SpawnQueueCount => spawnQueue.Count;
+
+        public float ProgressUntilNextSpawn =>
+            SpawnQueueCount == 0 ? 0f : Mathf.InverseLerp(0, spawnQueue.Peek().SpawnDelay, spawnTimer);
 
         private Vector3 spawnPosition;
         private float   spawnTimer;
@@ -42,11 +45,16 @@ namespace FurkanKambay
 
         private void MaybeSpawn()
         {
-            if (SpawnQueueCount == 0 || spawnTimer < spawnDelay)
+            if (SpawnQueueCount == 0)
+                return;
+
+            UnitSO queuedUnitSO = spawnQueue.Peek();
+
+            if (spawnTimer < queuedUnitSO.SpawnDelay)
                 return;
 
             spawnTimer = 0;
-            UnitSO queuedUnitSO = spawnQueue.Dequeue();
+            spawnQueue.Dequeue();
 
             Unit spawnedUnit = Instantiate(unitPrefab, spawnPosition, Quaternion.identity, transform);
             spawnedUnit.SetData(queuedUnitSO);
