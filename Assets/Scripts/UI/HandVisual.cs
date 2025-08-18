@@ -1,3 +1,4 @@
+using System;
 using FurkanKambay.Deckbuilding;
 using TMPro;
 using UnityEngine;
@@ -13,6 +14,8 @@ namespace FurkanKambay.UI
         [SerializeField] private DeckHolder deckHolder;
         [SerializeField] private Transform cardParent;
         [SerializeField] private TMP_Text  goldLabel;
+        [SerializeField] private TMP_Text  drawPileLabel;
+        [SerializeField] private TMP_Text  discardPileLabel;
 
         [Header("State")]
         [SerializeField] private CardVisual[] cardVisuals;
@@ -26,7 +29,7 @@ namespace FurkanKambay.UI
             deckHolder.Deck.OnCardDiscarded      += Card_Updated;
 
             InitializeCards();
-            UpdateCards();
+            UpdateUI();
         }
 
         private void OnDestroy()
@@ -58,12 +61,12 @@ namespace FurkanKambay.UI
         }
 
         private void Hand_Updated() =>
-            UpdateCards();
+            UpdateUI();
 
         private void Card_Updated(Card card) =>
-            UpdateCards();
+            UpdateUI();
 
-        private void UpdateCards()
+        private void UpdateUI()
         {
             Deck     deck = deckHolder.Deck;
             CardPile hand = deck.HandPile;
@@ -76,6 +79,9 @@ namespace FurkanKambay.UI
                 if (hand.TryPeek(i, out Card card))
                     visual.SetState(deckHolder, card);
             }
+
+            drawPileLabel.text    = deckHolder.Deck.DrawPileCount.ToString();
+            discardPileLabel.text = deckHolder.Deck.DiscardPileCount.ToString();
         }
     }
 }

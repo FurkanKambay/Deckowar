@@ -23,6 +23,10 @@ namespace FurkanKambay.Deckbuilding
 
         public int HandSize => config.HandSize;
 
+        public int DrawPileCount    => DrawPile.CardCount;
+        public int HandCardCount    => HandPile.CardCount;
+        public int DiscardPileCount => DiscardPile.CardCount;
+
         private DeckConfigSO config;
 
         public Deck(DeckConfigSO config)
