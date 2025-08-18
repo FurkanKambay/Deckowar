@@ -8,6 +8,7 @@ namespace FurkanKambay
     public class Castle : MonoBehaviour
     {
         [Header("References")]
+        [SerializeField] private Vitality vitality;
         [SerializeField] private Unit unitPrefab;
 
         [Header("Config")]
@@ -28,6 +29,9 @@ namespace FurkanKambay
 
         private void Update()
         {
+            if (!vitality.IsAlive)
+                return;
+
             spawnTimer += Time.deltaTime;
             MaybeSpawn();
         }

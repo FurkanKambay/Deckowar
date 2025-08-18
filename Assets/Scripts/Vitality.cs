@@ -21,6 +21,7 @@ namespace FurkanKambay
 
         public Faction Faction   => faction;
         public int     MaxHealth => maxHealth;
+        public bool    IsAlive   => health > 0;
 
         public float HealthNormalized => Mathf.InverseLerp(0, maxHealth, health);
 
