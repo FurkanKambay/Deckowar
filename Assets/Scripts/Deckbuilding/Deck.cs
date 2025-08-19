@@ -127,10 +127,10 @@ namespace FurkanKambay.Deckbuilding
         {
             DrawPile.Clear();
 
-            foreach (DeckConfigSO.Set cardSet in config.StarterDeck)
+            foreach (CardBundle cardBundle in config.StarterDeck)
             {
-                for (int i = 0; i < cardSet.amount; i++)
-                    DrawPile.Take(cardSet.cardSO.CreateInstance(this));
+                for (int i = 0; i < cardBundle.Amount; i++)
+                    DrawPile.Take(cardBundle.CardSO.CreateInstance(this));
             }
 
             // DrawPile.TrimExcess();

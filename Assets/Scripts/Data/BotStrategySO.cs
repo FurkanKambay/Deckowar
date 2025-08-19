@@ -7,8 +7,8 @@ namespace FurkanKambay.Data
     [CreateAssetMenu]
     public class BotStrategySO : ScriptableObject
     {
-        [SerializeField] private DeckConfigSO.Set[] cardSets;
+        [SerializeField] private CardBundle[] cardBundles;
 
-        public IReadOnlyList<DeckConfigSO.Set> CardSets => cardSets;
+        public IReadOnlyList<CardBundle> CardBundles => cardBundles;
     }
 }

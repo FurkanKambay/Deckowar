@@ -14,7 +14,7 @@ namespace FurkanKambay
 
         private void Start()
         {
-            if (!strategySO || strategySO.CardSets.Count == 0)
+            if (!strategySO || strategySO.CardBundles.Count == 0)
                 enabled = false;
         }
 
