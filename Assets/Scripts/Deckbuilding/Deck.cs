@@ -23,9 +23,9 @@ namespace FurkanKambay.Deckbuilding
 
         public int HandSize => config.HandSize;
 
-        public int DrawPileCount    => DrawPile.CardCount;
-        public int HandCardCount    => HandPile.CardCount;
-        public int DiscardPileCount => DiscardPile.CardCount;
+        public int DrawPileCount    => DrawPile.Count;
+        public int HandCardCount    => HandPile.Count;
+        public int DiscardPileCount => DiscardPile.Count;
 
         private DeckConfigSO config;
 
@@ -44,11 +44,11 @@ namespace FurkanKambay.Deckbuilding
         public void DrawHand()
         {
             bool hasDrawn     = false;
-            int  missingCount = config.HandSize - HandPile.CardCount;
+            int  missingCount = config.HandSize - HandCardCount;
 
             for (int i = 0; i < missingCount; i++)
             {
-                if (HandPile.CardCount >= config.HandSize)
+                if (HandCardCount >= config.HandSize)
                     break;
 
                 if (!TryDrawCard_WithoutNotify(out Card drawnCard))
@@ -72,10 +72,10 @@ namespace FurkanKambay.Deckbuilding
 
         private bool TryDrawCard_WithoutNotify(out Card drawnCard)
         {
-            if (DrawPile.CardCount == 0)
+            if (DrawPileCount == 0)
                 ReshuffleDrawPile();
 
-            if (DrawPile.CardCount == 0)
+            if (DrawPileCount == 0)
             {
                 drawnCard = null;
                 return false;
@@ -110,7 +110,7 @@ namespace FurkanKambay.Deckbuilding
             if (card is null)
                 return;
 
-            if (card.PileIndex < 0 || card.PileIndex >= HandPile.CardCount)
+            if (card.PileIndex < 0 || card.PileIndex >= HandCardCount)
                 return;
 
             if (DiscardPile.Take(card))
@@ -142,9 +142,9 @@ namespace FurkanKambay.Deckbuilding
 
         public override string ToString()
         {
-            int drawCount    = DrawPile.CardCount;
-            int handCount    = HandPile.CardCount;
-            int discardCount = DiscardPile.CardCount;
+            int drawCount    = DrawPileCount;
+            int handCount    = HandCardCount;
+            int discardCount = DiscardPileCount;
 
             string draws    = string.Concat(Enumerable.Repeat("⬆️",  drawCount));
             string hands    = string.Concat(Enumerable.Repeat("🤚",  handCount));

@@ -82,7 +82,7 @@ namespace FurkanKambay
 
             Deck.DiscardCard(card);
 
-            if (Deck.HandPile.CardCount == 0)
+            if (Deck.HandCardCount == 0)
                 Deck.DrawHand();
 
             return true;

@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Security.Cryptography;
@@ -12,13 +13,14 @@ namespace FurkanKambay.Deckbuilding
         DiscardPile
     }
 
-    public sealed class CardPile
+    public sealed class CardPile : IReadOnlyList<Card>
     {
         public Pile                     PileType { get; }
         public ReadOnlyCollection<Card> ListRO   { get; }
 
-        public int  CardCount => list.Count;
-        public Card LastCard  => list.Count == 0 ? null : list[^1];
+        public Card LastCard => list.Count == 0 ? null : list[^1];
+        public int  Count    => list.Count;
+        public Card this[int index] => ListRO[index];
 
         private readonly List<Card> list;
 
@@ -97,7 +99,7 @@ namespace FurkanKambay.Deckbuilding
             if (move)
                 card.CardPile?.RemoveCard(card);
 
-            card.SetPile(this, pileIndex: CardCount);
+            card.SetPile(this, pileIndex: Count);
             list.Add(card);
 
             return true;
@@ -111,11 +113,17 @@ namespace FurkanKambay.Deckbuilding
             list.RemoveAt(card.PileIndex);
 
             // Cascade down to adjust pile indexes
-            for (int i = card.PileIndex; i < CardCount; i++)
+            for (int i = card.PileIndex; i < Count; i++)
                 list[i].SetPile(this, i);
         }
 
+        IEnumerator<Card> IEnumerable<Card>.GetEnumerator() =>
+            ListRO.GetEnumerator();
+
+        IEnumerator IEnumerable.GetEnumerator() =>
+            ((IEnumerable)ListRO).GetEnumerator();
+
         public override string ToString() =>
-            $"{PileType}: {CardCount} Cards";
+            $"{PileType}: {Count} Cards";
     }
 }
