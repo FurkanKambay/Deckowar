@@ -53,7 +53,7 @@ namespace FurkanKambay
         public void DiscardHand()
         {
             Deck.DiscardHand();
-            PrintDeck();
+            // PrintDeck();
         }
 
         [ContextMenu("Discard Hand")]
@@ -65,7 +65,7 @@ namespace FurkanKambay
 
         [Conditional("UNITY_EDITOR")]
         private void PrintDeck() =>
-            Debug.Log($"Deck: {Deck}");
+            Debug.Log($"{castle.Vitality.Faction} Deck: {Deck}");
 
         public bool TryUseCard(Card card)
         {
