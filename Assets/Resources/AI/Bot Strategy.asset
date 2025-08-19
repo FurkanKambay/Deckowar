@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa4fd1f9c23240d3945740bb7cf94257, type: 3}
+  m_Name: Bot Strategy
+  m_EditorClassIdentifier: FurkanKambay::FurkanKambay.Data.BotStrategySO
+  cardSets:
+  - cardSO: {fileID: 11400000, guid: a1c318f3ad5e26d45ab0b1346fd5d96d, type: 2}
+    amount: 3
+  - cardSO: {fileID: 11400000, guid: 2b7bb2715ee3df94d8040d4aef8e18cd, type: 2}
+    amount: 1
+  - cardSO: {fileID: 11400000, guid: a1c318f3ad5e26d45ab0b1346fd5d96d, type: 2}
+    amount: 1
+  - cardSO: {fileID: 11400000, guid: 2b7bb2715ee3df94d8040d4aef8e18cd, type: 2}
+    amount: 1
+  - cardSO: {fileID: 11400000, guid: d91c98983bd806d48a879399db40d024, type: 2}
+    amount: 1
+  - cardSO: {fileID: 11400000, guid: 2b7bb2715ee3df94d8040d4aef8e18cd, type: 2}
+    amount: 2
+  - cardSO: {fileID: 11400000, guid: d91c98983bd806d48a879399db40d024, type: 2}
+    amount: 1
+  - cardSO: {fileID: 11400000, guid: a1c318f3ad5e26d45ab0b1346fd5d96d, type: 2}
+    amount: 2
