@@ -2621,7 +2621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deckConfigSO: {fileID: 11400000, guid: f26a0cdab84024743b984e3f458880c6, type: 2}
   castle: {fileID: 1232775509}
-  goldGainPerSecond: 10
+  goldGainPerSecond: 5
   maxGoldAmount: 200
 --- !u!4 &1557200135
 Transform:
