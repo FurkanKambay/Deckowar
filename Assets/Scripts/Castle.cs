@@ -35,29 +35,33 @@ namespace FurkanKambay
             if (!vitality.IsAlive)
                 return;
 
-            spawnTimer += Time.deltaTime;
-            MaybeSpawn();
+            if (SpawnQueueCount == 0)
+                return;
+
+            if (!MaybeSpawn())
+                spawnTimer += Time.deltaTime;
         }
 
         [ContextMenu("Spawn Unit")]
         public void EnqueueSpawnUnit(UnitSO unit) =>
             spawnQueue.Enqueue(unit);
 
-        private void MaybeSpawn()
+        private bool MaybeSpawn()
         {
             if (SpawnQueueCount == 0)
-                return;
+                return false;
 
             UnitSO queuedUnitSO = spawnQueue.Peek();
 
             if (spawnTimer < queuedUnitSO.SpawnDelay)
-                return;
+                return false;
 
             spawnTimer = 0;
             spawnQueue.Dequeue();
 
             Unit spawnedUnit = Instantiate(unitPrefab, spawnPosition, Quaternion.identity, transform);
             spawnedUnit.SetData(queuedUnitSO);
+            return true;
         }
 
         private void OnDrawGizmosSelected()
