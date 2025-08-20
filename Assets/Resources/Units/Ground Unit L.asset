@@ -17,3 +17,4 @@ MonoBehaviour:
   damage: 6
   attackRange: 1
   attackDelay: 2
+  sprite: {fileID: 1592437768, guid: 24ad799f38ad4a54395892effb886fdb, type: 3}

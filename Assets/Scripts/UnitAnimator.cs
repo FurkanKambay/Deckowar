@@ -26,6 +26,11 @@ namespace FurkanKambay
             spriteRenderer.SetPropertyBlock(propertyBlock);
         }
 
+        private void Start()
+        {
+            spriteRenderer.sprite = attacker.Unit.UnitSO.Sprite;
+        }
+
         private void OnEnable()
         {
             attacker.OnAttackStarted += Attacker_AttackStarted;

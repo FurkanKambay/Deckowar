@@ -114,7 +114,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -136,7 +136,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 64
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -154,11 +154,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Units_2
+      name: Castle_Player
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 128
         width: 64
         height: 64
       alignment: 0
@@ -176,11 +176,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Units_3
+      name: Castle_Enemy
       rect:
         serializedVersion: 2
         x: 64
-        y: 0
+        y: 128
         width: 64
         height: 64
       alignment: 0
@@ -193,6 +193,28 @@ TextureImporter:
       bones: []
       spriteID: 456a9e8d254bba341b71e115153bd353
       internalID: -590827726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Units_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdda22b2d467c514688f7408766786fa
+      internalID: 1592437768
       vertices: []
       indices: 
       edges: []
@@ -213,10 +235,11 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
+      Castle_Enemy: -590827726
+      Castle_Player: 164791805
       Units_0: -1459238769
       Units_1: 1267418411
-      Units_2: 164791805
-      Units_3: -590827726
+      Units_2: 1592437768
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

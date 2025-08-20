@@ -16,6 +16,7 @@ namespace FurkanKambay
         [Header("Config")]
         [SerializeField] private LayerMask attackLayers;
 
+        public Unit Unit      => unit;
         public bool HasTarget => (bool)target;
 
         public Vitality Target
