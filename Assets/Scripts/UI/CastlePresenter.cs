@@ -1,4 +1,3 @@
-using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,33 +6,20 @@ namespace FurkanKambay.UI
 {
     public class CastlePresenter : MonoBehaviour
     {
-        [SerializeField] private CastleHUDInfo playerCastleInfo;
-        [SerializeField] private CastleHUDInfo enemyCastleInfo;
+        [SerializeField] private Castle castle;
 
-        private void Update()
+        [Header("UI")]
+        [SerializeField] private Image bar;
+        [SerializeField] private Image    spawnRadial;
+        [SerializeField] private TMP_Text queueLabel;
+
+        public void Update()
         {
-            playerCastleInfo.UpdateUI();
-            enemyCastleInfo.UpdateUI();
-        }
+            bar.rectTransform.localScale = new Vector3(castle.Vitality.HealthNormalized, 1, 1);
 
-        [Serializable]
-        private class CastleHUDInfo
-        {
-            [SerializeField] private Castle castle;
-
-            [Header("UI")]
-            [SerializeField] private Image bar;
-            [SerializeField] private Image spawnRadial;
-            [SerializeField] private TMP_Text queueLabel;
-
-            public void UpdateUI()
-            {
-                bar.rectTransform.localScale = new Vector3(castle.Vitality.HealthNormalized, 1, 1);
-
-                spawnRadial.fillAmount = castle.ProgressUntilNextSpawn;
-                queueLabel.alpha       = castle.SpawnQueueCount == 0 ? 0 : 1;
-                queueLabel.text        = castle.SpawnQueueCount.ToString();
-            }
+            spawnRadial.fillAmount = castle.ProgressUntilNextSpawn;
+            queueLabel.alpha       = castle.SpawnQueueCount == 0 ? 0 : 1;
+            queueLabel.text        = castle.SpawnQueueCount.ToString();
         }
     }
 }
