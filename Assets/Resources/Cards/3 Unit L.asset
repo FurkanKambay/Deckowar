@@ -18,4 +18,4 @@ MonoBehaviour:
   icon: {fileID: 1695391513, guid: 2c4e8497bccdcf24cb5c0307ace534ea, type: 3}
   description: A large ground unit.
   cost: 40
-  unitSO: {fileID: 11400000, guid: e574959cec86d5540891095c4310249f, type: 2}
+  unitSO: {fileID: 11400000, guid: 72befb11fb8b5914389cff45a371e8f9, type: 2}
