@@ -1,7 +1,7 @@
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace FurkanKambay.Util
+namespace FurkanKambay.Common
 {
     [PublicAPI]
     public static class MathExtensions
