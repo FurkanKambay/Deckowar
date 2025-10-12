@@ -1,11 +1,13 @@
 using System;
 using System.Diagnostics;
+using JetBrains.Annotations;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
 using Object = UnityEngine.Object;
 
 namespace FurkanKambay.Util
 {
+    [PublicAPI]
     public static class EditorDebug
     {
         [HideInCallstack, Conditional("UNITY_EDITOR")]
