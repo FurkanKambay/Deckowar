@@ -1,4 +1,3 @@
-using System;
 using FurkanKambay.Deckbuilding;
 using TMPro;
 using UnityEngine;
