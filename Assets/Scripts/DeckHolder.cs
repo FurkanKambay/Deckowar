@@ -1,5 +1,5 @@
+using FurkanKambay.Common;
 using FurkanKambay.Deckbuilding;
-using FurkanKambay.Util;
 using UnityEngine;
 
 namespace FurkanKambay

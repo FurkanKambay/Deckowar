@@ -5,7 +5,7 @@ using UnityEngine;
 using Debug = UnityEngine.Debug;
 using Object = UnityEngine.Object;
 
-namespace FurkanKambay.Util
+namespace FurkanKambay.Common
 {
     [PublicAPI]
     public static class EditorDebug
