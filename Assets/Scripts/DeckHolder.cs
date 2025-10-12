@@ -1,7 +1,6 @@
-using System.Diagnostics;
 using FurkanKambay.Deckbuilding;
+using FurkanKambay.Util;
 using UnityEngine;
-using Debug = UnityEngine.Debug;
 
 namespace FurkanKambay
 {
@@ -63,10 +62,6 @@ namespace FurkanKambay
             PrintDeck();
         }
 
-        [Conditional("UNITY_EDITOR")]
-        private void PrintDeck() =>
-            Debug.Log($"{castle.Vitality.Faction} Deck: {Deck}");
-
         public bool TryUseCard(Card card)
         {
             if (!CanUseCard(card))
@@ -90,5 +85,8 @@ namespace FurkanKambay
 
         public bool CanUseCard(Card card) =>
             card.CardSO.Cost <= Gold;
+
+        [HideInCallstack]
+        private void PrintDeck() => EditorDebug.Log($"{castle.Vitality.Faction} Deck: {Deck}");
     }
 }
