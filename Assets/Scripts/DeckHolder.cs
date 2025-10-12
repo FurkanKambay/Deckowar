@@ -86,7 +86,8 @@ namespace FurkanKambay
         public bool CanUseCard(Card card) =>
             card.CardSO.Cost <= Gold;
 
+        // ReSharper disable Unity.PerformanceAnalysis
         [HideInCallstack]
-        private void PrintDeck() => EditorDebug.Log($"{castle.Vitality.Faction} Deck: {Deck}");
+        private void PrintDeck() => EditorDebug.Log($"[Deck] {castle.Vitality.Faction}: {Deck:E}");
     }
 }

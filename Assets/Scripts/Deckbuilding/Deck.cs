@@ -4,7 +4,7 @@ using System.Linq;
 namespace FurkanKambay.Deckbuilding
 {
     [Serializable]
-    public class Deck
+    public class Deck : IFormattable
     {
 #region Events
         public event Action OnResetToStarterDeck;
@@ -140,17 +140,21 @@ namespace FurkanKambay.Deckbuilding
             DiscardPile.Clear();
         }
 
-        public override string ToString()
+        public override string ToString() =>
+            $"{DrawPileCount,2} {HandCardCount,2} {DiscardPileCount,2}";
+
+        public string ToString(string format, IFormatProvider formatProvider)
         {
-            int drawCount = DrawPileCount;
-            int handCount = HandCardCount;
-            int discardCount = DiscardPileCount;
+            format = format?.ToUpperInvariant();
 
-            string draws = string.Concat(Enumerable.Repeat("⬆️", drawCount));
-            string hands = string.Concat(Enumerable.Repeat("🤚", handCount));
-            string discards = string.Concat(Enumerable.Repeat("🗑️", discardCount));
+            if (format is not "E")
+                return ToString();
 
-            return $"{drawCount,2} {handCount,2} {discardCount,2} | {draws} | {hands} | {discards} |";
+            string draws = string.Concat(Enumerable.Repeat("⬆️", DrawPileCount));
+            string hands = string.Concat(Enumerable.Repeat("🤚", HandCardCount));
+            string discards = string.Concat(Enumerable.Repeat("🗑️", DiscardPileCount));
+
+            return $"{DrawPileCount,2} {HandCardCount,2} {DiscardPileCount,2} | {draws} | {hands} | {discards} |";
         }
     }
 }
