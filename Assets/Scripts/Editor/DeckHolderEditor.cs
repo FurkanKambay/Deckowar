@@ -27,9 +27,9 @@ namespace FurkanKambay.Editor
             var buttons = new VisualElement { enabledSelf = Application.isPlaying };
             root.Add(buttons);
 
-            buttons.Add(new Button(DrawHand_Clicked) { text    = "Draw Hand" });
+            buttons.Add(new Button(DrawHand_Clicked) { text = "Draw Hand" });
             buttons.Add(new Button(DiscardHand_Clicked) { text = "Discard Hand" });
-            buttons.Add(new Button(ResetDeck_Clicked) { text   = "Reset Deck" });
+            buttons.Add(new Button(ResetDeck_Clicked) { text = "Reset Deck" });
 
             var state = new VisualElement { enabledSelf = Application.isPlaying };
 
@@ -41,22 +41,22 @@ namespace FurkanKambay.Editor
             // Pile Lists
             var drawPileList = new ListView(deckHolder.Deck.DrawPile.ListRO)
             {
-                showFoldoutHeader          = true,
-                headerTitle                = "Draw Pile",
+                showFoldoutHeader = true,
+                headerTitle = "Draw Pile",
                 bindingSourceSelectionMode = BindingSourceSelectionMode.AutoAssign
             };
 
             var handList = new ListView(deckHolder.Deck.HandPile.ListRO)
             {
-                showFoldoutHeader          = true,
-                headerTitle                = "Hand",
+                showFoldoutHeader = true,
+                headerTitle = "Hand",
                 bindingSourceSelectionMode = BindingSourceSelectionMode.AutoAssign
             };
 
             var discardPileList = new ListView(deckHolder.Deck.DiscardPile.ListRO)
             {
-                showFoldoutHeader          = true,
-                headerTitle                = "Discard Pile",
+                showFoldoutHeader = true,
+                headerTitle = "Discard Pile",
                 bindingSourceSelectionMode = BindingSourceSelectionMode.AutoAssign
             };
 

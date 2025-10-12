@@ -14,14 +14,14 @@ namespace FurkanKambay
         [Header("Config")]
         [SerializeField] private Vector2 spawnDelta;
 
-        public Vitality Vitality        => vitality;
-        public int      SpawnQueueCount => spawnQueue.Count;
+        public Vitality Vitality => vitality;
+        public int SpawnQueueCount => spawnQueue.Count;
 
         public float ProgressUntilNextSpawn =>
             SpawnQueueCount == 0 ? 0f : Mathf.InverseLerp(0, spawnQueue.Peek().SpawnDelay, spawnTimer);
 
         private Vector3 spawnPosition;
-        private float   spawnTimer;
+        private float spawnTimer;
 
         private readonly Queue<UnitSO> spawnQueue = new();
 

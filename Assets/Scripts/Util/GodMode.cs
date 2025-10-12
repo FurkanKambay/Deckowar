@@ -7,8 +7,8 @@ namespace FurkanKambay.Util
     public class GodMode : MonoBehaviour
     {
         [SerializeField] private DeckHolder deckHolder;
-        [SerializeField] private Castle     playerCastle;
-        [SerializeField] private Castle     enemyCastle;
+        [SerializeField] private Castle playerCastle;
+        [SerializeField] private Castle enemyCastle;
 
         [Header("Spawned Units")]
         [SerializeField] private UnitSO unitSO;

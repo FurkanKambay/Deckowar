@@ -9,7 +9,7 @@ namespace FurkanKambay.Deckbuilding
         [SerializeField] private int handSize = 5;
         [SerializeField] private CardBundle[] starterDeck;
 
-        public int          HandSize    => handSize;
+        public int HandSize => handSize;
         public CardBundle[] StarterDeck => starterDeck;
     }
 }

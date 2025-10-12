@@ -11,7 +11,7 @@ namespace FurkanKambay.UI
     {
         [Header("Prefab References")]
         [SerializeField] private Image background;
-        [SerializeField] private Image    icon;
+        [SerializeField] private Image icon;
         [SerializeField] private TMP_Text title;
         [SerializeField] private TMP_Text costLabel;
         [SerializeField] private TMP_Text description;
@@ -19,8 +19,8 @@ namespace FurkanKambay.UI
         [Header("Config")]
         [SerializeField] private Sprite unitBackground;
         [SerializeField] private Sprite turretBackground;
-        [SerializeField] private Color  costColor;
-        [SerializeField] private Color  costColorInsufficient;
+        [SerializeField] private Color costColor;
+        [SerializeField] private Color costColorInsufficient;
 
         [Header("State")]
         [SerializeField] private DeckHolder deckHolder;
@@ -34,7 +34,7 @@ namespace FurkanKambay.UI
         internal void SetState(DeckHolder newDeckHolder, Card newCard)
         {
             deckHolder = newDeckHolder;
-            card       = newCard;
+            card = newCard;
 
             UpdateCard();
         }
@@ -47,13 +47,13 @@ namespace FurkanKambay.UI
             background.sprite = card.CardSO.CardType switch
             {
                 CardType.Invalid => unitBackground,
-                CardType.Unit    => unitBackground,
-                CardType.Turret  => turretBackground,
-                _                => unitBackground
+                CardType.Unit => unitBackground,
+                CardType.Turret => turretBackground,
+                _ => unitBackground
             };
 
-            icon.sprite      = card.CardSO.Icon;
-            title.text       = card.CardSO.DisplayName;
+            icon.sprite = card.CardSO.Icon;
+            title.text = card.CardSO.DisplayName;
             description.text = card.CardSO.Description;
         }
 
@@ -62,9 +62,9 @@ namespace FurkanKambay.UI
             if (card is null || !card.IsValid)
                 return;
 
-            int    cost  = card.CardSO.Cost;
-            Color  color = cost <= deckHolder.Gold ? costColor : costColorInsufficient;
-            string hex   = ColorUtility.ToHtmlStringRGB(color);
+            int cost = card.CardSO.Cost;
+            Color color = cost <= deckHolder.Gold ? costColor : costColorInsufficient;
+            string hex = ColorUtility.ToHtmlStringRGB(color);
 
             costLabel.text = $"<color=#{hex}>{cost}</color>";
         }

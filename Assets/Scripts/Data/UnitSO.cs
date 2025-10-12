@@ -19,9 +19,9 @@ namespace FurkanKambay.Data
         [Header("Visual")]
         [SerializeField] private Sprite sprite;
 
-        public float SpawnDelay  => spawnDelay;
-        public float MoveSpeed   => moveSpeed;
-        public int   Damage      => damage;
+        public float SpawnDelay => spawnDelay;
+        public float MoveSpeed => moveSpeed;
+        public int Damage => damage;
         public float AttackRange => attackRange;
         public float AttackDelay => attackDelay;
 

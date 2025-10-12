@@ -13,20 +13,20 @@ namespace FurkanKambay.UI
         [Header("References - Scene")]
         [SerializeField] private DeckHolder deckHolder;
         [SerializeField] private Transform cardParent;
-        [SerializeField] private TMP_Text  goldLabel;
-        [SerializeField] private TMP_Text  drawPileLabel;
-        [SerializeField] private TMP_Text  discardPileLabel;
+        [SerializeField] private TMP_Text goldLabel;
+        [SerializeField] private TMP_Text drawPileLabel;
+        [SerializeField] private TMP_Text discardPileLabel;
 
         [Header("State")]
         [SerializeField] private CardVisual[] cardVisuals;
 
         private void Start()
         {
-            deckHolder.Deck.OnHandDrawn          += Hand_Updated;
-            deckHolder.Deck.OnHandDiscarded      += Hand_Updated;
+            deckHolder.Deck.OnHandDrawn += Hand_Updated;
+            deckHolder.Deck.OnHandDiscarded += Hand_Updated;
             deckHolder.Deck.OnResetToStarterDeck += Hand_Updated;
-            deckHolder.Deck.OnCardDrawn          += Card_Updated;
-            deckHolder.Deck.OnCardDiscarded      += Card_Updated;
+            deckHolder.Deck.OnCardDrawn += Card_Updated;
+            deckHolder.Deck.OnCardDiscarded += Card_Updated;
 
             InitializeCards();
             UpdateUI();
@@ -34,11 +34,11 @@ namespace FurkanKambay.UI
 
         private void OnDestroy()
         {
-            deckHolder.Deck.OnHandDrawn          -= Hand_Updated;
-            deckHolder.Deck.OnHandDiscarded      -= Hand_Updated;
+            deckHolder.Deck.OnHandDrawn -= Hand_Updated;
+            deckHolder.Deck.OnHandDiscarded -= Hand_Updated;
             deckHolder.Deck.OnResetToStarterDeck -= Hand_Updated;
-            deckHolder.Deck.OnCardDrawn          -= Card_Updated;
-            deckHolder.Deck.OnCardDiscarded      -= Card_Updated;
+            deckHolder.Deck.OnCardDrawn -= Card_Updated;
+            deckHolder.Deck.OnCardDiscarded -= Card_Updated;
         }
 
         private void Update()
@@ -55,7 +55,7 @@ namespace FurkanKambay.UI
 
             for (int i = 0; i < deckHolder.Deck.HandSize; i++)
             {
-                cardVisuals[i]      = Instantiate(cardVisualPrefab, cardParent);
+                cardVisuals[i] = Instantiate(cardVisualPrefab, cardParent);
                 cardVisuals[i].name = $"Card {i + 1}";
             }
         }
@@ -68,7 +68,7 @@ namespace FurkanKambay.UI
 
         private void UpdateUI()
         {
-            Deck     deck = deckHolder.Deck;
+            Deck deck = deckHolder.Deck;
             CardPile hand = deck.HandPile;
 
             for (int i = 0; i < deck.HandSize; i++)
@@ -80,7 +80,7 @@ namespace FurkanKambay.UI
                     visual.SetState(deckHolder, card);
             }
 
-            drawPileLabel.text    = deckHolder.Deck.DrawPileCount.ToString();
+            drawPileLabel.text = deckHolder.Deck.DrawPileCount.ToString();
             discardPileLabel.text = deckHolder.Deck.DiscardPileCount.ToString();
         }
     }

@@ -15,11 +15,11 @@ namespace FurkanKambay.Deckbuilding
 
     public sealed class CardPile : IReadOnlyList<Card>
     {
-        public Pile                     PileType { get; }
-        public ReadOnlyCollection<Card> ListRO   { get; }
+        public Pile PileType { get; }
+        public ReadOnlyCollection<Card> ListRO { get; }
 
         public Card LastCard => list.Count == 0 ? null : list[^1];
-        public int  Count    => list.Count;
+        public int Count => list.Count;
         public Card this[int index] => ListRO[index];
 
         private readonly List<Card> list;
@@ -27,8 +27,8 @@ namespace FurkanKambay.Deckbuilding
         public CardPile(Pile pileType)
         {
             PileType = pileType;
-            list     = new List<Card>();
-            ListRO   = list.AsReadOnly();
+            list = new List<Card>();
+            ListRO = list.AsReadOnly();
         }
 
         public bool TryPeek(int index, out Card card)
@@ -66,7 +66,7 @@ namespace FurkanKambay.Deckbuilding
         internal void Shuffle()
         {
             int targetIndex = list.Count;
-            var provider    = new RNGCryptoServiceProvider();
+            var provider = new RNGCryptoServiceProvider();
 
             while (targetIndex > 1)
             {

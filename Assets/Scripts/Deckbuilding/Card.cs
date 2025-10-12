@@ -8,22 +8,22 @@ namespace FurkanKambay.Deckbuilding
     {
         [SerializeField] private CardSO cardSO;
 
-        public CardSO CardSO  => cardSO;
-        public bool   IsValid => CardPile is not null;
+        public CardSO CardSO => cardSO;
+        public bool IsValid => CardPile is not null;
 
-        public Deck     Deck      { get; protected set; }
-        public CardPile CardPile  { get; protected set; }
-        public int      PileIndex { get; protected set; } = -1;
+        public Deck Deck { get; protected set; }
+        public CardPile CardPile { get; protected set; }
+        public int PileIndex { get; protected set; } = -1;
 
         internal Card(CardSO cardSO, Deck ownerDeck)
         {
             this.cardSO = cardSO;
-            Deck        = ownerDeck;
+            Deck = ownerDeck;
         }
 
         internal void SetPile(CardPile cardPile, int pileIndex)
         {
-            CardPile  = cardPile;
+            CardPile = cardPile;
             PileIndex = pileIndex;
         }
 

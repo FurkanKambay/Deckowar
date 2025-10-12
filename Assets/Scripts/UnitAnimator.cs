@@ -34,15 +34,15 @@ namespace FurkanKambay
         private void OnEnable()
         {
             attacker.OnAttackStarted += Attacker_AttackStarted;
-            vitality.OnDamageTaken   += Vitality_DamageTaken;
-            vitality.OnDied          += Vitality_Died;
+            vitality.OnDamageTaken += Vitality_DamageTaken;
+            vitality.OnDied += Vitality_Died;
         }
 
         private void OnDisable()
         {
             attacker.OnAttackStarted -= Attacker_AttackStarted;
-            vitality.OnDamageTaken   -= Vitality_DamageTaken;
-            vitality.OnDied          -= Vitality_Died;
+            vitality.OnDamageTaken -= Vitality_DamageTaken;
+            vitality.OnDied -= Vitality_Died;
         }
 
         private void Vitality_DamageTaken() =>

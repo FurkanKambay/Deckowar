@@ -10,13 +10,13 @@ namespace FurkanKambay
 
         [Header("References")]
         [SerializeField] private Unit unit;
-        [SerializeField] private Vitality   vitality;
+        [SerializeField] private Vitality vitality;
         [SerializeField] private Collider2D selfCollider;
 
         [Header("Config")]
         [SerializeField] private LayerMask attackLayers;
 
-        public Unit Unit      => unit;
+        public Unit Unit => unit;
         public bool HasTarget => (bool)target;
 
         public Vitality Target
@@ -30,8 +30,8 @@ namespace FurkanKambay
         }
 
         private Vitality target;
-        private float    attackTimer;
-        private bool     isAttacking;
+        private float attackTimer;
+        private bool isAttacking;
 
         private readonly RaycastHit2D[] hits = new RaycastHit2D[1];
 
@@ -46,7 +46,7 @@ namespace FurkanKambay
 
             if (hitCount == 0 || !hits[0].collider.TryGetComponent(out Vitality hitTarget))
             {
-                Target       = null;
+                Target = null;
                 unit.CanMove = true;
                 return;
             }

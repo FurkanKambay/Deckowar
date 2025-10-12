@@ -10,11 +10,11 @@ namespace FurkanKambay
         [SerializeField] private DeckHolder deckHolder;
         [SerializeField] private BotStrategySO strategySO;
 
-        private int    strategyStep;
-        private int    strategySubstep;
+        private int strategyStep;
+        private int strategySubstep;
         private CardSO nextCardSO;
 
-        private int StepCount           => strategySO.CardBundles.Count;
+        private int StepCount => strategySO.CardBundles.Count;
         private int CurrentSubstepCount => CurrentBundle?.Amount ?? 0;
 
         private CardBundle CurrentBundle =>
