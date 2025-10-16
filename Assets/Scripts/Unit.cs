@@ -1,3 +1,4 @@
+using System;
 using Deckowar.Core;
 using Deckowar.Data;
 using UnityEngine;
@@ -28,14 +29,10 @@ namespace Deckowar
             };
         }
 
-        public void Initialize(UnitSO data)
-        {
-            unitSO = data;
-        }
+        public void Initialize(UnitSO data) =>
+            unitSO = data ? data : throw new ArgumentNullException(nameof(data));
 
-        private void Start()
-        {
+        private void Start() =>
             Assert.IsNotNull(unitSO);
-        }
     }
 }
