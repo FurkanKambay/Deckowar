@@ -206,7 +206,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -215,6 +215,28 @@ TextureImporter:
       bones: []
       spriteID: cdda22b2d467c514688f7408766786fa
       internalID: 1592437768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grid_BG
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 128
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00b3e78dbcccb9b4bb6014e9eba8cea7
+      internalID: 1582273626
       vertices: []
       indices: 
       edges: []
@@ -237,6 +259,8 @@ TextureImporter:
     nameFileIdTable:
       Castle_Enemy: -590827726
       Castle_Player: 164791805
+      Grid_BG: 1582273626
+      Grid_Dark: -645873209
       Units_0: -1459238769
       Units_1: 1267418411
       Units_2: 1592437768
