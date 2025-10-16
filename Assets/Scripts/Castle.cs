@@ -42,7 +42,6 @@ namespace Deckowar
                 spawnTimer += Time.deltaTime;
         }
 
-        [ContextMenu("Spawn Unit")]
         public void EnqueueSpawnUnit(UnitSO unit) =>
             spawnQueue.Enqueue(unit);
 
