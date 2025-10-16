@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 607795297357717955}
   - component: {fileID: 2389452148729163374}
   - component: {fileID: 1910006505231164769}
-  - component: {fileID: 4248065838496262726}
   m_Layer: 7
   m_Name: Unit
   m_TagString: Untagged
@@ -49,7 +48,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac1aa435366c32c49bb2e10b6e5ebf7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  body: {fileID: 4248065838496262726}
   unitSO: {fileID: 11400000, guid: e574959cec86d5540891095c4310249f, type: 2}
   shouldMoveRight: 1
 --- !u!114 &2389452148729163374
@@ -112,33 +110,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.4, y: 1}
   m_EdgeRadius: 0
---- !u!50 &4248065838496262726
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1406589936298192355}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 6
 --- !u!1 &5258725174942468911
 GameObject:
   m_ObjectHideFlags: 0

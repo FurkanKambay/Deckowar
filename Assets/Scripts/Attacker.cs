@@ -88,7 +88,7 @@ namespace Deckowar
         private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawRay(unit.Body.position, unit.MoveDirection * unit.UnitSO.AttackRange);
+            Gizmos.DrawRay(unit.transform.position, unit.MoveDirection * unit.UnitSO.AttackRange);
         }
     }
 }

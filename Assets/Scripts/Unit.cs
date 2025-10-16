@@ -1,22 +1,19 @@
 using Deckowar.Data;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 namespace Deckowar
 {
     public sealed class Unit : MonoBehaviour
     {
-        [Header("References")]
-        [SerializeField] private Rigidbody2D body;
-
         [Header("Config")]
         [SerializeField] private UnitSO unitSO;
         [SerializeField] private bool shouldMoveRight;
 
+        public UnitSO UnitSO => unitSO;
+
         public bool CanMove { get; internal set; }
         internal Vector2 MoveDirection { get; private set; }
-
-        public Rigidbody2D Body => body;
-        public UnitSO UnitSO => unitSO;
 
         private void Awake()
         {
@@ -24,25 +21,14 @@ namespace Deckowar
             MoveDirection = shouldMoveRight ? Vector2.right : Vector2.left;
         }
 
-        public void SetData(UnitSO data) =>
-            unitSO = data;
-
-        private void FixedUpdate()
+        public void Initialize(UnitSO data)
         {
-            if (!unitSO)
-                return;
+            unitSO = data;
+        }
 
-            if (!CanMove)
-            {
-                body.linearVelocity = Vector2.zero;
-                return;
-            }
-
-            Vector2 moveVector = unitSO.MoveSpeed * MoveDirection;
-            // body.linearVelocity = moveVector;
-
-            Vector2 moveDelta = Time.deltaTime * moveVector;
-            body.MovePosition(body.position + moveDelta);
+        private void Start()
+        {
+            Assert.IsNotNull(unitSO);
         }
     }
 }

@@ -60,7 +60,8 @@ namespace Deckowar
             spawnQueue.Dequeue();
 
             Unit spawnedUnit = Instantiate(unitPrefab, spawnPosition, Quaternion.identity, transform);
-            spawnedUnit.SetData(queuedUnitSO);
+            spawnedUnit.Initialize(queuedUnitSO);
+
             return true;
         }
 
