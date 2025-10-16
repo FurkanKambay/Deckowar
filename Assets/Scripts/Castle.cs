@@ -68,7 +68,7 @@ namespace Deckowar
         private void OnDrawGizmosSelected()
         {
             Handles.color = Color.blue;
-            Handles.DrawWireDisc(spawnPosition, Vector3.forward, 0.1f);
+            Handles.DrawWireDisc(transform.position + (Vector3)spawnDelta, Vector3.forward, 0.1f);
         }
     }
 }
