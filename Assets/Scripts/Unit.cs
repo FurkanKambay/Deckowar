@@ -1,3 +1,4 @@
+using Deckowar.Core;
 using Deckowar.Data;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -8,7 +9,7 @@ namespace Deckowar
     {
         [Header("Config")]
         [SerializeField] private UnitSO unitSO;
-        [SerializeField] private bool shouldMoveRight;
+        [SerializeField] private Direction moveDirection;
 
         public UnitSO UnitSO => unitSO;
 
@@ -18,7 +19,13 @@ namespace Deckowar
         private void Awake()
         {
             CanMove = true;
-            MoveDirection = shouldMoveRight ? Vector2.right : Vector2.left;
+
+            MoveDirection = moveDirection switch
+            {
+                Direction.West => Vector2.left,
+                Direction.East => Vector2.right,
+                _ => Vector2.zero
+            };
         }
 
         public void Initialize(UnitSO data)
