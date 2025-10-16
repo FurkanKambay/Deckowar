@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 32aff96edc89436dac76aed1c3b9f011, type: 3}
   m_Name: Ground Unit L
-  m_EditorClassIdentifier: FurkanKambay::FurkanKambay.Data.UnitSO
+  m_EditorClassIdentifier: Deckowar::Deckowar.Data.UnitSO
   spawnDelay: 4
   moveSpeed: 1.1
   damage: 6

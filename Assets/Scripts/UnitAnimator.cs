@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace FurkanKambay
+namespace Deckowar
 {
     public class UnitAnimator : MonoBehaviour
     {

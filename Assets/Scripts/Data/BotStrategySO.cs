@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using FurkanKambay.Deckbuilding;
+using Deckowar.Deckbuilding;
 using UnityEngine;
 
-namespace FurkanKambay.Data
+namespace Deckowar.Data
 {
     [CreateAssetMenu]
     public class BotStrategySO : ScriptableObject

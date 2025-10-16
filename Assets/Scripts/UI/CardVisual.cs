@@ -1,11 +1,11 @@
-using FurkanKambay.Deckbuilding;
+using Deckowar.Deckbuilding;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Color = UnityEngine.Color;
 
-namespace FurkanKambay.UI
+namespace Deckowar.UI
 {
     public sealed class CardVisual : MonoBehaviour, IPointerClickHandler
     {

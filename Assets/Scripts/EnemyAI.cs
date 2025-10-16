@@ -1,8 +1,8 @@
-using FurkanKambay.Data;
-using FurkanKambay.Deckbuilding;
+using Deckowar.Data;
+using Deckowar.Deckbuilding;
 using UnityEngine;
 
-namespace FurkanKambay
+namespace Deckowar
 {
     public class EnemyAI : MonoBehaviour
     {

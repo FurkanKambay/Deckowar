@@ -3,7 +3,7 @@ using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace FurkanKambay.Editor
+namespace Deckowar.Editor
 {
     [CustomEditor(typeof(DeckHolder))]
     public class DeckHolderEditor : UnityEditor.Editor

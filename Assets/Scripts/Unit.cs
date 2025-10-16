@@ -1,7 +1,7 @@
-using FurkanKambay.Data;
+using Deckowar.Data;
 using UnityEngine;
 
-namespace FurkanKambay
+namespace Deckowar
 {
     public sealed class Unit : MonoBehaviour
     {

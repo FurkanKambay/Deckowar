@@ -2,7 +2,7 @@ using System.Diagnostics.CodeAnalysis;
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace FurkanKambay.Common
+namespace Deckowar.Common
 {
     [PublicAPI]
     public static class ObjectExtensions

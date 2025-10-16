@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Security.Cryptography;
 
-namespace FurkanKambay.Deckbuilding
+namespace Deckowar.Deckbuilding
 {
     public enum Pile
     {

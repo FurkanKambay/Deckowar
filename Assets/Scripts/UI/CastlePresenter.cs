@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace FurkanKambay.UI
+namespace Deckowar.UI
 {
     public class CastlePresenter : MonoBehaviour
     {

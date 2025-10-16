@@ -184,7 +184,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fac587df6bc44d9b82ca8b7757a79afb, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: FurkanKambay::FurkanKambay.UnitAttackVisual
+  m_EditorClassIdentifier: Deckowar::Deckowar.UnitAttackVisual
   spriteRenderer: {fileID: 5305273800628855937}
   animator: {fileID: 6928965159040168754}
   attacker: {fileID: 3099496320509844371}
@@ -313,7 +313,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b5ff1aa976e4d8d9a5ca00180371636, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: FurkanKambay::FurkanKambay.Attacker
+  m_EditorClassIdentifier: Deckowar::Deckowar.Attacker
   unit: {fileID: 607795297357717955}
   vitality: {fileID: 2389452148729163374}
   selfCollider: {fileID: 1910006505231164769}

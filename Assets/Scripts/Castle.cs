@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using FurkanKambay.Data;
+using Deckowar.Data;
 using UnityEditor;
 using UnityEngine;
 
-namespace FurkanKambay
+namespace Deckowar
 {
     public class Castle : MonoBehaviour
     {

@@ -5,7 +5,7 @@ using UnityEngine;
 using Debug = UnityEngine.Debug;
 using Object = UnityEngine.Object;
 
-namespace FurkanKambay.Common
+namespace Deckowar.Common
 {
     [PublicAPI]
     public static class EditorDebug

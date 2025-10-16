@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace FurkanKambay
+namespace Deckowar
 {
     public sealed class Attacker : MonoBehaviour
     {

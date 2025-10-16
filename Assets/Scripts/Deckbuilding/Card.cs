@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace FurkanKambay.Deckbuilding
+namespace Deckowar.Deckbuilding
 {
     [Serializable]
     public class Card

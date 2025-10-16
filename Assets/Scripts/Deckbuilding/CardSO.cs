@@ -1,7 +1,7 @@
-using FurkanKambay.Data;
+using Deckowar.Data;
 using UnityEngine;
 
-namespace FurkanKambay.Deckbuilding
+namespace Deckowar.Deckbuilding
 {
     public enum CardType
     {

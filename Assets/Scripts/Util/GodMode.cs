@@ -1,8 +1,8 @@
-using FurkanKambay.Data;
+using Deckowar.Data;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace FurkanKambay.Util
+namespace Deckowar.Util
 {
     public class GodMode : MonoBehaviour
     {

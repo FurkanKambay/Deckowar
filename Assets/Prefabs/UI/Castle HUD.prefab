@@ -802,7 +802,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77d866d66895460c8f9ffa745a3c7ad4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: FurkanKambay::FurkanKambay.UI.CastlePresenter
+  m_EditorClassIdentifier: Deckowar::Deckowar.UI.CastlePresenter
   castle: {fileID: 0}
   bar: {fileID: 834169952889225803}
   spawnRadial: {fileID: 894500392152237400}

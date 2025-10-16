@@ -1,8 +1,8 @@
-using FurkanKambay.Common;
-using FurkanKambay.Deckbuilding;
+using Deckowar.Common;
+using Deckowar.Deckbuilding;
 using UnityEngine;
 
-namespace FurkanKambay
+namespace Deckowar
 {
     public sealed class DeckHolder : MonoBehaviour
     {
