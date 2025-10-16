@@ -240,7 +240,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Deckowar::Deckowar.Attacker
   unit: {fileID: 607795297357717955}
   vitality: {fileID: 2389452148729163374}
-  selfCollider: {fileID: 0}
   attackLayers:
     serializedVersion: 2
     m_Bits: 192

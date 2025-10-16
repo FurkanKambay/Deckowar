@@ -11,7 +11,6 @@ namespace Deckowar
         [Header("References")]
         [SerializeField] private Unit unit;
         [SerializeField] private Vitality vitality;
-        [SerializeField] private Collider2D selfCollider;
 
         [Header("Config")]
         [SerializeField] private LayerMask attackLayers;
@@ -42,26 +41,7 @@ namespace Deckowar
 
         private void FixedUpdate()
         {
-            int hitCount = selfCollider.Raycast(unit.MoveDirection, hits, unit.UnitSO.AttackRange, attackLayers);
-
-            if (hitCount == 0 || !hits[0].collider.TryGetComponent(out Vitality hitTarget))
-            {
-                Target = null;
-                unit.CanMove = true;
-                return;
-            }
-
-            unit.CanMove = false;
-
-            if (vitality.Faction == hitTarget.Faction)
-            {
-                Target = null;
-                return;
-            }
-
-            Target = hitTarget;
-
-            TryAttack();
+            // TryAttack();
         }
 
         internal void ProcAttack()
