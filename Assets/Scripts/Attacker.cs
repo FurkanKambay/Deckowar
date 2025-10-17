@@ -58,8 +58,8 @@ namespace Deckowar
 
         private void TryAttack()
         {
-            if (isAttacking || attackTimer < unit.UnitSO.AttackDelay)
-                return;
+            // if (isAttacking || attackTimer < unit.UnitSO.AttackDelay)
+            //     return;
 
             OnAttackStarted?.Invoke();
             isAttacking = true;

@@ -6,20 +6,18 @@ namespace Deckowar.Data
     public class UnitSO : ScriptableObject
     {
         [Header("Spawn")]
-        [SerializeField] private float spawnDelay;
+        [SerializeField, Min(0)] private int spawnDelay;
 
         [Header("Attack")]
         [SerializeField, Min(0)] private int damage = 1;
-        [SerializeField, Min(0)] private float attackRange = 1f;
-        [SerializeField, Min(0)] private float attackDelay = 1f;
+        [SerializeField, Min(1)] private int attackRange = 1;
 
         [Header("Visual")]
         [SerializeField] private Sprite sprite;
 
-        public float SpawnDelay => spawnDelay;
+        public int SpawnDelay => spawnDelay;
         public int Damage => damage;
-        public float AttackRange => attackRange;
-        public float AttackDelay => attackDelay;
+        public int AttackRange => attackRange;
 
         public Sprite Sprite => sprite;
     }
