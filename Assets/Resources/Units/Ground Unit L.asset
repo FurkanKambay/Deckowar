@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Ground Unit L
   m_EditorClassIdentifier: Deckowar::Deckowar.Data.UnitSO
   spawnDelay: 4
-  moveSpeed: 1.1
   damage: 6
   attackRange: 1
   attackDelay: 2
