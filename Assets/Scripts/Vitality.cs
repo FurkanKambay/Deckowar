@@ -1,14 +1,9 @@
 using System;
+using Deckowar.Core;
 using UnityEngine;
 
 namespace Deckowar
 {
-    public enum Faction
-    {
-        Player,
-        Enemy
-    }
-
     [SelectionBase]
     public sealed class Vitality : MonoBehaviour
     {
