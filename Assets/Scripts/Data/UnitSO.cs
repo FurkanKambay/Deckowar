@@ -16,6 +16,7 @@ namespace Deckowar.Data
         [SerializeField] private Sprite sprite;
 
         public int SpawnDelay => spawnDelay;
+
         public int Damage => damage;
         public int AttackRange => attackRange;
 

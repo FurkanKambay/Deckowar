@@ -1,4 +1,5 @@
 using System;
+using Deckowar.Core;
 using UnityEngine;
 
 namespace Deckowar
@@ -15,54 +16,21 @@ namespace Deckowar
         [Header("Config")]
         [SerializeField] private LayerMask attackLayers;
 
-        public Unit Unit => unit;
-        public bool HasTarget => (bool)target;
+        public Intent Intent { get; private set; }
 
-        public Vitality Target
+        public void TryAttack()
         {
-            get => target;
-            private set
-            {
-                if (!ReferenceEquals(target, value))
-                    target = value;
-            }
-        }
+            if (Intent is Intent.Attack)
+                return;
 
-        private Vitality target;
-        private float attackTimer;
-        private bool isAttacking;
-
-        private readonly RaycastHit2D[] hits = new RaycastHit2D[1];
-
-        private void Update()
-        {
-            attackTimer += Time.deltaTime;
-        }
-
-        private void FixedUpdate()
-        {
-            // TryAttack();
+            OnAttackStarted?.Invoke();
+            Intent = Intent.Attack;
         }
 
         internal void ProcAttack()
         {
-            isAttacking = false;
-            attackTimer = 0;
-
-            if (!Target)
-                return;
-
-            Target.TakeDamage(unit.UnitSO.Damage);
+            Intent = Intent.None;
             OnAttackProcced?.Invoke();
-        }
-
-        private void TryAttack()
-        {
-            // if (isAttacking || attackTimer < unit.UnitSO.AttackDelay)
-            //     return;
-
-            OnAttackStarted?.Invoke();
-            isAttacking = true;
         }
 
         private void OnDrawGizmosSelected()

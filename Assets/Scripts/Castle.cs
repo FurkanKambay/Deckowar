@@ -30,22 +30,10 @@ namespace Deckowar
             spawnPosition = transform.position + (Vector3)spawnDelta;
         }
 
-        private void Update()
-        {
-            if (!vitality.IsAlive)
-                return;
-
-            if (SpawnQueueCount == 0)
-                return;
-
-            if (!MaybeSpawn())
-                spawnTimer += Time.deltaTime;
-        }
-
         public void EnqueueSpawnUnit(UnitSO unit) =>
             spawnQueue.Enqueue(unit);
 
-        private bool MaybeSpawn()
+        internal bool TrySpawn()
         {
             if (SpawnQueueCount == 0)
                 return false;
