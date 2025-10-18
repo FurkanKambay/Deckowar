@@ -32,30 +32,5 @@ namespace Deckowar
 
         public void EnqueueSpawnUnit(UnitSO unit) =>
             spawnQueue.Enqueue(unit);
-
-        internal bool TrySpawn()
-        {
-            if (SpawnQueueCount == 0)
-                return false;
-
-            UnitSO queuedUnitSO = spawnQueue.Peek();
-
-            if (spawnTimer < queuedUnitSO.SpawnDelay)
-                return false;
-
-            spawnTimer = 0;
-            spawnQueue.Dequeue();
-
-            Unit spawnedUnit = Instantiate(unitPrefab, spawnPosition, Quaternion.identity, transform);
-            spawnedUnit.Initialize(queuedUnitSO);
-
-            return true;
-        }
-
-        private void OnDrawGizmosSelected()
-        {
-            Handles.color = Color.blue;
-            Handles.DrawWireDisc(transform.position + (Vector3)spawnDelta, Vector3.forward, 0.1f);
-        }
     }
 }
