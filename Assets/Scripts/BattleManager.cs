@@ -7,10 +7,6 @@ namespace Deckowar
 {
     public sealed class BattleManager : MonoBehaviour
     {
-        [Header("Asset References")]
-        [SerializeField] private Unit unitPrefabPlayer;
-        [SerializeField] private Unit unitPrefabEnemy;
-
         [Header("References")]
         [SerializeField] private Battlefield battlefield;
 
@@ -30,15 +26,7 @@ namespace Deckowar
             if (!battlefield.CanPushUnit(heading))
                 return false;
 
-            (Unit prefab, Vector3 spawnPosition) = heading switch
-            {
-                Heading.West => (unitPrefabEnemy, spawnPointEnemy),
-                Heading.East => (unitPrefabPlayer, spawnPointPlayer),
-                _ => default
-            };
-
             var spawnedUnit = new Unit(unitSO);
-
             return battlefield.PushUnit(heading, spawnedUnit);
         }
 
