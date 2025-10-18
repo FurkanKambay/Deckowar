@@ -32,11 +32,5 @@ namespace Deckowar
             Intent = Intent.None;
             OnAttackProcced?.Invoke();
         }
-
-        private void OnDrawGizmosSelected()
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawRay(unit.transform.position, unit.MoveDirection * unit.UnitSO.AttackRange);
-        }
     }
 }
