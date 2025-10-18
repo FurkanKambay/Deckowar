@@ -1871,6 +1871,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1624969367}
   - component: {fileID: 1624969368}
+  - component: {fileID: 1624969369}
   m_Layer: 0
   m_Name: "\u2694\uFE0F Battlefield"
   m_TagString: Untagged
@@ -1906,6 +1907,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Deckowar::Deckowar.Battlefield
   cellCount: 8
+--- !u!114 &1624969369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624969366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7187c661f9424170a88cd52664fc187e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Deckowar::Deckowar.BattleManager
+  battlefield: {fileID: 1624969368}
 --- !u!1001 &1736814645
 PrefabInstance:
   m_ObjectHideFlags: 0
