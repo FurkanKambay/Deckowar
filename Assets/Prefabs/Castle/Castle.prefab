@@ -151,5 +151,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vitality: {fileID: 4372466536989279257}
-  unitPrefab: {fileID: 0}
   spawnDelta: {x: 0, y: 0}

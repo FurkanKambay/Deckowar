@@ -8,7 +8,6 @@ namespace Deckowar
     {
         [Header("References")]
         [SerializeField] private Vitality vitality;
-        [SerializeField] private Unit unitPrefab;
 
         [Header("Config")]
         [SerializeField] private Vector2 spawnDelta;
@@ -19,15 +18,9 @@ namespace Deckowar
         public float ProgressUntilNextSpawn =>
             SpawnQueueCount == 0 ? 0f : Mathf.InverseLerp(0, spawnQueue.Peek().SpawnDelay, spawnTimer);
 
-        private Vector3 spawnPosition;
         private float spawnTimer;
 
         private readonly Queue<UnitSO> spawnQueue = new();
-
-        private void Awake()
-        {
-            spawnPosition = transform.position + (Vector3)spawnDelta;
-        }
 
         public void EnqueueSpawnUnit(UnitSO unit) =>
             spawnQueue.Enqueue(unit);
