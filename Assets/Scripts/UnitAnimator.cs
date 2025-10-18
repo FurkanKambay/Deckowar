@@ -1,4 +1,5 @@
 using System.Collections;
+using Deckowar.Data;
 using UnityEngine;
 
 namespace Deckowar
@@ -7,9 +8,7 @@ namespace Deckowar
     {
         [Header("References")]
         [SerializeField] private SpriteRenderer spriteRenderer;
-        [SerializeField] private Unit unit;
         [SerializeField] private Animator animator;
-        [SerializeField] private Attacker attacker;
         [SerializeField] private Vitality vitality;
 
         [Header("Config")]
@@ -29,19 +28,18 @@ namespace Deckowar
 
         private void Start()
         {
-            spriteRenderer.sprite = unit.UnitSO.Sprite;
+            // TODO: assign unit sprite
+            // spriteRenderer.sprite = unit.UnitSO.Sprite;
         }
 
         private void OnEnable()
         {
-            attacker.OnAttackStarted += Attacker_AttackStarted;
             vitality.OnDamageTaken += Vitality_DamageTaken;
             vitality.OnDied += Vitality_Died;
         }
 
         private void OnDisable()
         {
-            attacker.OnAttackStarted -= Attacker_AttackStarted;
             vitality.OnDamageTaken -= Vitality_DamageTaken;
             vitality.OnDied -= Vitality_Died;
         }
@@ -69,7 +67,9 @@ namespace Deckowar
             animator.SetTrigger(AnimAttack);
         }
 
-        private void Anim_ProcAttack() =>
-            attacker.ProcAttack();
+        private void Anim_ProcAttack()
+        {
+            // TODO: send attack proc signal
+        }
     }
 }

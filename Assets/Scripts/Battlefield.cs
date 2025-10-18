@@ -36,7 +36,7 @@ namespace Deckowar
             GetUnit(heading.GetOpposite(), lastNavigableCell - cell);
 
         public bool CanPushUnit(Heading heading) =>
-            heading is not Heading.None && !GetUnit(heading, 0);
+            heading is not Heading.None && GetUnit(heading, 0) == null;
 
         public bool PushUnit(Heading heading, Unit unit)
         {
@@ -58,7 +58,7 @@ namespace Deckowar
             Unit unit = GetUnit(heading, cell);
             Unit blockingUnit = GetUnit(heading, cell + 1);
 
-            if (!unit || blockingUnit)
+            if (unit is null || blockingUnit is not null)
                 return false;
 
             SetUnit(heading, cell + 1, unit);

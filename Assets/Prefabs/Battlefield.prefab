@@ -166,6 +166,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7187c661f9424170a88cd52664fc187e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Deckowar::Deckowar.BattleManager
-  unitPrefabPlayer: {fileID: 6371342192744839839, guid: 0e85ba3f0885de146a1c9e1676aaedf7, type: 3}
-  unitPrefabEnemy: {fileID: 6371342192744839839, guid: 48de511acb3f8f644b3d7d0b01d443f8, type: 3}
   battlefield: {fileID: 1563695853443456993}

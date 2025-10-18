@@ -6,5 +6,10 @@ namespace Deckowar
     {
         [Header("References")]
         [SerializeField] private BattleManager battleManager;
+
+        private void OnEnable()
+        {
+            // var spawnedUnit = Instantiate(unitPrefab, spawnPoint, Quaternion.identity, transform);
+        }
     }
 }

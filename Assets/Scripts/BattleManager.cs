@@ -37,11 +37,7 @@ namespace Deckowar
                 _ => default
             };
 
-            if (!prefab)
-                return false;
-
-            Unit spawnedUnit = Instantiate(prefab, spawnPosition, Quaternion.identity, transform);
-            spawnedUnit.Initialize(unitSO);
+            var spawnedUnit = new Unit(unitSO);
 
             return battlefield.PushUnit(heading, spawnedUnit);
         }
