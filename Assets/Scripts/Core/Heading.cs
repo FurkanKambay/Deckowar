@@ -1,6 +1,6 @@
 namespace Deckowar.Core
 {
-    public enum Direction
+    public enum Heading
     {
         None,
         West,

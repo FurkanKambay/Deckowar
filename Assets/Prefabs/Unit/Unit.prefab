@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitSO: {fileID: 11400000, guid: e574959cec86d5540891095c4310249f, type: 2}
-  moveDirection: 0
+  heading: 0
 --- !u!114 &2389452148729163374
 MonoBehaviour:
   m_ObjectHideFlags: 0

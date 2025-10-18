@@ -10,7 +10,7 @@ namespace Deckowar
     {
         [Header("Config")]
         [SerializeField] private UnitSO unitSO;
-        [SerializeField] private Direction moveDirection;
+        [SerializeField] private Heading heading;
 
         public UnitSO UnitSO => unitSO;
 
@@ -21,10 +21,10 @@ namespace Deckowar
         {
             CanMove = true;
 
-            MoveDirection = moveDirection switch
+            MoveDirection = heading switch
             {
-                Direction.West => Vector2.left,
-                Direction.East => Vector2.right,
+                Heading.West => Vector2.left,
+                Heading.East => Vector2.right,
                 _ => Vector2.zero
             };
         }
