@@ -8,6 +8,8 @@ namespace Deckowar
         [Header("Config")]
         [SerializeField, Range(2, 10)] private int cellCount = 5;
 
+        public int CellCount => cellCount;
+
         private Unit[,] units;
         private int lastNavigableCell;
 
