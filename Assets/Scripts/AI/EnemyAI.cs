@@ -2,7 +2,7 @@ using Deckowar.Data;
 using Deckowar.Deckbuilding;
 using UnityEngine;
 
-namespace Deckowar
+namespace Deckowar.AI
 {
     public class EnemyAI : MonoBehaviour
     {
