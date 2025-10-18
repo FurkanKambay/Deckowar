@@ -1,3 +1,4 @@
+using System;
 using Deckowar.Core;
 using Deckowar.Data;
 using UnityEditor;
@@ -7,6 +8,8 @@ namespace Deckowar
 {
     public sealed class BattleManager : MonoBehaviour
     {
+        public event Action<BattleManager, Heading, Unit> OnUnitSpawned;
+
         [Header("References")]
         [SerializeField] private Battlefield battlefield;
 
@@ -27,7 +30,12 @@ namespace Deckowar
                 return false;
 
             var spawnedUnit = new Unit(unitSO);
-            return battlefield.PushUnit(heading, spawnedUnit);
+            bool success = battlefield.PushUnit(heading, spawnedUnit);
+
+            if (success)
+                OnUnitSpawned?.Invoke(this, heading, spawnedUnit);
+
+            return success;
         }
 
         private void LocateSpawnPoints()
