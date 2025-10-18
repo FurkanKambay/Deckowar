@@ -1,8 +1,7 @@
 using System;
-using Deckowar.Core;
 using Deckowar.Data;
 
-namespace Deckowar
+namespace Deckowar.Core
 {
     public sealed class Unit
     {
