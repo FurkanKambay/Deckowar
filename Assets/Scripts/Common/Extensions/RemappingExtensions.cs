@@ -1,6 +1,6 @@
 using JetBrains.Annotations;
 
-namespace Deckowar.Common
+namespace Deckowar.Common.Extensions
 {
     [PublicAPI]
     public static class RemappingExtensions

@@ -1,7 +1,7 @@
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace Deckowar.Common
+namespace Deckowar.Common.Extensions
 {
     [PublicAPI]
     public static class MathExtensions
