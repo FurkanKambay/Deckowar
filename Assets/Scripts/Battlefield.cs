@@ -33,6 +33,18 @@ namespace Deckowar
         public Unit GetOpponent(Heading heading, int cell) =>
             GetUnit(heading.GetOpposite(), lastNavigableCell - cell);
 
+        public bool CanPushUnit(Heading heading) =>
+            heading is not Heading.None && !GetUnit(heading, 0);
+
+        public bool PushUnit(Heading heading, Unit unit)
+        {
+            if (!CanPushUnit(heading))
+                return false;
+
+            SetUnit(heading, 0, unit);
+            return true;
+        }
+
         public bool RemoveUnit(Heading heading, int cell) =>
             SetUnit(heading, cell, null);
 
