@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Deckowar::Deckowar.UnitAttackVisual
   spriteRenderer: {fileID: 5305273800628855937}
+  unit: {fileID: 607795297357717955}
   animator: {fileID: 6928965159040168754}
   attacker: {fileID: 3099496320509844371}
   vitality: {fileID: 2389452148729163374}

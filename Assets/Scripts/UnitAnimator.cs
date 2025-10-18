@@ -7,6 +7,7 @@ namespace Deckowar
     {
         [Header("References")]
         [SerializeField] private SpriteRenderer spriteRenderer;
+        [SerializeField] private Unit unit;
         [SerializeField] private Animator animator;
         [SerializeField] private Attacker attacker;
         [SerializeField] private Vitality vitality;
@@ -28,7 +29,7 @@ namespace Deckowar
 
         private void Start()
         {
-            spriteRenderer.sprite = attacker.Unit.UnitSO.Sprite;
+            spriteRenderer.sprite = unit.UnitSO.Sprite;
         }
 
         private void OnEnable()
