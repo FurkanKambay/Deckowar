@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 1563695853443456993}
   - component: {fileID: 6107009490630003036}
   - component: {fileID: 890711005696430898}
+  - component: {fileID: 9088366031480398585}
   m_Layer: 0
   m_Name: Battlefield
   m_TagString: Untagged
@@ -167,3 +168,19 @@ MonoBehaviour:
   spriteRenderer: {fileID: 317955501021376622}
   multiplier: 2
   height: 2
+--- !u!114 &9088366031480398585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5105437684538849423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 601c753d23d04f5b92a4a3553bf2715e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Deckowar::Deckowar.BattleUnitsRenderer
+  battlefield: {fileID: 1563695853443456993}
+  battleManager: {fileID: 6107009490630003036}
+  playerUnitPrefab: {fileID: 4864425765008717503, guid: 0e85ba3f0885de146a1c9e1676aaedf7, type: 3}
+  enemyUnitPrefab: {fileID: 4864425765008717503, guid: 48de511acb3f8f644b3d7d0b01d443f8, type: 3}

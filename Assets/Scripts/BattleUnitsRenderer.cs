@@ -1,3 +1,5 @@
+using Deckowar.Core;
+using UnityEditor;
 using UnityEngine;
 
 namespace Deckowar
@@ -5,11 +7,61 @@ namespace Deckowar
     public sealed class BattleUnitsRenderer : MonoBehaviour
     {
         [Header("References")]
+        [SerializeField] private Battlefield battlefield;
         [SerializeField] private BattleManager battleManager;
+
+        [Header("Asset References")]
+        [SerializeField] private GameObject playerUnitPrefab;
+        [SerializeField] private GameObject enemyUnitPrefab;
+
+        private Vector2 spawnPointPlayer;
+        private Vector2 spawnPointEnemy;
+
+        private void Awake()
+        {
+            LocateSpawnPoints();
+        }
 
         private void OnEnable()
         {
-            // var spawnedUnit = Instantiate(unitPrefab, spawnPoint, Quaternion.identity, transform);
+            battleManager.OnUnitSpawned += BattleManager_UnitSpawned;
         }
+
+        private void OnDisable()
+        {
+            battleManager.OnUnitSpawned -= BattleManager_UnitSpawned;
+        }
+
+        private void BattleManager_UnitSpawned(BattleManager sender, Heading heading, Unit unit)
+        {
+            (GameObject prefab, Vector2 spawnPoint) = heading switch
+            {
+                Heading.West => (enemyUnitPrefab, spawnPointEnemy),
+                Heading.East => (playerUnitPrefab, spawnPointPlayer),
+                _ => default
+            };
+
+            GameObject spawnedUnit = Instantiate(prefab, spawnPoint, Quaternion.identity, transform);
+        }
+
+        private void LocateSpawnPoints()
+        {
+            int x = battlefield.CellCount - 1; // ! coupled to the visuals
+            spawnPointPlayer = transform.TransformPoint(-x, 0, 0);
+            spawnPointEnemy = transform.TransformPoint(+x, 0, 0);
+        }
+
+#if UNITY_EDITOR
+        private void OnDrawGizmosSelected()
+        {
+            LocateSpawnPoints();
+
+            Handles.color = Color.limeGreen;
+            Handles.DrawWireDisc(spawnPointPlayer, Vector3.forward, 0.1f);
+
+            Handles.color = Color.softRed;
+            Handles.DrawWireDisc(spawnPointEnemy, Vector3.forward, 0.1f);
+        }
+#endif
     }
 }
