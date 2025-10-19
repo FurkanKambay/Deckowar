@@ -12,10 +12,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Unit Enemy
       objectReference: {fileID: 0}
-    - target: {fileID: 2389452148729163374, guid: 1750281a84fe3624cbefda897ef4df61, type: 3}
-      propertyPath: faction
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 7761560519218001547, guid: 1750281a84fe3624cbefda897ef4df61, type: 3}
       propertyPath: m_LocalScale.x
       value: -1
