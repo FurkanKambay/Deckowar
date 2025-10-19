@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Ground Unit M
   m_EditorClassIdentifier: Deckowar::Deckowar.Data.UnitSO
   spawnDelay: 3
+  maxHealth: 2
   damage: 3
   attackRange: 1
   sprite: {fileID: 1267418411, guid: 24ad799f38ad4a54395892effb886fdb, type: 3}
