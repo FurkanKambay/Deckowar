@@ -57,8 +57,9 @@ namespace Deckowar
 
             Unit unit = GetUnit(heading, cell);
             Unit blockingUnit = GetUnit(heading, cell + 1);
+            Unit opponent = GetOpponent(heading, cell);
 
-            if (unit is null || blockingUnit is not null)
+            if (unit is null || blockingUnit is not null || opponent is not null)
                 return false;
 
             SetUnit(heading, cell + 1, unit);
