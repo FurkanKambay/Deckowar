@@ -9,12 +9,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1757477750334953315, guid: 21a1fd1905f092b40b91223f887e6aa4, type: 3}
-      propertyPath: unitPrefab
-      value: 
-      objectReference: {fileID: 6371342192744839839, guid: 0e85ba3f0885de146a1c9e1676aaedf7, type: 3}
-    - target: {fileID: 1757477750334953315, guid: 21a1fd1905f092b40b91223f887e6aa4, type: 3}
-      propertyPath: spawnDelta.x
-      value: 2
+      propertyPath: faction
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7048790437238751503, guid: 21a1fd1905f092b40b91223f887e6aa4, type: 3}
       propertyPath: m_Name

@@ -99,7 +99,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8873518191012979440}
-  - component: {fileID: 4372466536989279257}
   - component: {fileID: 1757477750334953315}
   m_Layer: 6
   m_Name: Castle
@@ -124,20 +123,6 @@ Transform:
   - {fileID: 9145141448548239752}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4372466536989279257
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7048790437238751503}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5876e402cba444edb454479d1689af03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  faction: 0
-  maxHealth: 20
 --- !u!114 &1757477750334953315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,5 +135,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a600f949c9d41e1a1c6dff17934d8dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vitality: {fileID: 4372466536989279257}
-  spawnDelta: {x: 0, y: 0}
+  faction: 0
+  maxHealth: 20

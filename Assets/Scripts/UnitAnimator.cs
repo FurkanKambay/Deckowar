@@ -1,5 +1,5 @@
 using System.Collections;
-using Deckowar.Data;
+using Deckowar.Core;
 using UnityEngine;
 
 namespace Deckowar
@@ -59,7 +59,7 @@ namespace Deckowar
 
         private void Vitality_Died()
         {
-            Destroy(vitality.gameObject, t: 0f);
+            // Destroy(vitality.gameObject, t: 0f);
         }
 
         private void Attacker_AttackStarted()

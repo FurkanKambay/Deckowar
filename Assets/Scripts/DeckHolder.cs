@@ -88,6 +88,6 @@ namespace Deckowar
 
         // ReSharper disable Unity.PerformanceAnalysis
         [HideInCallstack]
-        private void PrintDeck() => EditorDebug.Log($"[Deck] {castle.Vitality.Faction}: {Deck:E}");
+        private void PrintDeck() => EditorDebug.Log($"[Deck] {castle.Faction}: {Deck:E}");
     }
 }
