@@ -23,7 +23,9 @@
       "name": "OpenUPM",
       "url": "https://package.openupm.com",
       "scopes": [
-        "com.febucci"
+        "com.febucci",
+        "com.needle",
+        "today.comes"
       ]
     }
   ]
