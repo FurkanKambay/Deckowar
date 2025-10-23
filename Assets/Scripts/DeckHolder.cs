@@ -82,7 +82,6 @@ namespace Deckowar
                 castle.GainGold();
         }
 
-        // ReSharper disable Unity.PerformanceAnalysis
         [HideInCallstack]
         private void PrintDeck() => EditorDebug.Log($"[Deck] {castle.Faction}: {Deck:E}");
     }
