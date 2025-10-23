@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Deckowar.Core;
 using Deckowar.Data;
@@ -7,6 +8,9 @@ namespace Deckowar
 {
     public class Castle : MonoBehaviour
     {
+        public event Action<Castle, UnitSO> OnUnitEnqueued;
+        public event Action<Castle, UnitSO> OnUnitDequeued;
+
         [Header("Config")]
         [SerializeField] private Faction faction;
         [SerializeField, Min(1)] private int maxHealth = 20;
@@ -28,7 +32,22 @@ namespace Deckowar
             Vitality = new Vitality(maxHealth);
         }
 
-        public void EnqueueSpawnUnit(UnitSO unit) =>
+        public void EnqueueSpawnUnit(UnitSO unit)
+        {
+            if (!unit)
+                return;
+
             spawnQueue.Enqueue(unit);
+            OnUnitEnqueued?.Invoke(this, unit);
+        }
+
+        public bool TryDequeueSpawnUnit(out UnitSO unitSO)
+        {
+            if (!spawnQueue.TryDequeue(out unitSO))
+                return false;
+
+            OnUnitDequeued?.Invoke(this, unitSO);
+            return true;
+        }
     }
 }
