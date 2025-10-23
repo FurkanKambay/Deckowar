@@ -1,16 +1,18 @@
 using Deckowar.Common;
 using Deckowar.Deckbuilding;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 namespace Deckowar
 {
     public sealed class DeckHolder : MonoBehaviour
     {
-        [Header("Config")]
-        [SerializeField] private DeckConfigSO deckConfigSO;
+        [Header("References")]
+        [SerializeField] private TurnTimeManager turnTimeManager;
         [SerializeField] private Castle castle;
 
         [Header("Config")]
+        [SerializeField] private DeckConfigSO deckConfigSO;
         [SerializeField, Min(0)] private float goldGainPerSecond;
         [SerializeField, Min(10)] private float maxGoldAmount = 200;
 
@@ -28,6 +30,10 @@ namespace Deckowar
 
         private void Awake()
         {
+            Assert.IsNotNull(turnTimeManager);
+            Assert.IsNotNull(castle);
+            Assert.IsNotNull(deckConfigSO);
+
             Deck = new Deck(deckConfigSO);
 
             Deck.ResetToStarterDeck();

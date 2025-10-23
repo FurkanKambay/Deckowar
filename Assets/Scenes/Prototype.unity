@@ -1103,8 +1103,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93b6ac5792124522a7fff907083b6b0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deckConfigSO: {fileID: 11400000, guid: f26a0cdab84024743b984e3f458880c6, type: 2}
+  turnTimeManager: {fileID: 1495283801}
   castle: {fileID: 1823492435}
+  deckConfigSO: {fileID: 11400000, guid: f26a0cdab84024743b984e3f458880c6, type: 2}
   goldGainPerSecond: 10
   maxGoldAmount: 200
 --- !u!1 &827657877
@@ -1804,8 +1805,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93b6ac5792124522a7fff907083b6b0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deckConfigSO: {fileID: 11400000, guid: f26a0cdab84024743b984e3f458880c6, type: 2}
+  turnTimeManager: {fileID: 1495283801}
   castle: {fileID: 1232775509}
+  deckConfigSO: {fileID: 11400000, guid: f26a0cdab84024743b984e3f458880c6, type: 2}
   goldGainPerSecond: 5
   maxGoldAmount: 200
 --- !u!4 &1557200135
@@ -2290,9 +2292,9 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 696014188}
   - {fileID: 195277139}
+  - {fileID: 1495283800}
   - {fileID: 752937553}
   - {fileID: 1557200135}
-  - {fileID: 1495283800}
   - {fileID: 921433874271017308}
   - {fileID: 1005697601}
   - {fileID: 2734990105606783513}
