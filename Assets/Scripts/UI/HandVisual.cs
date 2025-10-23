@@ -42,7 +42,7 @@ namespace Deckowar.UI
 
         private void Update()
         {
-            goldLabel.text = $"{deckHolder.Gold:N0}";
+            goldLabel.text = $"{deckHolder.Castle.Gold:N0}";
         }
 
         private void InitializeCards()

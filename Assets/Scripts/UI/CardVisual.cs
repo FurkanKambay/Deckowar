@@ -63,7 +63,7 @@ namespace Deckowar.UI
                 return;
 
             int cost = card.CardSO.Cost;
-            Color color = cost <= deckHolder.Gold ? costColor : costColorInsufficient;
+            Color color = cost <= deckHolder.Castle.Gold ? costColor : costColorInsufficient;
             string hex = ColorUtility.ToHtmlStringRGB(color);
 
             costLabel.text = $"<color=#{hex}>{cost}</color>";

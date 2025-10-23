@@ -17,7 +17,7 @@ namespace Deckowar.UI
         {
             bar.rectTransform.localScale = new Vector3(castle.Vitality.HealthNormalized, 1, 1);
 
-            spawnRadial.fillAmount = castle.ProgressUntilNextSpawn;
+            // spawnRadial.fillAmount = castle.ProgressUntilNextSpawn;
             queueLabel.alpha = castle.SpawnQueueCount == 0 ? 0 : 1;
             queueLabel.text = castle.SpawnQueueCount.ToString();
         }

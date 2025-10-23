@@ -14,16 +14,13 @@ namespace Deckowar
         [Header("Config")]
         [SerializeField] private Faction faction;
         [SerializeField, Min(1)] private int maxHealth = 20;
+        [SerializeField, Min(0)] private float goldGainPerTurn = 1;
 
         public Faction Faction => faction;
-        public Vitality Vitality { get; private set; }
-
         public int SpawnQueueCount => spawnQueue.Count;
 
-        public float ProgressUntilNextSpawn =>
-            SpawnQueueCount == 0 ? 0f : Mathf.InverseLerp(0, spawnQueue.Peek().SpawnDelay, spawnTimer);
-
-        private float spawnTimer;
+        public float Gold { get; private set; }
+        public Vitality Vitality { get; private set; }
 
         private readonly Queue<UnitSO> spawnQueue = new();
 
@@ -31,6 +28,12 @@ namespace Deckowar
         {
             Vitality = new Vitality(maxHealth);
         }
+
+        public void GainGold() =>
+            Gold = Mathf.Clamp(Gold + goldGainPerTurn, 0, max: 500);
+
+        public void LoseGold(int amount) =>
+            Gold = Mathf.Clamp(Gold - amount, 0, max: 500);
 
         public void EnqueueSpawnUnit(UnitSO unit)
         {

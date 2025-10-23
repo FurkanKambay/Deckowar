@@ -33,7 +33,7 @@ namespace Deckowar.AI
 
             nextCardSO = CurrentBundle.CardSO;
 
-            if (deckHolder.Gold < nextCardSO.Cost)
+            if (deckHolder.Castle.Gold < nextCardSO.Cost)
                 return;
 
             foreach (Card card in deckHolder.Deck.HandPile.ListRO)

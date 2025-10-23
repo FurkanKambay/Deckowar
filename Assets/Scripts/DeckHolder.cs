@@ -13,20 +13,9 @@ namespace Deckowar
 
         [Header("Config")]
         [SerializeField] private DeckConfigSO deckConfigSO;
-        [SerializeField, Min(0)] private float goldGainPerTurn;
-        [SerializeField, Min(10)] private float maxGoldAmount = 200;
 
+        public Castle Castle => castle;
         public Deck Deck { get; private set; }
-
-        public float MaxGoldAmount => maxGoldAmount;
-
-        public float Gold
-        {
-            get => gold;
-            private set => gold = Mathf.Clamp(value, 0, maxGoldAmount);
-        }
-
-        private float gold;
 
         private void Awake()
         {
@@ -71,7 +60,7 @@ namespace Deckowar
             if (!CanUseCard(card))
                 return false;
 
-            Gold -= card.CardSO.Cost;
+            castle.LoseGold(card.CardSO.Cost);
 
             // TODO: other unit types
             if (card.CardSO.CardType == CardType.Unit)
@@ -88,12 +77,12 @@ namespace Deckowar
         }
 
         public bool CanUseCard(Card card) =>
-            card.CardSO.Cost <= Gold;
+            card.CardSO.Cost <= castle.Gold;
 
         private void TurnTimeManager_TurnChanged(TurnTimeManager sender)
         {
             if (sender.CurrentFaction == castle.Faction)
-                Gold += goldGainPerTurn;
+                castle.GainGold();
         }
 
         // ReSharper disable Unity.PerformanceAnalysis
