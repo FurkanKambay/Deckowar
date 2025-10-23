@@ -1,4 +1,5 @@
 using System;
+using Deckowar.Common;
 using Deckowar.Core;
 using Deckowar.Data;
 using UnityEngine;
@@ -11,6 +12,28 @@ namespace Deckowar
 
         [Header("References")]
         [SerializeField] private Battlefield battlefield;
+        [SerializeField] private Castle castlePlayer;
+        [SerializeField] private Castle castleEnemy;
+
+#region Unity Callbacks
+        private void OnEnable()
+        {
+            castlePlayer.OnUnitEnqueued += Castle_UnitEnqueued;
+            castleEnemy.OnUnitEnqueued += Castle_UnitEnqueued;
+
+            castlePlayer.OnUnitDequeued += Castle_UnitDequeued;
+            castleEnemy.OnUnitDequeued += Castle_UnitDequeued;
+        }
+
+        private void OnDisable()
+        {
+            castlePlayer.OnUnitEnqueued -= Castle_UnitEnqueued;
+            castleEnemy.OnUnitEnqueued -= Castle_UnitEnqueued;
+
+            castlePlayer.OnUnitDequeued -= Castle_UnitDequeued;
+            castleEnemy.OnUnitDequeued -= Castle_UnitDequeued;
+        }
+#endregion
 
         public void SpawnEastward(UnitSO unitSO) => TrySpawn(Heading.East, unitSO);
         public void SpawnWestward(UnitSO unitSO) => TrySpawn(Heading.West, unitSO);
@@ -27,6 +50,18 @@ namespace Deckowar
                 OnUnitSpawned?.Invoke(this, heading, spawnedUnit);
 
             return success;
+        }
+
+        private void Castle_UnitEnqueued(Castle castle, UnitSO unitSO)
+        {
+            Heading heading = castle.Faction.GetHeading();
+            EditorDebug.Log($"{heading} Castle enqueued a unit");
+        }
+
+        private void Castle_UnitDequeued(Castle castle, UnitSO unitSO)
+        {
+            Heading heading = castle.Faction.GetHeading();
+            EditorDebug.Log($"{heading} Castle dequeued a unit");
         }
     }
 }

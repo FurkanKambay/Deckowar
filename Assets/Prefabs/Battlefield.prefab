@@ -152,6 +152,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Deckowar::Deckowar.BattleManager
   battlefield: {fileID: 1563695853443456993}
+  castlePlayer: {fileID: 0}
+  castleEnemy: {fileID: 0}
 --- !u!114 &890711005696430898
 MonoBehaviour:
   m_ObjectHideFlags: 0
