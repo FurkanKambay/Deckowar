@@ -21,8 +21,13 @@ namespace Deckowar
             Assert.IsNotNull(readyInput);
             readyInput.asset.Enable();
 
-            CurrentTurn = 0;
-            CurrentFaction = Faction.Player;
+            CurrentTurn = -1;
+            CurrentFaction = Faction.None;
+        }
+
+        private void Start()
+        {
+            ProceedToNextTurn();
         }
 
         private void Update()
