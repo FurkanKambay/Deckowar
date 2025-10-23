@@ -1,6 +1,8 @@
 using System;
 using Deckowar.Core;
 using UnityEngine;
+using UnityEngine.Assertions;
+using UnityEngine.InputSystem;
 
 namespace Deckowar
 {
@@ -8,13 +10,25 @@ namespace Deckowar
     {
         public event Action<TurnTimeManager> OnTurnChanged;
 
+        [Header("Input")]
+        [SerializeField] private InputActionReference readyInput;
+
         public int CurrentTurn { get; private set; }
         public Faction CurrentFaction { get; private set; }
 
         private void Awake()
         {
+            Assert.IsNotNull(readyInput);
+            readyInput.asset.Enable();
+
             CurrentTurn = 0;
             CurrentFaction = Faction.Player;
+        }
+
+        private void Update()
+        {
+            if (readyInput.action.triggered)
+                ProceedToNextTurn();
         }
 
         public void ProceedToNextTurn()
