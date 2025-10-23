@@ -29,7 +29,7 @@ namespace Deckowar
             if (cell < 0 || cell > lastNavigableCell || heading is Heading.None)
                 return null;
 
-            return units[(int)heading, cell];
+            return units[GetHeadingIndex(heading), cell];
         }
 
         public Unit GetOpponent(Heading heading, int cell) =>
@@ -71,8 +71,11 @@ namespace Deckowar
             if (cell < 0 || cell >= cellCount || heading is Heading.None)
                 return false;
 
-            units[(int)heading, cell] = unit;
+            units[GetHeadingIndex(heading), cell] = unit;
             return true;
         }
+
+        private static int GetHeadingIndex(Heading heading) =>
+            (int)heading - 1;
     }
 }

@@ -55,13 +55,16 @@ namespace Deckowar
         private void Castle_UnitEnqueued(Castle castle, UnitSO unitSO)
         {
             Heading heading = castle.Faction.GetHeading();
-            EditorDebug.Log($"{heading} Castle enqueued a unit");
+
+            EditorDebug.Log($"{heading} Castle queued up {unitSO.name}", this);
         }
 
         private void Castle_UnitDequeued(Castle castle, UnitSO unitSO)
         {
             Heading heading = castle.Faction.GetHeading();
-            EditorDebug.Log($"{heading} Castle dequeued a unit");
+
+            TrySpawn(heading, unitSO);
+            EditorDebug.Log($"{heading} Castle spawned {unitSO.name}", this);
         }
     }
 }
