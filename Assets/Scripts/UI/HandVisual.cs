@@ -12,7 +12,6 @@ namespace Deckowar.UI
         [Header("References - Scene")]
         [SerializeField] private DeckHolder deckHolder;
         [SerializeField] private Transform cardParent;
-        [SerializeField] private TMP_Text goldLabel;
         [SerializeField] private TMP_Text drawPileLabel;
         [SerializeField] private TMP_Text discardPileLabel;
 
@@ -38,11 +37,6 @@ namespace Deckowar.UI
             deckHolder.Deck.OnResetToStarterDeck -= Hand_Updated;
             deckHolder.Deck.OnCardDrawn -= Card_Updated;
             deckHolder.Deck.OnCardDiscarded -= Card_Updated;
-        }
-
-        private void Update()
-        {
-            goldLabel.text = $"{deckHolder.Castle.Gold:N0}";
         }
 
         private void InitializeCards()

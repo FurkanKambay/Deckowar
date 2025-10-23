@@ -807,6 +807,7 @@ MonoBehaviour:
   bar: {fileID: 834169952889225803}
   spawnRadial: {fileID: 894500392152237400}
   queueLabel: {fileID: 6342595369859476918}
+  goldLabel: {fileID: 80982769479561995}
 --- !u!1 &8536513668384843814
 GameObject:
   m_ObjectHideFlags: 0
