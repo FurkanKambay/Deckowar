@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Deckowar.Core;
 using Deckowar.Data;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 namespace Deckowar
 {
@@ -10,6 +11,9 @@ namespace Deckowar
     {
         public event Action<Castle, UnitSO> OnUnitEnqueued;
         public event Action<Castle, UnitSO> OnUnitDequeued;
+
+        [Header("References")]
+        [SerializeField] private TurnTimeManager turnTimeManager;
 
         [Header("Config")]
         [SerializeField] private Faction faction;
@@ -26,8 +30,12 @@ namespace Deckowar
 
         private void Awake()
         {
+            Assert.IsNotNull(turnTimeManager);
             Vitality = new Vitality(maxHealth);
         }
+
+        private void OnEnable() => turnTimeManager.OnTurnChanged += TurnTimeManager_TurnChanged;
+        private void OnDisable() => turnTimeManager.OnTurnChanged -= TurnTimeManager_TurnChanged;
 
         public void GainGold() =>
             Gold = Mathf.Clamp(Gold + goldGainPerTurn, 0, max: 500);
@@ -51,6 +59,14 @@ namespace Deckowar
 
             OnUnitDequeued?.Invoke(this, unitSO);
             return true;
+        }
+
+        private void TurnTimeManager_TurnChanged(TurnTimeManager sender)
+        {
+            if (sender.CurrentFaction == Faction)
+                GainGold();
+            else
+                TryDequeueSpawnUnit(out _);
         }
     }
 }

@@ -8,7 +8,6 @@ namespace Deckowar
     public sealed class DeckHolder : MonoBehaviour
     {
         [Header("References")]
-        [SerializeField] private TurnTimeManager turnTimeManager;
         [SerializeField] private Castle castle;
 
         [Header("Config")]
@@ -19,7 +18,6 @@ namespace Deckowar
 
         private void Awake()
         {
-            Assert.IsNotNull(turnTimeManager);
             Assert.IsNotNull(castle);
             Assert.IsNotNull(deckConfigSO);
 
@@ -30,9 +28,6 @@ namespace Deckowar
 
             PrintDeck();
         }
-
-        private void OnEnable() => turnTimeManager.OnTurnChanged += TurnTimeManager_TurnChanged;
-        private void OnDisable() => turnTimeManager.OnTurnChanged -= TurnTimeManager_TurnChanged;
 
         public void DrawHand()
         {
@@ -75,12 +70,6 @@ namespace Deckowar
 
         public bool CanUseCard(Card card) =>
             card.CardSO.Cost <= castle.Gold;
-
-        private void TurnTimeManager_TurnChanged(TurnTimeManager sender)
-        {
-            if (sender.CurrentFaction == castle.Faction)
-                castle.GainGold();
-        }
 
         [HideInCallstack]
         private void PrintDeck() => EditorDebug.Log($"[Deck] {castle.Faction}: {Deck:E}");

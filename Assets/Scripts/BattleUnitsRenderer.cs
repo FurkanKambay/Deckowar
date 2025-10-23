@@ -11,8 +11,8 @@ namespace Deckowar
         [SerializeField] private BattleManager battleManager;
 
         [Header("Asset References")]
-        [SerializeField] private GameObject playerUnitPrefab;
-        [SerializeField] private GameObject enemyUnitPrefab;
+        [SerializeField] private UnitAnimator playerUnitPrefab;
+        [SerializeField] private UnitAnimator enemyUnitPrefab;
 
         private Vector2 spawnPointPlayer;
         private Vector2 spawnPointEnemy;
@@ -34,14 +34,15 @@ namespace Deckowar
 
         private void BattleManager_UnitSpawned(BattleManager sender, Heading heading, Unit unit)
         {
-            (GameObject prefab, Vector2 spawnPoint) = heading switch
+            (UnitAnimator prefab, Vector2 spawnPoint) = heading switch
             {
                 Heading.West => (enemyUnitPrefab, spawnPointEnemy),
                 Heading.East => (playerUnitPrefab, spawnPointPlayer),
                 _ => default
             };
 
-            GameObject spawnedUnit = Instantiate(prefab, spawnPoint, Quaternion.identity, transform);
+            UnitAnimator spawnedUnit = Instantiate(prefab, spawnPoint, Quaternion.identity, transform);
+            spawnedUnit.Init(unit);
         }
 
         private void LocateSpawnPoints()

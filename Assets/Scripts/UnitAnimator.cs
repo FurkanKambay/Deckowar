@@ -1,6 +1,7 @@
 using System.Collections;
 using Deckowar.Core;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 namespace Deckowar
 {
@@ -9,10 +10,11 @@ namespace Deckowar
         [Header("References")]
         [SerializeField] private SpriteRenderer spriteRenderer;
         [SerializeField] private Animator animator;
-        [SerializeField] private Vitality vitality;
 
         [Header("Config")]
         [SerializeField] private float hurtDuration;
+
+        public Unit Unit { get; private set; }
 
         private MaterialPropertyBlock propertyBlock;
 
@@ -21,27 +23,35 @@ namespace Deckowar
 
         private void Awake()
         {
+            Assert.IsNotNull(spriteRenderer);
+            Assert.IsNull(animator);
+
             propertyBlock = new MaterialPropertyBlock();
             propertyBlock.SetInt(ShaderHurt, 0);
             spriteRenderer.SetPropertyBlock(propertyBlock);
         }
 
+        public void Init(Unit unit)
+        {
+            Unit = unit;
+        }
+
         private void Start()
         {
-            // TODO: assign unit sprite
-            // spriteRenderer.sprite = unit.UnitSO.Sprite;
+            Assert.IsNotNull(Unit);
+
+            Unit.Vitality.OnDamageTaken += Vitality_DamageTaken;
+            Unit.Vitality.OnDied += Vitality_Died;
+
+            spriteRenderer.sprite = Unit.UnitSO.Sprite;
         }
 
-        private void OnEnable()
+        private void OnDestroy()
         {
-            vitality.OnDamageTaken += Vitality_DamageTaken;
-            vitality.OnDied += Vitality_Died;
-        }
+            Assert.IsNotNull(Unit);
 
-        private void OnDisable()
-        {
-            vitality.OnDamageTaken -= Vitality_DamageTaken;
-            vitality.OnDied -= Vitality_Died;
+            Unit.Vitality.OnDamageTaken -= Vitality_DamageTaken;
+            Unit.Vitality.OnDied -= Vitality_Died;
         }
 
         private void Vitality_DamageTaken() =>

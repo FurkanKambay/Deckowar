@@ -1103,7 +1103,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93b6ac5792124522a7fff907083b6b0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnTimeManager: {fileID: 1495283801}
   castle: {fileID: 1823492435}
   deckConfigSO: {fileID: 11400000, guid: f26a0cdab84024743b984e3f458880c6, type: 2}
 --- !u!1 &827657877
@@ -1370,17 +1369,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1082073867 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 80982769479561995, guid: e502da243a7a0494bb178dd966bfa492, type: 3}
-  m_PrefabInstance: {fileID: 4023578662309577}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1232775507
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1409,6 +1397,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8705571715566519020, guid: 8c28d9af2a3224f4f8e77f82ac4ebfaa, type: 3}
+      propertyPath: turnTimeManager
+      value: 
+      objectReference: {fileID: 1495283801}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1650,7 +1642,6 @@ MonoBehaviour:
   cardVisualPrefab: {fileID: 6493637955391652454, guid: ee54e9bf4d808f14094a369482f63f80, type: 3}
   deckHolder: {fileID: 752937554}
   cardParent: {fileID: 1400948889}
-  goldLabel: {fileID: 1082073867}
   drawPileLabel: {fileID: 827657879}
   discardPileLabel: {fileID: 618940691}
   cardVisuals: []
@@ -1804,7 +1795,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93b6ac5792124522a7fff907083b6b0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnTimeManager: {fileID: 1495283801}
   castle: {fileID: 1232775509}
   deckConfigSO: {fileID: 11400000, guid: f26a0cdab84024743b984e3f458880c6, type: 2}
 --- !u!4 &1557200135
@@ -2243,6 +2233,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9088366031480398585, guid: 53135653c613ccc4bbadc7488401a2ec, type: 3}
+      propertyPath: enemyUnitPrefab
+      value: 
+      objectReference: {fileID: 1862845653338737232, guid: 48de511acb3f8f644b3d7d0b01d443f8, type: 3}
+    - target: {fileID: 9088366031480398585, guid: 53135653c613ccc4bbadc7488401a2ec, type: 3}
+      propertyPath: playerUnitPrefab
+      value: 
+      objectReference: {fileID: 1862845653338737232, guid: 0e85ba3f0885de146a1c9e1676aaedf7, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2276,6 +2274,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Castle Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5494118178620310322, guid: 89b6c77210fce774ca19ddf2bab43577, type: 3}
+      propertyPath: turnTimeManager
+      value: 
+      objectReference: {fileID: 1495283801}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

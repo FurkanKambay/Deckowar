@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7761560519218001547}
+  - component: {fileID: 5322963584803246348}
   m_Layer: 7
   m_Name: Unit
   m_TagString: Untagged
@@ -32,6 +33,21 @@ Transform:
   - {fileID: 337507325477834118}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5322963584803246348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406589936298192355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fac587df6bc44d9b82ca8b7757a79afb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Deckowar::Deckowar.UnitAttackVisual
+  spriteRenderer: {fileID: 5305273800628855937}
+  animator: {fileID: 6928965159040168754}
+  hurtDuration: 0.2
 --- !u!1 &5258725174942468911
 GameObject:
   m_ObjectHideFlags: 0
@@ -41,7 +57,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 337507325477834118}
-  - component: {fileID: 488834693582236890}
   - component: {fileID: 5305273800628855937}
   - component: {fileID: 6928965159040168754}
   m_Layer: 0
@@ -66,21 +81,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7761560519218001547}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 30}
---- !u!114 &488834693582236890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5258725174942468911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fac587df6bc44d9b82ca8b7757a79afb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Deckowar::Deckowar.UnitAttackVisual
-  spriteRenderer: {fileID: 5305273800628855937}
-  animator: {fileID: 6928965159040168754}
-  hurtDuration: 0.2
 --- !u!212 &5305273800628855937
 SpriteRenderer:
   m_ObjectHideFlags: 0
