@@ -13,7 +13,7 @@ namespace Deckowar
 
         [Header("Config")]
         [SerializeField] private DeckConfigSO deckConfigSO;
-        [SerializeField, Min(0)] private float goldGainPerSecond;
+        [SerializeField, Min(0)] private float goldGainPerTurn;
         [SerializeField, Min(10)] private float maxGoldAmount = 200;
 
         public Deck Deck { get; private set; }
@@ -42,10 +42,8 @@ namespace Deckowar
             PrintDeck();
         }
 
-        private void Update()
-        {
-            Gold += goldGainPerSecond * Time.deltaTime;
-        }
+        private void OnEnable() => turnTimeManager.OnTurnChanged += TurnTimeManager_TurnChanged;
+        private void OnDisable() => turnTimeManager.OnTurnChanged -= TurnTimeManager_TurnChanged;
 
         [ContextMenu("Draw Hand")]
         public void DrawHand()
@@ -91,6 +89,12 @@ namespace Deckowar
 
         public bool CanUseCard(Card card) =>
             card.CardSO.Cost <= Gold;
+
+        private void TurnTimeManager_TurnChanged(TurnTimeManager sender)
+        {
+            if (sender.CurrentFaction == castle.Faction)
+                Gold += goldGainPerTurn;
+        }
 
         // ReSharper disable Unity.PerformanceAnalysis
         [HideInCallstack]

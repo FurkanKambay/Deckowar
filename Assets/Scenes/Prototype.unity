@@ -1106,7 +1106,7 @@ MonoBehaviour:
   turnTimeManager: {fileID: 1495283801}
   castle: {fileID: 1823492435}
   deckConfigSO: {fileID: 11400000, guid: f26a0cdab84024743b984e3f458880c6, type: 2}
-  goldGainPerSecond: 10
+  goldGainPerTurn: 10
   maxGoldAmount: 200
 --- !u!1 &827657877
 GameObject:
@@ -1808,7 +1808,7 @@ MonoBehaviour:
   turnTimeManager: {fileID: 1495283801}
   castle: {fileID: 1232775509}
   deckConfigSO: {fileID: 11400000, guid: f26a0cdab84024743b984e3f458880c6, type: 2}
-  goldGainPerSecond: 5
+  goldGainPerTurn: 5
   maxGoldAmount: 200
 --- !u!4 &1557200135
 Transform:
