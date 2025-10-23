@@ -34,21 +34,18 @@ namespace Deckowar
         private void OnEnable() => turnTimeManager.OnTurnChanged += TurnTimeManager_TurnChanged;
         private void OnDisable() => turnTimeManager.OnTurnChanged -= TurnTimeManager_TurnChanged;
 
-        [ContextMenu("Draw Hand")]
         public void DrawHand()
         {
             Deck.DrawHand();
             PrintDeck();
         }
 
-        [ContextMenu("Discard Hand")]
         public void DiscardHand()
         {
             Deck.DiscardHand();
             // PrintDeck();
         }
 
-        [ContextMenu("Discard Hand")]
         public void ResetToStarterDeck()
         {
             Deck.ResetToStarterDeck();
