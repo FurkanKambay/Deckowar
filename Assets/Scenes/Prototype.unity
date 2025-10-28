@@ -2221,6 +2221,10 @@ PrefabInstance:
       propertyPath: castlePlayer
       value: 
       objectReference: {fileID: 1823492435}
+    - target: {fileID: 6107009490630003036, guid: 53135653c613ccc4bbadc7488401a2ec, type: 3}
+      propertyPath: turnTimeManager
+      value: 
+      objectReference: {fileID: 1495283801}
     - target: {fileID: 8747266771020073921, guid: 53135653c613ccc4bbadc7488401a2ec, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0

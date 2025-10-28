@@ -1,3 +1,4 @@
+using Deckowar.Common;
 using Deckowar.Core;
 using UnityEngine;
 
@@ -50,7 +51,21 @@ namespace Deckowar
         public bool RemoveUnit(Heading heading, int cell) =>
             SetUnit(heading, cell, null);
 
-        public bool MoveUnit(Heading heading, int cell)
+        public void AdvanceAllUnits()
+        {
+            AdvanceUnits(Heading.East);
+            AdvanceUnits(Heading.West);
+        }
+
+        private void AdvanceUnits(Heading heading)
+        {
+            EditorDebug.Log($"Advancing {heading} units", this);
+
+            for (int cell = lastNavigableCell; cell >= 0; cell--)
+                AdvanceUnit(heading, cell);
+        }
+
+        public bool AdvanceUnit(Heading heading, int cell)
         {
             if (cell + 1 > lastNavigableCell)
                 return false;

@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7187c661f9424170a88cd52664fc187e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Deckowar::Deckowar.BattleManager
+  turnTimeManager: {fileID: 0}
   battlefield: {fileID: 1563695853443456993}
   castlePlayer: {fileID: 0}
   castleEnemy: {fileID: 0}
