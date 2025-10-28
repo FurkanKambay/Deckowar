@@ -24,7 +24,7 @@ namespace Deckowar
         private void Awake()
         {
             Assert.IsNotNull(spriteRenderer);
-            Assert.IsNull(animator);
+            Assert.IsNotNull(animator);
 
             propertyBlock = new MaterialPropertyBlock();
             propertyBlock.SetInt(ShaderHurt, 0);
