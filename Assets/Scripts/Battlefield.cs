@@ -21,7 +21,7 @@ namespace Deckowar
             // [0  ]     [0 1  ]   [0 1 2  ] [0 1 2 3  ]
             // [  0]     [  1 0]   [  2 1 0] [  3 2 1 0]
 
-            lastNavigableCell = units.Length - 1;
+            lastNavigableCell = cellCount - 2;
         }
 
         public Unit GetUnit(Heading heading, int cell)
