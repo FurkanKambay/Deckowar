@@ -72,6 +72,6 @@ namespace Deckowar
             card.CardSO.Cost <= castle.Gold;
 
         [HideInCallstack]
-        private void PrintDeck() => EditorDebug.Log($"[Deck] {castle.Faction}: {Deck:E}");
+        private void PrintDeck() => Log.Info($"[Deck] {castle.Faction}: {Deck:E}");
     }
 }

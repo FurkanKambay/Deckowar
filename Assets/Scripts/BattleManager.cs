@@ -64,7 +64,7 @@ namespace Deckowar
 
         private void Castle_UnitEnqueued(Castle castle, UnitSO unitSO)
         {
-            EditorDebug.Log($"{castle.Faction} Castle queued up {unitSO.name}", this);
+            Log.Info($"{castle.Faction} Castle queued up {unitSO.name}", this);
         }
 
         private void Castle_UnitDequeued(Castle castle, UnitSO unitSO)
@@ -72,7 +72,7 @@ namespace Deckowar
             Heading heading = castle.Faction.GetHeading();
 
             TrySpawn(heading, unitSO);
-            EditorDebug.Log($"{heading} Castle spawned {unitSO.name}", this);
+            Log.Info($"{heading} Castle spawned {unitSO.name}", this);
         }
     }
 }

@@ -16,9 +16,11 @@ namespace Furkan.Common
             Debug.Log($"{frameCount} {deltaTimeMS} {message}");
         }
 
+        // ReSharper disable Unity.PerformanceAnalysis
         [HideInCallstack, Conditional("ENABLE_LOGS")]
         public static void Info(string m) => Debug.Log(m);
 
+        // ReSharper disable Unity.PerformanceAnalysis
         [HideInCallstack, Conditional("ENABLE_LOGS")]
         public static void Info(string m, Object c) => Debug.Log(m, c);
 

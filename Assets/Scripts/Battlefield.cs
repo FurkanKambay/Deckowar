@@ -59,7 +59,7 @@ namespace Deckowar
 
         private void AdvanceUnits(Heading heading)
         {
-            EditorDebug.Log($"Advancing {heading}ward units", this);
+            Log.Info($"Advancing {heading}ward units", this);
 
             for (int cell = lastNavigableCell; cell >= 0; cell--)
                 AdvanceUnit(heading, cell);
