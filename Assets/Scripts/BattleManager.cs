@@ -1,7 +1,7 @@
 using System;
-using Deckowar.Common;
 using Deckowar.Core;
 using Deckowar.Data;
+using Furkan.Common;
 using UnityEngine;
 
 namespace Deckowar
@@ -64,9 +64,7 @@ namespace Deckowar
 
         private void Castle_UnitEnqueued(Castle castle, UnitSO unitSO)
         {
-            Heading heading = castle.Faction.GetHeading();
-
-            EditorDebug.Log($"{heading} Castle queued up {unitSO.name}", this);
+            EditorDebug.Log($"{castle.Faction} Castle queued up {unitSO.name}", this);
         }
 
         private void Castle_UnitDequeued(Castle castle, UnitSO unitSO)

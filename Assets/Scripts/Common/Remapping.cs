@@ -1,7 +1,7 @@
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace Deckowar.Common
+namespace Furkan.Common
 {
     [PublicAPI]
     public readonly struct Remapping

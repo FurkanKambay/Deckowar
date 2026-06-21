@@ -1,6 +1,6 @@
 {
-    "name": "Deckowar.Common",
-    "rootNamespace": "Deckowar",
+    "name": "Furkan.Common",
+    "rootNamespace": "Furkan",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
