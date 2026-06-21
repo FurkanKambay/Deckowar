@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace Deckowar.Core
 {
     public enum Heading
@@ -22,5 +24,15 @@ namespace Deckowar.Core
             Heading.East => Faction.Player,
             _ => Faction.None
         };
+
+        public static Vector3 GetVector(this Heading heading)
+        {
+            return heading switch
+            {
+                Heading.West => Vector3.left,
+                Heading.East => Vector3.right,
+                _ => Vector3.zero
+            };
+        }
     }
 }
