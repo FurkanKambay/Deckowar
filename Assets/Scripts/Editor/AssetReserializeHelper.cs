@@ -1,4 +1,3 @@
-#if UNITY_EDITOR
 using UnityEditor;
 using UnityEngine;
 
@@ -6,9 +5,11 @@ namespace FK.Deckowar.Editor
 {
     public sealed class AssetReserializeHelper : MonoBehaviour
     {
-        [MenuItem("Tools/Force Reserialize Assets")]
-        private static void ForceReserializeAssets() =>
-            AssetDatabase.ForceReserializeAssets();
+        [MenuItem("Tools/Force Reserialize Assets", priority = 10)]
+        private static void ForceReserializeAssets()
+        {
+            if (!EditorApplication.isPlaying)
+                AssetDatabase.ForceReserializeAssets();
+        }
     }
 }
-#endif
