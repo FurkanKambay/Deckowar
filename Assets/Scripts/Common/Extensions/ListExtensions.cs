@@ -7,7 +7,8 @@ namespace Furkan.Common.Extensions
     [PublicAPI]
     public static class ListExtensions
     {
-        private static RNGCryptoServiceProvider rng = new();
+        private static RNGCryptoServiceProvider provider = new();
+        private static byte[] box = new byte[1];
 
         public static void Shuffle<T>(this IList<T> list)
         {
@@ -15,10 +16,8 @@ namespace Furkan.Common.Extensions
 
             while (n > 1)
             {
-                byte[] box = new byte[1];
-
                 do
-                    rng.GetBytes(box);
+                    provider.GetBytes(box);
                 while (!(box[0] < n * (byte.MaxValue / n)));
 
                 int k = box[0] % n;
