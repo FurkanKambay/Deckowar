@@ -15,10 +15,10 @@ namespace FK.Deckowar.AI
         private CardSO nextCardSO;
 
         private int StepCount => strategySO.CardBundles.Count;
-        private int CurrentSubstepCount => CurrentBundle?.Amount ?? 0;
+        private int CurrentSubstepCount => CurrentBundle.Amount;
 
         private CardBundle CurrentBundle =>
-            strategyStep < StepCount ? strategySO.CardBundles[strategyStep] : null;
+            strategyStep < StepCount ? strategySO.CardBundles[strategyStep] : default;
 
         private void Start()
         {
@@ -28,7 +28,7 @@ namespace FK.Deckowar.AI
 
         private void Update()
         {
-            if (CurrentBundle is null)
+            if (!CurrentBundle.IsValid)
                 return;
 
             nextCardSO = CurrentBundle.CardSO;
