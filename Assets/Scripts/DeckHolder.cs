@@ -53,11 +53,11 @@ namespace FK.Deckowar
             if (!CanUseCard(card))
                 return false;
 
-            castle.LoseGold(card.CardSO.Cost);
+            castle.LoseGold(card.CardAsset.Cost);
 
             // TODO: other unit types
-            if (card.CardSO.CardType == CardType.Unit)
-                castle.EnqueueSpawnUnit(card.CardSO.UnitSO);
+            if (card.CardAsset.CardType == CardType.Unit)
+                castle.EnqueueSpawnUnit(card.CardAsset.UnitAsset);
 
             // TODO: other card effects
 
@@ -70,7 +70,7 @@ namespace FK.Deckowar
         }
 
         public bool CanUseCard(Card card) =>
-            card.CardSO.Cost <= castle.Gold;
+            card.CardAsset.Cost <= castle.Gold;
 
         [HideInCallstack]
         private void PrintDeck() => Log.Info($"[Deck] {castle.Faction}: {Deck:E}");

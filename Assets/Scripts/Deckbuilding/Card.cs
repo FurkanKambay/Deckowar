@@ -6,18 +6,18 @@ namespace FK.Deckowar.Deckbuilding
     [Serializable]
     public class Card
     {
-        [SerializeField] private CardSO cardSO;
+        [SerializeField] private CardAsset cardAsset;
 
-        public CardSO CardSO => cardSO;
+        public CardAsset CardAsset => cardAsset;
         public bool IsValid => CardPile is not null;
 
         public Deck Deck { get; protected set; }
         public CardPile CardPile { get; protected set; }
         public int PileIndex { get; protected set; } = -1;
 
-        internal Card(CardSO cardSO, Deck ownerDeck)
+        internal Card(CardAsset cardAsset, Deck ownerDeck)
         {
-            this.cardSO = cardSO;
+            this.cardAsset = cardAsset;
             Deck = ownerDeck;
         }
 
@@ -28,6 +28,6 @@ namespace FK.Deckowar.Deckbuilding
         }
 
         public override string ToString() =>
-            $"[{PileIndex}] {cardSO.DisplayName}";
+            $"[{PileIndex}] {cardAsset.DisplayName}";
     }
 }

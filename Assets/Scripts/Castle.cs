@@ -9,8 +9,8 @@ namespace FK.Deckowar
 {
     public class Castle : MonoBehaviour
     {
-        public event Action<Castle, UnitSO> OnUnitEnqueued;
-        public event Action<Castle, UnitSO> OnUnitDequeued;
+        public event Action<Castle, UnitAsset> OnUnitEnqueued;
+        public event Action<Castle, UnitAsset> OnUnitDequeued;
 
         [Header("References")]
         [SerializeField] private TurnTimeManager turnTimeManager;
@@ -26,7 +26,7 @@ namespace FK.Deckowar
         public float Gold { get; private set; }
         public Vitality Vitality { get; private set; }
 
-        private readonly Queue<UnitSO> spawnQueue = new();
+        private readonly Queue<UnitAsset> spawnQueue = new();
 
         private void Awake()
         {
@@ -43,7 +43,7 @@ namespace FK.Deckowar
         public void LoseGold(int amount) =>
             Gold = Mathf.Clamp(Gold - amount, 0, max: 500);
 
-        public void EnqueueSpawnUnit(UnitSO unit)
+        public void EnqueueSpawnUnit(UnitAsset unit)
         {
             if (!unit)
                 return;
@@ -52,12 +52,12 @@ namespace FK.Deckowar
             OnUnitEnqueued?.Invoke(this, unit);
         }
 
-        public bool TryDequeueSpawnUnit(out UnitSO unitSO)
+        public bool TryDequeueSpawnUnit(out UnitAsset unitAsset)
         {
-            if (!spawnQueue.TryDequeue(out unitSO))
+            if (!spawnQueue.TryDequeue(out unitAsset))
                 return false;
 
-            OnUnitDequeued?.Invoke(this, unitSO);
+            OnUnitDequeued?.Invoke(this, unitAsset);
             return true;
         }
 

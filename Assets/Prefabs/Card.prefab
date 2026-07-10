@@ -139,7 +139,7 @@ MonoBehaviour:
   costColorInsufficient: {r: 0.53900003, g: 0.07398039, b: 0.07398039, a: 1}
   deckHolder: {fileID: 0}
   card:
-    cardSO: {fileID: 0}
+    cardAsset: {fileID: 0}
 --- !u!1 &2023971967073740016
 GameObject:
   m_ObjectHideFlags: 0

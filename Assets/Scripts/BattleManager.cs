@@ -40,15 +40,15 @@ namespace FK.Deckowar
         }
 #endregion
 
-        public void SpawnEastward(UnitSO unitSO) => TrySpawn(Heading.East, unitSO);
-        public void SpawnWestward(UnitSO unitSO) => TrySpawn(Heading.West, unitSO);
+        public void SpawnEastward(UnitAsset unitAsset) => TrySpawn(Heading.East, unitAsset);
+        public void SpawnWestward(UnitAsset unitAsset) => TrySpawn(Heading.West, unitAsset);
 
-        private bool TrySpawn(Heading heading, UnitSO unitSO)
+        private bool TrySpawn(Heading heading, UnitAsset unitAsset)
         {
             if (!battlefield.CanPushUnit(heading))
                 return false;
 
-            var spawnedUnit = new Unit(unitSO);
+            var spawnedUnit = new Unit(unitAsset);
             bool success = battlefield.PushUnit(heading, spawnedUnit);
 
             if (success)
@@ -62,17 +62,17 @@ namespace FK.Deckowar
             battlefield.AdvanceAllUnits();
         }
 
-        private void Castle_UnitEnqueued(Castle castle, UnitSO unitSO)
+        private void Castle_UnitEnqueued(Castle castle, UnitAsset unitAsset)
         {
-            Log.Info($"{castle.Faction} Castle queued up {unitSO.name}", this);
+            Log.Info($"{castle.Faction} Castle queued up {unitAsset.name}", this);
         }
 
-        private void Castle_UnitDequeued(Castle castle, UnitSO unitSO)
+        private void Castle_UnitDequeued(Castle castle, UnitAsset unitAsset)
         {
             Heading heading = castle.Faction.GetHeading();
 
-            TrySpawn(heading, unitSO);
-            Log.Info($"{heading} Castle spawned {unitSO.name}", this);
+            TrySpawn(heading, unitAsset);
+            Log.Info($"{heading} Castle spawned {unitAsset.name}", this);
         }
     }
 }

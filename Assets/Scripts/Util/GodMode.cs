@@ -11,15 +11,15 @@ namespace FK.Deckowar.Util
         [SerializeField] private Castle enemyCastle;
 
         [Header("Spawned Units")]
-        [SerializeField] private UnitSO unitSO;
+        [SerializeField] private UnitAsset unitAsset;
 
         private void Update()
         {
             if (Keyboard.current.jKey.wasPressedThisFrame)
-                playerCastle.EnqueueSpawnUnit(unitSO);
+                playerCastle.EnqueueSpawnUnit(unitAsset);
 
             if (Keyboard.current.kKey.wasPressedThisFrame)
-                enemyCastle.EnqueueSpawnUnit(unitSO);
+                enemyCastle.EnqueueSpawnUnit(unitAsset);
 
             if (Keyboard.current.dKey.wasPressedThisFrame)
             {

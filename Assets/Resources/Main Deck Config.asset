@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handSize: 5
   starterDeck:
-  - cardSO: {fileID: 11400000, guid: a1c318f3ad5e26d45ab0b1346fd5d96d, type: 2}
+  - cardAsset: {fileID: 11400000, guid: a1c318f3ad5e26d45ab0b1346fd5d96d, type: 2}
     amount: 6
-  - cardSO: {fileID: 11400000, guid: 2b7bb2715ee3df94d8040d4aef8e18cd, type: 2}
+  - cardAsset: {fileID: 11400000, guid: 2b7bb2715ee3df94d8040d4aef8e18cd, type: 2}
     amount: 4
-  - cardSO: {fileID: 11400000, guid: d91c98983bd806d48a879399db40d024, type: 2}
+  - cardAsset: {fileID: 11400000, guid: d91c98983bd806d48a879399db40d024, type: 2}
     amount: 3
-  - cardSO: {fileID: 11400000, guid: e75ed22616d2b4a4cab30edf8d6d2523, type: 2}
+  - cardAsset: {fileID: 11400000, guid: e75ed22616d2b4a4cab30edf8d6d2523, type: 2}
     amount: 4
-  - cardSO: {fileID: 11400000, guid: 4742f96caba187e439b612ab7980d27b, type: 2}
+  - cardAsset: {fileID: 11400000, guid: 4742f96caba187e439b612ab7980d27b, type: 2}
     amount: 3
-  - cardSO: {fileID: 11400000, guid: e734e96a8c9a836468e0a49aaa782d58, type: 2}
+  - cardAsset: {fileID: 11400000, guid: e734e96a8c9a836468e0a49aaa782d58, type: 2}
     amount: 2

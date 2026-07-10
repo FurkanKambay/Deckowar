@@ -130,7 +130,7 @@ namespace FK.Deckowar.Deckbuilding
             foreach (CardBundle cardBundle in config.StarterDeck)
             {
                 for (int i = 0; i < cardBundle.Amount; i++)
-                    DrawPile.Take(cardBundle.CardSO.CreateInstance(this));
+                    DrawPile.Take(cardBundle.CardAsset.CreateInstance(this));
             }
 
             // DrawPile.TrimExcess();

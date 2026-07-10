@@ -11,21 +11,21 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa4fd1f9c23240d3945740bb7cf94257, type: 3}
   m_Name: Bot Strategy
-  m_EditorClassIdentifier: Deckowar::Deckowar.Data.BotStrategySO
+  m_EditorClassIdentifier: Deckowar::Deckowar.Data.BotStrategyAsset
   cardBundles:
-  - cardSO: {fileID: 11400000, guid: a1c318f3ad5e26d45ab0b1346fd5d96d, type: 2}
+  - cardAsset: {fileID: 11400000, guid: a1c318f3ad5e26d45ab0b1346fd5d96d, type: 2}
     amount: 3
-  - cardSO: {fileID: 11400000, guid: 2b7bb2715ee3df94d8040d4aef8e18cd, type: 2}
+  - cardAsset: {fileID: 11400000, guid: 2b7bb2715ee3df94d8040d4aef8e18cd, type: 2}
     amount: 1
-  - cardSO: {fileID: 11400000, guid: a1c318f3ad5e26d45ab0b1346fd5d96d, type: 2}
+  - cardAsset: {fileID: 11400000, guid: a1c318f3ad5e26d45ab0b1346fd5d96d, type: 2}
     amount: 1
-  - cardSO: {fileID: 11400000, guid: 2b7bb2715ee3df94d8040d4aef8e18cd, type: 2}
+  - cardAsset: {fileID: 11400000, guid: 2b7bb2715ee3df94d8040d4aef8e18cd, type: 2}
     amount: 1
-  - cardSO: {fileID: 11400000, guid: d91c98983bd806d48a879399db40d024, type: 2}
+  - cardAsset: {fileID: 11400000, guid: d91c98983bd806d48a879399db40d024, type: 2}
     amount: 1
-  - cardSO: {fileID: 11400000, guid: 2b7bb2715ee3df94d8040d4aef8e18cd, type: 2}
+  - cardAsset: {fileID: 11400000, guid: 2b7bb2715ee3df94d8040d4aef8e18cd, type: 2}
     amount: 2
-  - cardSO: {fileID: 11400000, guid: d91c98983bd806d48a879399db40d024, type: 2}
+  - cardAsset: {fileID: 11400000, guid: d91c98983bd806d48a879399db40d024, type: 2}
     amount: 1
-  - cardSO: {fileID: 11400000, guid: a1c318f3ad5e26d45ab0b1346fd5d96d, type: 2}
+  - cardAsset: {fileID: 11400000, guid: a1c318f3ad5e26d45ab0b1346fd5d96d, type: 2}
     amount: 2

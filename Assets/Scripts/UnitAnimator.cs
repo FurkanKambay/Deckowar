@@ -43,7 +43,7 @@ namespace FK.Deckowar
             Unit.Vitality.OnDamageTaken += Vitality_DamageTaken;
             Unit.Vitality.OnDied += Vitality_Died;
 
-            spriteRenderer.sprite = Unit.UnitSO.Sprite;
+            spriteRenderer.sprite = Unit.UnitAsset.Sprite;
         }
 
         private void OnDestroy()

@@ -3,7 +3,7 @@ using UnityEngine;
 namespace FK.Deckowar.Data
 {
     [CreateAssetMenu]
-    public class UnitSO : ScriptableObject
+    public class UnitAsset : ScriptableObject
     {
         [Header("Spawn")]
         [SerializeField, Min(0)] private int spawnDelay;

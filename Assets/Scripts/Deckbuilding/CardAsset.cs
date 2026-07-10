@@ -11,7 +11,7 @@ namespace FK.Deckowar.Deckbuilding
     }
 
     [CreateAssetMenu(menuName = "Card")]
-    public class CardSO : ScriptableObject
+    public class CardAsset : ScriptableObject
     {
         [SerializeField] private int id;
         [SerializeField] private CardType cardType;
@@ -21,7 +21,7 @@ namespace FK.Deckowar.Deckbuilding
         [SerializeField] private int cost;
 
         // only show when CardType.Unit
-        [SerializeField] private UnitSO unitSO;
+        [SerializeField] private UnitAsset unitAsset;
 
         public int Id => id;
         public CardType CardType => cardType;
@@ -30,7 +30,7 @@ namespace FK.Deckowar.Deckbuilding
         public string Description => description;
         public int Cost => cost;
 
-        public UnitSO UnitSO => unitSO;
+        public UnitAsset UnitAsset => unitAsset;
 
         public Card CreateInstance(Deck ownerDeck) =>
             new(this, ownerDeck);

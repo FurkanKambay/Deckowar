@@ -44,7 +44,7 @@ namespace FK.Deckowar.UI
             if (card is null || !card.IsValid)
                 return;
 
-            background.sprite = card.CardSO.CardType switch
+            background.sprite = card.CardAsset.CardType switch
             {
                 CardType.Invalid => unitBackground,
                 CardType.Unit => unitBackground,
@@ -52,9 +52,9 @@ namespace FK.Deckowar.UI
                 _ => unitBackground
             };
 
-            icon.sprite = card.CardSO.Icon;
-            title.text = card.CardSO.DisplayName;
-            description.text = card.CardSO.Description;
+            icon.sprite = card.CardAsset.Icon;
+            title.text = card.CardAsset.DisplayName;
+            description.text = card.CardAsset.Description;
         }
 
         private void UpdateCostLabel()
@@ -62,7 +62,7 @@ namespace FK.Deckowar.UI
             if (card is null || !card.IsValid)
                 return;
 
-            int cost = card.CardSO.Cost;
+            int cost = card.CardAsset.Cost;
             Color color = cost <= deckHolder.Castle.Gold ? costColor : costColorInsufficient;
             string hex = ColorUtility.ToHtmlStringRGB(color);
 

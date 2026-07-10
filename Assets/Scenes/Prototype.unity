@@ -1014,7 +1014,7 @@ MonoBehaviour:
   deckHolder: {fileID: 752937554}
   playerCastle: {fileID: 1823492435}
   enemyCastle: {fileID: 1232775509}
-  unitSO: {fileID: 11400000, guid: e574959cec86d5540891095c4310249f, type: 2}
+  unitAsset: {fileID: 11400000, guid: e574959cec86d5540891095c4310249f, type: 2}
 --- !u!1001 &744645122
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 namespace FK.Deckowar.Data
 {
     [CreateAssetMenu]
-    public class BotStrategySO : ScriptableObject
+    public class BotStrategyAsset : ScriptableObject
     {
         [SerializeField] private CardBundle[] cardBundles;
 

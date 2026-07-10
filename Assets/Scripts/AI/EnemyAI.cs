@@ -8,11 +8,11 @@ namespace FK.Deckowar.AI
     {
         [Header("References")]
         [SerializeField] private DeckHolder deckHolder;
-        [SerializeField] private BotStrategySO strategySO;
+        [SerializeField] private BotStrategyAsset strategySO;
 
         private int strategyStep;
         private int strategySubstep;
-        private CardSO nextCardSO;
+        private CardAsset nextCardAsset;
 
         private int StepCount => strategySO.CardBundles.Count;
         private int CurrentSubstepCount => CurrentBundle.Amount;
@@ -31,14 +31,14 @@ namespace FK.Deckowar.AI
             if (!CurrentBundle.IsValid)
                 return;
 
-            nextCardSO = CurrentBundle.CardSO;
+            nextCardAsset = CurrentBundle.CardAsset;
 
-            if (deckHolder.Castle.Gold < nextCardSO.Cost)
+            if (deckHolder.Castle.Gold < nextCardAsset.Cost)
                 return;
 
             foreach (Card card in deckHolder.Deck.HandPile.ListRO)
             {
-                if (card.CardSO != nextCardSO || !deckHolder.TryUseCard(card))
+                if (card.CardAsset != nextCardAsset || !deckHolder.TryUseCard(card))
                     continue;
 
                 NextSubstep();
