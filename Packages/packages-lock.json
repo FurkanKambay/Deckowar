@@ -191,6 +191,13 @@
         "com.unity.modules.physics": "1.0.0"
       }
     },
+    "org.nuget.microsoft.unity.analyzers": {
+      "version": "1.26.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://unitynuget-registry.openupm.com"
+    },
     "com.unity.modules.adaptiveperformance": {
       "version": "1.0.0",
       "depth": 0,
