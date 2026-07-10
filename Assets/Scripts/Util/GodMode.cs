@@ -10,7 +10,7 @@ namespace FK.Deckowar.Util
         [SerializeField] private Castle playerCastle;
         [SerializeField] private Castle enemyCastle;
 
-        [Header("Spawned Units")]
+        [Header("Spawned Units (J, K)")]
         [SerializeField] private UnitAsset unitAsset;
 
         private void Update()
