@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace Deckowar.Deckbuilding
+namespace FK.Deckowar.Deckbuilding
 {
     [Serializable]
     public class Deck : IFormattable

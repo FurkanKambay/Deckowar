@@ -1,8 +1,8 @@
-using Deckowar.Core;
-using Furkan.Common;
+using FK.Common;
+using FK.Deckowar.Core;
 using UnityEngine;
 
-namespace Deckowar
+namespace FK.Deckowar
 {
     public sealed class Battlefield : MonoBehaviour
     {

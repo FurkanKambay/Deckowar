@@ -1,9 +1,9 @@
 using System.Collections;
-using Deckowar.Core;
+using FK.Deckowar.Core;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace Deckowar
+namespace FK.Deckowar
 {
     public class UnitAnimator : MonoBehaviour
     {

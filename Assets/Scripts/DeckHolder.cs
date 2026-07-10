@@ -1,9 +1,9 @@
-using Deckowar.Deckbuilding;
-using Furkan.Common;
+using FK.Common;
+using FK.Deckowar.Deckbuilding;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace Deckowar
+namespace FK.Deckowar
 {
     public sealed class DeckHolder : MonoBehaviour
     {

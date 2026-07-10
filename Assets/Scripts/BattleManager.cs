@@ -1,10 +1,10 @@
 using System;
-using Deckowar.Core;
-using Deckowar.Data;
-using Furkan.Common;
+using FK.Common;
+using FK.Deckowar.Core;
+using FK.Deckowar.Data;
 using UnityEngine;
 
-namespace Deckowar
+namespace FK.Deckowar
 {
     public sealed class BattleManager : MonoBehaviour
     {

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Deckowar.Deckbuilding
+namespace FK.Deckowar.Deckbuilding
 {
     [Serializable]
     public record CardBundle

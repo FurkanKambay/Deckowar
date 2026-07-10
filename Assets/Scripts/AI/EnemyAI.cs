@@ -1,8 +1,8 @@
-using Deckowar.Data;
-using Deckowar.Deckbuilding;
+using FK.Deckowar.Data;
+using FK.Deckowar.Deckbuilding;
 using UnityEngine;
 
-namespace Deckowar.AI
+namespace FK.Deckowar.AI
 {
     public class EnemyAI : MonoBehaviour
     {

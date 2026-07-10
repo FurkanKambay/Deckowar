@@ -2,7 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Deckowar.Editor
+namespace FK.Deckowar.Editor
 {
     public sealed class AssetReserializeHelper : MonoBehaviour
     {

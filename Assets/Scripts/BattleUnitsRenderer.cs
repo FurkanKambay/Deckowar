@@ -1,8 +1,8 @@
-using Deckowar.Core;
+using FK.Deckowar.Core;
 using UnityEditor;
 using UnityEngine;
 
-namespace Deckowar
+namespace FK.Deckowar
 {
     public sealed class BattleUnitsRenderer : MonoBehaviour
     {

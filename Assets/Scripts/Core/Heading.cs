@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Deckowar.Core
+namespace FK.Deckowar.Core
 {
     public enum Heading
     {

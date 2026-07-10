@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Deckowar.Core
+namespace FK.Deckowar.Core
 {
     public class Vitality
     {

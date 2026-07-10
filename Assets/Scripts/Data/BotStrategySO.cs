@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using Deckowar.Deckbuilding;
+using FK.Deckowar.Deckbuilding;
 using UnityEngine;
 
-namespace Deckowar.Data
+namespace FK.Deckowar.Data
 {
     [CreateAssetMenu]
     public class BotStrategySO : ScriptableObject

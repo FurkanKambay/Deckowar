@@ -1,4 +1,4 @@
-namespace Deckowar.Core
+namespace FK.Deckowar.Core
 {
     public enum Faction
     {

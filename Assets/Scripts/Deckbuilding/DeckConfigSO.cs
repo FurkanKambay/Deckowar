@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Deckowar.Deckbuilding
+namespace FK.Deckowar.Deckbuilding
 {
     [CreateAssetMenu(menuName = "Deck Config")]
     public sealed class DeckConfigSO : ScriptableObject

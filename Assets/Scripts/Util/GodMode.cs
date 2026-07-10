@@ -1,8 +1,8 @@
-using Deckowar.Data;
+using FK.Deckowar.Data;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Deckowar.Util
+namespace FK.Deckowar.Util
 {
     public class GodMode : MonoBehaviour
     {

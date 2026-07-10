@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Deckowar.Data
+namespace FK.Deckowar.Data
 {
     [CreateAssetMenu]
     public class UnitSO : ScriptableObject

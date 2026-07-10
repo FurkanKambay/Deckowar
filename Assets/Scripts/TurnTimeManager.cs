@@ -1,10 +1,10 @@
 using System;
-using Deckowar.Core;
+using FK.Deckowar.Core;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.InputSystem;
 
-namespace Deckowar
+namespace FK.Deckowar
 {
     public class TurnTimeManager : MonoBehaviour
     {

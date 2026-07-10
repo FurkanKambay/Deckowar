@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
-using Deckowar.Core;
-using Deckowar.Data;
+using FK.Deckowar.Core;
+using FK.Deckowar.Data;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace Deckowar
+namespace FK.Deckowar
 {
     public class Castle : MonoBehaviour
     {

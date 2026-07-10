@@ -1,6 +1,6 @@
 using JetBrains.Annotations;
 
-namespace Furkan.Common.Extensions
+namespace FK.Common.Extensions
 {
     [PublicAPI]
     public static class RemappingExtensions

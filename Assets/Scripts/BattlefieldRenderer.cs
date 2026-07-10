@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Deckowar
+namespace FK.Deckowar
 {
     public sealed class BattlefieldRenderer : MonoBehaviour
     {

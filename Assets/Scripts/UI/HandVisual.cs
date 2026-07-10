@@ -1,8 +1,8 @@
-using Deckowar.Deckbuilding;
+using FK.Deckowar.Deckbuilding;
 using TMPro;
 using UnityEngine;
 
-namespace Deckowar.UI
+namespace FK.Deckowar.UI
 {
     public class HandVisual : MonoBehaviour
     {

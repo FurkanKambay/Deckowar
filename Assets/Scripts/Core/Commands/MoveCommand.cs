@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Deckowar.Core.Commands
+namespace FK.Deckowar.Core.Commands
 {
     [Serializable]
     public class UnitMoveCommand : ICommand

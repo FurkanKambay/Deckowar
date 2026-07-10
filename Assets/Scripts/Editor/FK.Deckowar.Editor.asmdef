@@ -1,6 +1,6 @@
 {
-    "name": "Deckowar.Editor",
-    "rootNamespace": "Deckowar",
+    "name": "FK.Deckowar.Editor",
+    "rootNamespace": "FK.Deckowar",
     "references": [
         "GUID:6efb3ea524f53ae4297493d54e49d0f4"
     ],

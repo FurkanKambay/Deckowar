@@ -1,7 +1,7 @@
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace Furkan.Common
+namespace FK.Common
 {
     [PublicAPI]
     public readonly struct Remapping

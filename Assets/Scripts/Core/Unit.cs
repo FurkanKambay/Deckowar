@@ -1,7 +1,7 @@
 using System;
-using Deckowar.Data;
+using FK.Deckowar.Data;
 
-namespace Deckowar.Core
+namespace FK.Deckowar.Core
 {
     public sealed class Unit
     {

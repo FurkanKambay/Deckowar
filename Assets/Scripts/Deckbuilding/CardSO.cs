@@ -1,7 +1,7 @@
-using Deckowar.Data;
+using FK.Deckowar.Data;
 using UnityEngine;
 
-namespace Deckowar.Deckbuilding
+namespace FK.Deckowar.Deckbuilding
 {
     public enum CardType
     {
