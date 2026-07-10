@@ -2,6 +2,7 @@ using FK.Common;
 using FK.Deckowar.Deckbuilding;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.Serialization;
 
 namespace FK.Deckowar
 {
@@ -11,7 +12,7 @@ namespace FK.Deckowar
         [SerializeField] private Castle castle;
 
         [Header("Config")]
-        [SerializeField] private DeckConfigSO deckConfigSO;
+        [SerializeField] private DeckConfigAsset deckConfigAsset;
 
         public Castle Castle => castle;
         public Deck Deck { get; private set; }
@@ -19,9 +20,9 @@ namespace FK.Deckowar
         private void Awake()
         {
             Assert.IsNotNull(castle);
-            Assert.IsNotNull(deckConfigSO);
+            Assert.IsNotNull(deckConfigAsset);
 
-            Deck = new Deck(deckConfigSO);
+            Deck = new Deck(deckConfigAsset);
 
             Deck.ResetToStarterDeck();
             Deck.DrawHand();

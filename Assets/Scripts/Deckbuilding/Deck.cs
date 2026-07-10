@@ -27,9 +27,9 @@ namespace FK.Deckowar.Deckbuilding
         public int HandCardCount => HandPile.Count;
         public int DiscardPileCount => DiscardPile.Count;
 
-        private DeckConfigSO config;
+        private DeckConfigAsset config;
 
-        public Deck(DeckConfigSO config)
+        public Deck(DeckConfigAsset config)
         {
             if (!config)
                 throw new ArgumentNullException(nameof(config));
