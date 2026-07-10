@@ -198,6 +198,13 @@
         "com.unity.modules.physics": "1.0.0"
       }
     },
+    "com.vertx.attributes": {
+      "version": "1.6.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://package.openupm.com"
+    },
     "org.nuget.microsoft.unity.analyzers": {
       "version": "1.26.0",
       "depth": 0,
