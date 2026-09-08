@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Vertx.Attributes;
 
-namespace FK.Deckowar.Util
+namespace FK.Deckowar.Debug
 {
     public class GodMode : MonoBehaviour
     {

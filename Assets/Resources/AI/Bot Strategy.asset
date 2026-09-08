@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa4fd1f9c23240d3945740bb7cf94257, type: 3}
   m_Name: Bot Strategy
-  m_EditorClassIdentifier: Deckowar::Deckowar.Data.BotStrategyAsset
+  m_EditorClassIdentifier: FK.Deckowar::FK.Deckowar.Data.BotStrategyAsset
   cardBundles:
   - cardAsset: {fileID: 11400000, guid: a1c318f3ad5e26d45ab0b1346fd5d96d, type: 2}
     amount: 3

@@ -370,7 +370,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e6ac3b8e008456e9c5e5d360e824c82, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: FK.Deckowar::FK.Deckowar.Util.GodMode
+  m_EditorClassIdentifier: FK.Deckowar::FK.Deckowar.Debug.GodMode
   deckHolder: {fileID: 752937554}
   playerCastle: {fileID: 1757477749455403523}
   enemyCastle: {fileID: 1757477750717945740}
@@ -1350,7 +1350,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 601c753d23d04f5b92a4a3553bf2715e, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Deckowar::Deckowar.BattleUnitsRenderer
+  m_EditorClassIdentifier: FK.Deckowar::FK.Deckowar.BattleUnitsRenderer
   battlefield: {fileID: 1836002045733111485}
   battleManager: {fileID: 6343852223866294272}
   unitPrefab: {fileID: 5322963584803246348, guid: 1750281a84fe3624cbefda897ef4df61, type: 3}
@@ -1365,7 +1365,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c7bf512baef4316b6c8047a1f51179e, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Deckowar::Deckowar.BattlefieldRenderer
+  m_EditorClassIdentifier: FK.Deckowar::FK.Deckowar.BattlefieldRenderer
   battlefield: {fileID: 1836002045733111485}
   spriteRenderer: {fileID: 621512064215361842}
   multiplier: 2
@@ -1929,7 +1929,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2b1ad4d503b84262b4797122444d5a1c, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Deckowar::Deckowar.EnemyAI
+  m_EditorClassIdentifier: FK.Deckowar::FK.Deckowar.EnemyAI
   deckHolder: {fileID: 1557200134}
   strategySO: {fileID: 11400000, guid: 3cd7086d1f769d940a0a2f3a87a88efa, type: 2}
 --- !u!1001 &1736814645
@@ -2417,7 +2417,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b74d74fb09934fc787ab1b8c446584b0, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Deckowar::Deckowar.Battlefield
+  m_EditorClassIdentifier: FK.Deckowar::FK.Deckowar.Battlefield
   cellCount: 8
 --- !u!4 &2443734616477231896
 Transform:
@@ -2497,7 +2497,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7187c661f9424170a88cd52664fc187e, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Deckowar::Deckowar.BattleManager
+  m_EditorClassIdentifier: FK.Deckowar::FK.Deckowar.BattleManager
   readyInput: {fileID: -2099379676528639254, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   battlefield: {fileID: 1836002045733111485}
   castlePlayer: {fileID: 1757477749455403523}

@@ -44,7 +44,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fac587df6bc44d9b82ca8b7757a79afb, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Deckowar::Deckowar.UnitAttackVisual
+  m_EditorClassIdentifier: FK.Deckowar::FK.Deckowar.UnitAnimator
   spriteRenderer: {fileID: 5305273800628855937}
   animator: {fileID: 6928965159040168754}
   hurtDuration: 0.2
