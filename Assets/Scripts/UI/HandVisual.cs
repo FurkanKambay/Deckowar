@@ -18,25 +18,34 @@ namespace FK.Deckowar.UI
         [Header("State")]
         [SerializeField] private CardVisual[] cardVisuals;
 
-        private void Start()
+        public void Init(DeckHolder deckHolder)
         {
-            deckHolder.Deck.OnHandDrawn += Hand_Updated;
-            deckHolder.Deck.OnHandDiscarded += Hand_Updated;
-            deckHolder.Deck.OnResetToStarterDeck += Hand_Updated;
-            deckHolder.Deck.OnCardDrawn += Card_Updated;
-            deckHolder.Deck.OnCardDiscarded += Card_Updated;
+            this.deckHolder = deckHolder;
+        }
+
+        private void OnEnable()
+        {
+            if (!deckHolder) return;
+
+            deckHolder.Deck.OnHandDrawn += Deck_HandUpdated;
+            deckHolder.Deck.OnHandDiscarded += Deck_HandUpdated;
+            deckHolder.Deck.OnResetToStarterDeck += Deck_HandUpdated;
+            deckHolder.Deck.OnCardDrawn += Deck_CardUpdated;
+            deckHolder.Deck.OnCardDiscarded += Deck_CardUpdated;
 
             InitializeCards();
             UpdateUI();
         }
 
-        private void OnDestroy()
+        private void OnDisable()
         {
-            deckHolder.Deck.OnHandDrawn -= Hand_Updated;
-            deckHolder.Deck.OnHandDiscarded -= Hand_Updated;
-            deckHolder.Deck.OnResetToStarterDeck -= Hand_Updated;
-            deckHolder.Deck.OnCardDrawn -= Card_Updated;
-            deckHolder.Deck.OnCardDiscarded -= Card_Updated;
+            if (!deckHolder) return;
+
+            deckHolder.Deck.OnHandDrawn -= Deck_HandUpdated;
+            deckHolder.Deck.OnHandDiscarded -= Deck_HandUpdated;
+            deckHolder.Deck.OnResetToStarterDeck -= Deck_HandUpdated;
+            deckHolder.Deck.OnCardDrawn -= Deck_CardUpdated;
+            deckHolder.Deck.OnCardDiscarded -= Deck_CardUpdated;
         }
 
         private void InitializeCards()
@@ -53,10 +62,10 @@ namespace FK.Deckowar.UI
             }
         }
 
-        private void Hand_Updated() =>
+        private void Deck_HandUpdated() =>
             UpdateUI();
 
-        private void Card_Updated(Card card) =>
+        private void Deck_CardUpdated(Card card) =>
             UpdateUI();
 
         private void UpdateUI()

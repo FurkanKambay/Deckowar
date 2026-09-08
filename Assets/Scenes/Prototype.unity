@@ -361,17 +361,17 @@ MonoBehaviour:
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
-  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_PointAction: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MoveAction: {fileID: -8784545083839296357, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_SubmitAction: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_CancelAction: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_LeftClickAction: {fileID: 3001919216989983466, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MiddleClickAction: {fileID: -2185481485913320682, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_RightClickAction: {fileID: -4090225696740746782, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_PointAction: {fileID: -1654692200621890270, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_MoveAction: {fileID: -8784545083839296357, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_SubmitAction: {fileID: 392368643174621059, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_CancelAction: {fileID: 7727032971491509709, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_LeftClickAction: {fileID: 3001919216989983466, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_MiddleClickAction: {fileID: -2185481485913320682, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_RightClickAction: {fileID: -4090225696740746782, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_TrackedDevicePositionAction: {fileID: 0}
+  m_TrackedDeviceOrientationAction: {fileID: 0}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
@@ -400,11 +400,11 @@ Transform:
   m_GameObject: {fileID: 242441916}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -960, y: -540, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1370546023}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &269491613 stripped
 RectTransform:
@@ -427,10 +427,6 @@ PrefabInstance:
       propertyPath: m_ReverseArrangement
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2656379639277011828, guid: e502da243a7a0494bb178dd966bfa492, type: 3}
-      propertyPath: castle
-      value: 
-      objectReference: {fileID: 1757477750717945740}
     - target: {fileID: 4344856367068204329, guid: e502da243a7a0494bb178dd966bfa492, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -597,6 +593,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8373621565126565627, guid: e502da243a7a0494bb178dd966bfa492, type: 3}
   m_PrefabInstance: {fileID: 432828986}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &432828988 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2656379639277011828, guid: e502da243a7a0494bb178dd966bfa492, type: 3}
+  m_PrefabInstance: {fileID: 432828986}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77d866d66895460c8f9ffa745a3c7ad4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FK.Deckowar::FK.Deckowar.UI.CastleHUD
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -720,37 +727,6 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &603045898
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 603045899}
-  m_Layer: 0
-  m_Name: ----- GUI -----
-  m_TagString: EditorOnly
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &603045899
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 603045898}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1461,6 +1437,7 @@ GameObject:
   - component: {fileID: 1370546022}
   - component: {fileID: 1370546021}
   - component: {fileID: 1370546020}
+  - component: {fileID: 1370546024}
   m_Layer: 5
   m_Name: UI Canvas
   m_TagString: Untagged
@@ -1544,7 +1521,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 242441919}
   - {fileID: 1400948889}
   - {fileID: 91889755}
   - {fileID: 115017082}
@@ -1555,6 +1531,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1370546024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370546019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff8c4644d65b40faa412e740ba96afd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FK.Deckowar::FK.Deckowar.UI.GameUIManager
+  handVisual: {fileID: 1400948891}
+  playerHUD: {fileID: 4023578662309580}
+  enemyHUD: {fileID: 432828988}
+  playerCastle: {fileID: 1757477749455403523}
+  enemyCastle: {fileID: 1757477750717945740}
+  playerDeckHolder: {fileID: 752937554}
 --- !u!1 &1400948888
 GameObject:
   m_ObjectHideFlags: 0
@@ -1564,10 +1558,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1400948889}
-  - component: {fileID: 1400948890}
   - component: {fileID: 1400948891}
+  - component: {fileID: 1400948890}
   m_Layer: 5
-  m_Name: Cards in hand
+  m_Name: Cards in Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1798,6 +1792,37 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: 3f9215ea0144899419cfbc0957140d3f, type: 2}
+--- !u!1 &1548816632
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1548816633}
+  m_Layer: 0
+  m_Name: ----- GUI -----
+  m_TagString: EditorOnly
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1548816633
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548816632}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1557200133
 GameObject:
   m_ObjectHideFlags: 0
@@ -2074,10 +2099,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 115017082}
     m_Modifications:
-    - target: {fileID: 2656379639277011828, guid: e502da243a7a0494bb178dd966bfa492, type: 3}
-      propertyPath: castle
-      value: 
-      objectReference: {fileID: 1757477749455403523}
     - target: {fileID: 4344856367068204329, guid: e502da243a7a0494bb178dd966bfa492, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2223,6 +2244,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e502da243a7a0494bb178dd966bfa492, type: 3}
+--- !u!114 &4023578662309580 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2656379639277011828, guid: e502da243a7a0494bb178dd966bfa492, type: 3}
+  m_PrefabInstance: {fileID: 4023578662309577}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77d866d66895460c8f9ffa745a3c7ad4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FK.Deckowar::FK.Deckowar.UI.CastleHUD
 --- !u!1 &247004176888807449
 GameObject:
   m_ObjectHideFlags: 0
@@ -2697,5 +2729,6 @@ SceneRoots:
   - {fileID: 148539312}
   - {fileID: 8873518190133809040}
   - {fileID: 8873518190859624991}
-  - {fileID: 603045899}
+  - {fileID: 1548816633}
   - {fileID: 1370546023}
+  - {fileID: 242441919}

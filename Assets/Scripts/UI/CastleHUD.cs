@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace FK.Deckowar.UI
 {
-    public class CastlePresenter : MonoBehaviour
+    public class CastleHUD : MonoBehaviour
     {
         [SerializeField] private Castle castle;
 
@@ -22,16 +22,21 @@ namespace FK.Deckowar.UI
         [SerializeField] private TMP_Text goldLabel;
         [SerializeField] private float goldScaleSpeed;
 
+        public void Init(Castle castle)
+        {
+            this.castle = castle;
+        }
+
         private void OnEnable()
         {
-            if (castle)
-                castle.PropertyChanged += Castle_PropertyChanged;
+            if (!castle) return;
+            castle.PropertyChanged += Castle_PropertyChanged;
         }
 
         private void OnDisable()
         {
-            if (castle)
-                castle.PropertyChanged -= Castle_PropertyChanged;
+            if (!castle) return;
+            castle.PropertyChanged -= Castle_PropertyChanged;
         }
 
         public void Update()
