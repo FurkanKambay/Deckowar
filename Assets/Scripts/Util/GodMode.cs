@@ -1,6 +1,7 @@
 using FK.Deckowar.Data;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Vertx.Attributes;
 
 namespace FK.Deckowar.Util
 {
@@ -10,7 +11,8 @@ namespace FK.Deckowar.Util
         [SerializeField] private Castle playerCastle;
         [SerializeField] private Castle enemyCastle;
 
-        [Header("Spawned Units (J, K)")]
+        [Header("Config")]
+        [HelpBox("J = spawn for Player\nK = spawn for Enemy")]
         [SerializeField] private UnitAsset unitAsset;
 
         private void Update()
