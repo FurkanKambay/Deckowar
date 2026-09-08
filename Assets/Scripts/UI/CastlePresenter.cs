@@ -61,9 +61,6 @@ namespace FK.Deckowar.UI
                 gold.localScale = Vector3.MoveTowards(gold.localScale, initial, delta);
                 yield return null;
             }
-
-            Debug.Log("DONE SCALING");
-
         }
     }
 }
