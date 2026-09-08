@@ -23,7 +23,7 @@ namespace FK.Deckowar.UI
             this.deckHolder = deckHolder;
         }
 
-        private void OnEnable()
+        private void Start()
         {
             if (!deckHolder) return;
 
@@ -37,7 +37,7 @@ namespace FK.Deckowar.UI
             UpdateUI();
         }
 
-        private void OnDisable()
+        private void OnDestroy()
         {
             if (!deckHolder) return;
 
