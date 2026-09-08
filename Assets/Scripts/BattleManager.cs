@@ -107,7 +107,8 @@ namespace FK.Deckowar
             if (!battlefield.CanPushUnit(heading))
                 return false;
 
-            var spawnedUnit = new Unit(unitAsset);
+            Faction faction = heading.GetFaction();
+            var spawnedUnit = new Unit(unitAsset, faction);
             bool success = battlefield.PushUnit(heading, spawnedUnit);
 
             if (success)

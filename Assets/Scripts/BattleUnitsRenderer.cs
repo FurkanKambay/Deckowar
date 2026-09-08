@@ -1,3 +1,4 @@
+using System;
 using FK.Deckowar.Core;
 using UnityEditor;
 using UnityEngine;
@@ -11,8 +12,7 @@ namespace FK.Deckowar
         [SerializeField] private BattleManager battleManager;
 
         [Header("Asset References")]
-        [SerializeField] private UnitAnimator playerUnitPrefab;
-        [SerializeField] private UnitAnimator enemyUnitPrefab;
+        [SerializeField] private UnitAnimator unitPrefab;
 
         private Vector2 spawnPointPlayer;
         private Vector2 spawnPointEnemy;
@@ -34,14 +34,14 @@ namespace FK.Deckowar
 
         private void BattleManager_UnitSpawned(BattleManager sender, Heading heading, Unit unit)
         {
-            (UnitAnimator prefab, Vector2 spawnPoint) = heading switch
+            Vector2 spawnPoint = heading switch
             {
-                Heading.West => (enemyUnitPrefab, spawnPointEnemy),
-                Heading.East => (playerUnitPrefab, spawnPointPlayer),
-                _ => default
+                Heading.West => spawnPointEnemy,
+                Heading.East => spawnPointPlayer,
+                _ => throw new ArgumentOutOfRangeException(nameof(heading))
             };
 
-            UnitAnimator spawnedUnit = Instantiate(prefab, spawnPoint, Quaternion.identity, transform);
+            UnitAnimator spawnedUnit = Instantiate(unitPrefab, spawnPoint, Quaternion.identity, transform);
             spawnedUnit.Init(unit);
         }
 

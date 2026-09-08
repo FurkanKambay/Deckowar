@@ -11,10 +11,11 @@ namespace FK.Deckowar.Core
         public Faction Faction { get; private set; }
         public Vitality Vitality { get; private set; }
 
-        public Unit(UnitAsset unitAsset)
+        public Unit(UnitAsset unitAsset, Faction faction)
         {
             UnitAsset = unitAsset ? unitAsset : throw new ArgumentNullException(nameof(unitAsset));
             Vitality = new Vitality(unitAsset.MaxHealth);
+            Faction = faction;
         }
     }
 }

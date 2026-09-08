@@ -44,6 +44,7 @@ namespace FK.Deckowar
             Unit.Vitality.OnDied += Vitality_Died;
 
             spriteRenderer.sprite = Unit.UnitAsset.Sprite;
+            spriteRenderer.flipX = Unit.Faction == Faction.Enemy;
         }
 
         private void OnDestroy()
