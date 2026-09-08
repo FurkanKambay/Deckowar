@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using FK.Deckowar.Core;
 using FK.Deckowar.Data;
 using UnityEngine;
@@ -7,10 +9,12 @@ using UnityEngine.Assertions;
 
 namespace FK.Deckowar
 {
-    public class Castle : MonoBehaviour
+    public class Castle : MonoBehaviour, INotifyPropertyChanged
     {
         public event Action<Castle, UnitAsset> OnUnitEnqueued;
         public event Action<Castle, UnitAsset> OnUnitDequeued;
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         [Header("References")]
         [SerializeField] private TurnTimeManager turnTimeManager;
@@ -23,10 +27,16 @@ namespace FK.Deckowar
         public Faction Faction => faction;
         public int SpawnQueueCount => spawnQueue.Count;
 
-        public float Gold { get; private set; }
+        public float Gold
+        {
+            get => gold;
+            private set => SetField(ref gold, value);
+        }
+
         public Vitality Vitality { get; private set; }
 
         private readonly Queue<UnitAsset> spawnQueue = new();
+        private float gold;
 
         private void Awake()
         {
@@ -67,6 +77,19 @@ namespace FK.Deckowar
                 GainGold();
             else
                 TryDequeueSpawnUnit(out _);
+        }
+
+        private void RaisePropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private bool SetField<T>(ref T field, T value, [CallerMemberName] string propertyName = null)
+        {
+            if (EqualityComparer<T>.Default.Equals(field, value)) return false;
+            field = value;
+            RaisePropertyChanged(propertyName);
+            return true;
         }
     }
 }
