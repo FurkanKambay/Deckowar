@@ -2,24 +2,19 @@ using FK.Common;
 using FK.Deckowar.Deckbuilding;
 using UnityEngine;
 using UnityEngine.Assertions;
-using UnityEngine.Serialization;
 
 namespace FK.Deckowar
 {
     public sealed class DeckHolder : MonoBehaviour
     {
-        [Header("References")]
-        [SerializeField] private Castle castle;
-
-        [Header("Config")]
         [SerializeField] private DeckConfigAsset deckConfigAsset;
+        [SerializeField] private Castle castle;
 
         public Castle Castle => castle;
         public Deck Deck { get; private set; }
 
         private void Awake()
         {
-            Assert.IsNotNull(castle);
             Assert.IsNotNull(deckConfigAsset);
 
             Deck = new Deck(deckConfigAsset);

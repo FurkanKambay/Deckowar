@@ -22,11 +22,23 @@ namespace FK.Deckowar.UI
         [SerializeField] private TMP_Text goldLabel;
         [SerializeField] private float goldScaleSpeed;
 
-        private void OnEnable() => castle.PropertyChanged += Castle_PropertyChanged;
-        private void OnDisable() => castle.PropertyChanged -= Castle_PropertyChanged;
+        private void OnEnable()
+        {
+            if (castle)
+                castle.PropertyChanged += Castle_PropertyChanged;
+        }
+
+        private void OnDisable()
+        {
+            if (castle)
+                castle.PropertyChanged -= Castle_PropertyChanged;
+        }
 
         public void Update()
         {
+            if (!castle)
+                return;
+
             bar.rectTransform.localScale = new Vector3(castle.Vitality.HealthNormalized, 1, 1);
 
             // spawnRadial.fillAmount = castle.ProgressUntilNextSpawn;

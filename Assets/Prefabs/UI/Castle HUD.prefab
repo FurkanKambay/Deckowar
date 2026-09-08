@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5720207795955532771}
   - component: {fileID: 6668753949592994784}
   m_Layer: 5
-  m_Name: Row 1
+  m_Name: Row 1 - health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 6419312958600227948}
   - component: {fileID: 305283955389742186}
   m_Layer: 5
-  m_Name: Row 2
+  m_Name: Row 2 - gold, spawn queue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -136,8 +136,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5502907970058358464}
-  - component: {fileID: 6530752330910044253}
   - component: {fileID: 80982769479561995}
+  - component: {fileID: 6530752330910044253}
   m_Layer: 5
   m_Name: Gold Label
   m_TagString: Untagged
@@ -164,14 +164,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &6530752330910044253
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1903977430595009012}
-  m_CullTransparentMesh: 1
 --- !u!114 &80982769479561995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,6 +256,14 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &6530752330910044253
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903977430595009012}
+  m_CullTransparentMesh: 1
 --- !u!1 &4077434234200622801
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,8 +273,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8582669060215806967}
-  - component: {fileID: 1856157746934039877}
   - component: {fileID: 6342595369859476918}
+  - component: {fileID: 1856157746934039877}
   m_Layer: 5
   m_Name: Queue label
   m_TagString: Untagged
@@ -301,14 +301,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &1856157746934039877
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4077434234200622801}
-  m_CullTransparentMesh: 1
 --- !u!114 &6342595369859476918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -401,6 +393,14 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1856157746934039877
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4077434234200622801}
+  m_CullTransparentMesh: 1
 --- !u!1 &4306285368607910498
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,8 +410,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6581597155015509438}
-  - component: {fileID: 8356656462200438753}
   - component: {fileID: 894500392152237400}
+  - component: {fileID: 8356656462200438753}
   m_Layer: 5
   m_Name: Spawn radial
   m_TagString: Untagged
@@ -438,14 +438,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &8356656462200438753
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4306285368607910498}
-  m_CullTransparentMesh: 1
 --- !u!114 &894500392152237400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -476,6 +468,14 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!222 &8356656462200438753
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4306285368607910498}
+  m_CullTransparentMesh: 1
 --- !u!1 &4858154356872470120
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,8 +625,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4722960025239483020}
-  - component: {fileID: 2243522065512215433}
   - component: {fileID: 834169952889225803}
+  - component: {fileID: 2243522065512215433}
   m_Layer: 5
   m_Name: HP Bar inner
   m_TagString: Untagged
@@ -653,14 +653,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0.5}
---- !u!222 &2243522065512215433
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7357536345360568578}
-  m_CullTransparentMesh: 1
 --- !u!114 &834169952889225803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -691,6 +683,14 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 2
+--- !u!222 &2243522065512215433
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7357536345360568578}
+  m_CullTransparentMesh: 1
 --- !u!1 &7847376878600304261
 GameObject:
   m_ObjectHideFlags: 0
@@ -821,8 +821,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 993717376954785695}
-  - component: {fileID: 3816160412212657741}
   - component: {fileID: 5901673619721662567}
+  - component: {fileID: 3816160412212657741}
   m_Layer: 5
   m_Name: Gold BG
   m_TagString: Untagged
@@ -849,14 +849,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &3816160412212657741
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8536513668384843814}
-  m_CullTransparentMesh: 1
 --- !u!114 &5901673619721662567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -887,3 +879,11 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!222 &3816160412212657741
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8536513668384843814}
+  m_CullTransparentMesh: 1

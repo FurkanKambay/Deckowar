@@ -18,8 +18,8 @@ namespace FK.Deckowar
 
         private MaterialPropertyBlock propertyBlock;
 
-        private static readonly int AnimAttack = Animator.StringToHash("attack");
-        private static readonly int ShaderHurt = Shader.PropertyToID("_Hurt");
+        private static readonly int animAttack = Animator.StringToHash("attack");
+        private static readonly int shaderHurt = Shader.PropertyToID("_Hurt");
 
         private void Awake()
         {
@@ -27,7 +27,7 @@ namespace FK.Deckowar
             Assert.IsNotNull(animator);
 
             propertyBlock = new MaterialPropertyBlock();
-            propertyBlock.SetInt(ShaderHurt, 0);
+            propertyBlock.SetInt(shaderHurt, 0);
             spriteRenderer.SetPropertyBlock(propertyBlock);
         }
 
@@ -59,22 +59,22 @@ namespace FK.Deckowar
 
         private IEnumerator GetHurt()
         {
-            propertyBlock.SetInt(ShaderHurt, 1);
+            propertyBlock.SetInt(shaderHurt, 1);
             spriteRenderer.SetPropertyBlock(propertyBlock);
             yield return new WaitForSeconds(hurtDuration);
 
-            propertyBlock.SetInt(ShaderHurt, 0);
+            propertyBlock.SetInt(shaderHurt, 0);
             spriteRenderer.SetPropertyBlock(propertyBlock);
         }
 
         private void Vitality_Died()
         {
-            // Destroy(vitality.gameObject, t: 0f);
+            // Destroy(Unit.Vitality.gameObject, t: 0f);
         }
 
         private void Attacker_AttackStarted()
         {
-            animator.SetTrigger(AnimAttack);
+            animator.SetTrigger(animAttack);
         }
 
         private void Anim_ProcAttack()

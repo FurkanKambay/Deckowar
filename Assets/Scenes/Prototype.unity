@@ -232,7 +232,7 @@ GameObject:
   m_Component:
   - component: {fileID: 91889755}
   m_Layer: 5
-  m_Name: "\U0001FA99 Bottom Panel"
+  m_Name: Card Pile Icons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -269,7 +269,7 @@ GameObject:
   m_Component:
   - component: {fileID: 115017082}
   m_Layer: 5
-  m_Name: "\U0001F49D Castle HUDs"
+  m_Name: Castle HUDs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -296,7 +296,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -75}
   m_SizeDelta: {x: -150, y: 200}
   m_Pivot: {x: 0.5, y: 1}
---- !u!1 &195277138
+--- !u!1 &148539311
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -304,21 +304,21 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 195277139}
+  - component: {fileID: 148539312}
   m_Layer: 0
-  m_Name: ~ GAME
+  m_Name: ----- Battlers -----
   m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &195277139
+--- !u!4 &148539312
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 195277138}
+  m_GameObject: {fileID: 148539311}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -430,7 +430,7 @@ PrefabInstance:
     - target: {fileID: 2656379639277011828, guid: e502da243a7a0494bb178dd966bfa492, type: 3}
       propertyPath: castle
       value: 
-      objectReference: {fileID: 1232775509}
+      objectReference: {fileID: 1757477750717945740}
     - target: {fileID: 4344856367068204329, guid: e502da243a7a0494bb178dd966bfa492, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -609,7 +609,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420030}
   m_Layer: 0
-  m_Name: "\U0001F3A6 Main Camera"
+  m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -725,6 +725,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &603045898
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 603045899}
+  m_Layer: 0
+  m_Name: ----- GUI -----
+  m_TagString: EditorOnly
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &603045899
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603045898}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &618940689
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,8 +765,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 618940690}
-  - component: {fileID: 618940692}
   - component: {fileID: 618940691}
+  - component: {fileID: 618940692}
   m_Layer: 5
   m_Name: Discard Pile Label
   m_TagString: Untagged
@@ -873,7 +904,7 @@ GameObject:
   - component: {fileID: 619394802}
   - component: {fileID: 619394801}
   m_Layer: 0
-  m_Name: "\U0001F4A1 Global Light"
+  m_Name: Global Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -963,14 +994,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 619394800}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1525117075}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &696014187
+--- !u!1 &656546498
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -978,22 +1009,21 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 696014188}
-  - component: {fileID: 696014189}
+  - component: {fileID: 656546499}
   m_Layer: 0
-  m_Name: GodMode
-  m_TagString: Untagged
+  m_Name: ----- Managers -----
+  m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &696014188
+--- !u!4 &656546499
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 696014187}
+  m_GameObject: {fileID: 656546498}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -1002,22 +1032,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &696014189
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 696014187}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e6ac3b8e008456e9c5e5d360e824c82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Deckowar::Deckowar.Util.GodMode
-  deckHolder: {fileID: 752937554}
-  playerCastle: {fileID: 1823492435}
-  enemyCastle: {fileID: 1232775509}
-  unitAsset: {fileID: 11400000, guid: e574959cec86d5540891095c4310249f, type: 2}
 --- !u!1001 &744645122
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1095,9 +1109,9 @@ GameObject:
   - component: {fileID: 752937553}
   - component: {fileID: 752937554}
   m_Layer: 0
-  m_Name: "\u2666\uFE0F Player Deck Holder"
+  m_Name: Player Deck Holder
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1109,12 +1123,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 752937552}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 8873518190133809040}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &752937554
 MonoBehaviour:
@@ -1128,8 +1142,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93b6ac5792124522a7fff907083b6b0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  castle: {fileID: 1823492435}
   deckConfigAsset: {fileID: 11400000, guid: f26a0cdab84024743b984e3f458880c6, type: 2}
+  castle: {fileID: 1757477749455403523}
 --- !u!1 &827657877
 GameObject:
   m_ObjectHideFlags: 0
@@ -1139,8 +1153,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 827657878}
-  - component: {fileID: 827657880}
   - component: {fileID: 827657879}
+  - component: {fileID: 827657880}
   m_Layer: 5
   m_Name: Draw Pile Label
   m_TagString: Untagged
@@ -1267,7 +1281,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 827657877}
   m_CullTransparentMesh: 1
---- !u!1 &832949012
+--- !u!1 &913736800
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1275,29 +1289,64 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 832949013}
+  - component: {fileID: 913736801}
+  - component: {fileID: 913736803}
+  - component: {fileID: 913736802}
   m_Layer: 0
-  m_Name: ~ GUI
-  m_TagString: EditorOnly
+  m_Name: Battle Visuals
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &832949013
+--- !u!4 &913736801
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 832949012}
+  m_GameObject: {fileID: 913736800}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
+  m_Children:
+  - {fileID: 2443734616477231896}
+  m_Father: {fileID: 8479468799896408733}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &913736802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913736800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 601c753d23d04f5b92a4a3553bf2715e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Deckowar::Deckowar.BattleUnitsRenderer
+  battlefield: {fileID: 1836002045733111485}
+  battleManager: {fileID: 6343852223866294272}
+  playerUnitPrefab: {fileID: 1862845653338737232, guid: 0e85ba3f0885de146a1c9e1676aaedf7, type: 3}
+  enemyUnitPrefab: {fileID: 1862845653338737232, guid: 48de511acb3f8f644b3d7d0b01d443f8, type: 3}
+--- !u!114 &913736803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913736800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c7bf512baef4316b6c8047a1f51179e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Deckowar::Deckowar.BattlefieldRenderer
+  battlefield: {fileID: 1836002045733111485}
+  spriteRenderer: {fileID: 621512064215361842}
+  multiplier: 2
+  height: 2
 --- !u!1001 &935708306
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1364,85 +1413,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5288352784871998813, guid: ee54e9bf4d808f14094a369482f63f80, type: 3}
   m_PrefabInstance: {fileID: 935708306}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1005697600
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1005697601}
-  m_Layer: 0
-  m_Name: ~ ENVIRONMENT
-  m_TagString: EditorOnly
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1005697601
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1005697600}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1232775507
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 99609587037017216, guid: 8c28d9af2a3224f4f8e77f82ac4ebfaa, type: 3}
-      propertyPath: m_Name
-      value: Castle Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 1987959001409812351, guid: 8c28d9af2a3224f4f8e77f82ac4ebfaa, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1987959001409812351, guid: 8c28d9af2a3224f4f8e77f82ac4ebfaa, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1987959001409812351, guid: 8c28d9af2a3224f4f8e77f82ac4ebfaa, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1987959001409812351, guid: 8c28d9af2a3224f4f8e77f82ac4ebfaa, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8705571715566519020, guid: 8c28d9af2a3224f4f8e77f82ac4ebfaa, type: 3}
-      propertyPath: turnTimeManager
-      value: 
-      objectReference: {fileID: 1495283801}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8c28d9af2a3224f4f8e77f82ac4ebfaa, type: 3}
---- !u!114 &1232775509 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8705571715566519020, guid: 8c28d9af2a3224f4f8e77f82ac4ebfaa, type: 3}
-  m_PrefabInstance: {fileID: 1232775507}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a600f949c9d41e1a1c6dff17934d8dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1312976319
 GameObject:
   m_ObjectHideFlags: 0
@@ -1575,10 +1545,10 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 242441919}
   - {fileID: 1400948889}
   - {fileID: 91889755}
   - {fileID: 115017082}
-  - {fileID: 242441919}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1595,10 +1565,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1400948889}
-  - component: {fileID: 1400948891}
   - component: {fileID: 1400948890}
+  - component: {fileID: 1400948891}
   m_Layer: 5
-  m_Name: "\U0001F0CF Hand UI"
+  m_Name: Cards in hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1681,8 +1651,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1481992048}
-  - component: {fileID: 1481992050}
   - component: {fileID: 1481992049}
+  - component: {fileID: 1481992050}
   m_Layer: 5
   m_Name: Discard Pile BG
   m_TagString: Untagged
@@ -1747,7 +1717,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1481992047}
   m_CullTransparentMesh: 1
---- !u!1 &1495283799
+--- !u!1 &1525117074
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1755,43 +1725,80 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1495283800}
-  - component: {fileID: 1495283801}
+  - component: {fileID: 1525117075}
   m_Layer: 0
-  m_Name: "\u231B Turn Time Manager"
+  m_Name: Atmosphere
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 2800000, guid: 490d69b278eff784b85feca736d57389, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1495283800
+--- !u!4 &1525117075
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1495283799}
+  m_GameObject: {fileID: 1525117074}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 619394802}
+  - {fileID: 1541548339}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1541548338
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1541548339}
+  - component: {fileID: 1541548340}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1541548339
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541548338}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1525117075}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1495283801
+--- !u!114 &1541548340
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1495283799}
+  m_GameObject: {fileID: 1541548338}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 581cc0fadcfb15648978e4c8b1a65ee1, type: 3}
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Deckowar::Deckowar.TurnTimeManager
-  readyInput: {fileID: -2099379676528639254, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_EditorClassIdentifier: Unity.RenderPipelines.Core.Runtime::UnityEngine.Rendering.Volume
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 3f9215ea0144899419cfbc0957140d3f, type: 2}
 --- !u!1 &1557200133
 GameObject:
   m_ObjectHideFlags: 0
@@ -1804,9 +1811,9 @@ GameObject:
   - component: {fileID: 1557200134}
   - component: {fileID: 1557200136}
   m_Layer: 0
-  m_Name: "\u2660\uFE0F Enemy Deck Holder"
+  m_Name: Enemy Deck Holder
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1822,8 +1829,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93b6ac5792124522a7fff907083b6b0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  castle: {fileID: 1232775509}
   deckConfigAsset: {fileID: 11400000, guid: f26a0cdab84024743b984e3f458880c6, type: 2}
+  castle: {fileID: 1757477750717945740}
 --- !u!4 &1557200135
 Transform:
   m_ObjectHideFlags: 0
@@ -1832,12 +1839,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1557200133}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 8873518190859624991}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1557200136
 MonoBehaviour:
@@ -1919,17 +1926,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5288352784871998813, guid: ee54e9bf4d808f14094a369482f63f80, type: 3}
   m_PrefabInstance: {fileID: 1736814645}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1823492435 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5494118178620310322, guid: 89b6c77210fce774ca19ddf2bab43577, type: 3}
-  m_PrefabInstance: {fileID: 2734990105606783513}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a600f949c9d41e1a1c6dff17934d8dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1981663219
 GameObject:
   m_ObjectHideFlags: 0
@@ -1939,8 +1935,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1981663220}
-  - component: {fileID: 1981663222}
   - component: {fileID: 1981663221}
+  - component: {fileID: 1981663222}
   m_Layer: 5
   m_Name: Draw Pile BG
   m_TagString: Untagged
@@ -2082,7 +2078,7 @@ PrefabInstance:
     - target: {fileID: 2656379639277011828, guid: e502da243a7a0494bb178dd966bfa492, type: 3}
       propertyPath: castle
       value: 
-      objectReference: {fileID: 1823492435}
+      objectReference: {fileID: 1757477749455403523}
     - target: {fileID: 4344856367068204329, guid: e502da243a7a0494bb178dd966bfa492, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2228,106 +2224,479 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e502da243a7a0494bb178dd966bfa492, type: 3}
---- !u!1001 &921433874271017308
-PrefabInstance:
+--- !u!1 &247004176888807449
+GameObject:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5105437684538849423, guid: 53135653c613ccc4bbadc7488401a2ec, type: 3}
-      propertyPath: m_Name
-      value: "\u2694\uFE0F Battle"
-      objectReference: {fileID: 0}
-    - target: {fileID: 6107009490630003036, guid: 53135653c613ccc4bbadc7488401a2ec, type: 3}
-      propertyPath: castleEnemy
-      value: 
-      objectReference: {fileID: 1232775509}
-    - target: {fileID: 6107009490630003036, guid: 53135653c613ccc4bbadc7488401a2ec, type: 3}
-      propertyPath: castlePlayer
-      value: 
-      objectReference: {fileID: 1823492435}
-    - target: {fileID: 6107009490630003036, guid: 53135653c613ccc4bbadc7488401a2ec, type: 3}
-      propertyPath: turnTimeManager
-      value: 
-      objectReference: {fileID: 1495283801}
-    - target: {fileID: 8747266771020073921, guid: 53135653c613ccc4bbadc7488401a2ec, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8747266771020073921, guid: 53135653c613ccc4bbadc7488401a2ec, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8747266771020073921, guid: 53135653c613ccc4bbadc7488401a2ec, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9088366031480398585, guid: 53135653c613ccc4bbadc7488401a2ec, type: 3}
-      propertyPath: enemyUnitPrefab
-      value: 
-      objectReference: {fileID: 1862845653338737232, guid: 48de511acb3f8f644b3d7d0b01d443f8, type: 3}
-    - target: {fileID: 9088366031480398585, guid: 53135653c613ccc4bbadc7488401a2ec, type: 3}
-      propertyPath: playerUnitPrefab
-      value: 
-      objectReference: {fileID: 1862845653338737232, guid: 0e85ba3f0885de146a1c9e1676aaedf7, type: 3}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 53135653c613ccc4bbadc7488401a2ec, type: 3}
---- !u!1001 &2734990105606783513
-PrefabInstance:
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2443734616477231896}
+  - component: {fileID: 621512064215361842}
+  m_Layer: 0
+  m_Name: battleground BG
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &621512064215361842
+SpriteRenderer:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 247004176888807449}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: 1582273626, guid: 24ad799f38ad4a54395892effb886fdb, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 2
+  m_Size: {x: 16, y: 2}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
+--- !u!114 &1757477749455403523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7048790436074646639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a600f949c9d41e1a1c6dff17934d8dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statsAsset: {fileID: 11400000, guid: 2be86674fe24ffc4eb19312e2147377b, type: 2}
+--- !u!114 &1757477750717945740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7048790436280091104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a600f949c9d41e1a1c6dff17934d8dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statsAsset: {fileID: 11400000, guid: fadb513369d972544b8651c8fe681db9, type: 2}
+--- !u!114 &1836002045733111485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5337820798582989267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b74d74fb09934fc787ab1b8c446584b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Deckowar::Deckowar.Battlefield
+  cellCount: 8
+--- !u!4 &2443734616477231896
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 247004176888807449}
   serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3420983283788002977, guid: 89b6c77210fce774ca19ddf2bab43577, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -9
-      objectReference: {fileID: 0}
-    - target: {fileID: 3420983283788002977, guid: 89b6c77210fce774ca19ddf2bab43577, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3420983283788002977, guid: 89b6c77210fce774ca19ddf2bab43577, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3420983283788002977, guid: 89b6c77210fce774ca19ddf2bab43577, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3859165290205631838, guid: 89b6c77210fce774ca19ddf2bab43577, type: 3}
-      propertyPath: m_Name
-      value: Castle Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5494118178620310322, guid: 89b6c77210fce774ca19ddf2bab43577, type: 3}
-      propertyPath: turnTimeManager
-      value: 
-      objectReference: {fileID: 1495283801}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 89b6c77210fce774ca19ddf2bab43577, type: 3}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 913736801}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3693216000599525952
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9145141449464432999}
+  - component: {fileID: 8186544285105299878}
+  m_Layer: 0
+  m_Name: castle visual
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &3693216002004559823
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9145141447530669288}
+  - component: {fileID: 8186544285436841001}
+  m_Layer: 0
+  m_Name: castle visual
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &5337820798582989267
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8479468799896408733}
+  - component: {fileID: 1836002045733111485}
+  - component: {fileID: 6343852223866294272}
+  m_Layer: 0
+  m_Name: "\u2694\uFE0F Battle Manager"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &6343852223866294272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5337820798582989267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7187c661f9424170a88cd52664fc187e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Deckowar::Deckowar.BattleManager
+  readyInput: {fileID: -2099379676528639254, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  battlefield: {fileID: 1836002045733111485}
+  castlePlayer: {fileID: 1757477749455403523}
+  castleEnemy: {fileID: 1757477750717945740}
+--- !u!1 &7048790436074646639
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8873518190133809040}
+  - component: {fileID: 1757477749455403523}
+  - component: {fileID: 9116718526125328795}
+  m_Layer: 6
+  m_Name: Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &7048790436280091104
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8873518190859624991}
+  - component: {fileID: 1757477750717945740}
+  - component: {fileID: 9116718524301009940}
+  m_Layer: 6
+  m_Name: Enemy
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &8186544285105299878
+SpriteRenderer:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3693216000599525952}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: -1306696823
+  m_SortingLayer: 2
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: -590827726, guid: 24ad799f38ad4a54395892effb886fdb, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.8828125, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
+--- !u!212 &8186544285436841001
+SpriteRenderer:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3693216002004559823}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: -1306696823
+  m_SortingLayer: 2
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: 164791805, guid: 24ad799f38ad4a54395892effb886fdb, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.8828125, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
+--- !u!4 &8479468799896408733
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5337820798582989267}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 913736801}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &8873518190133809040
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7048790436074646639}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 752937553}
+  - {fileID: 9145141447530669288}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &8873518190859624991
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7048790436280091104}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 1557200135}
+  - {fileID: 9145141449464432999}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9116718524301009940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7048790436280091104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf1fa81666448dab301802892265121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FK.Deckowar::FK.Deckowar.CastleRenderer
+  castle: {fileID: 1757477750717945740}
+  spriteRenderer: {fileID: 8186544285105299878}
+--- !u!114 &9116718526125328795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7048790436074646639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf1fa81666448dab301802892265121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FK.Deckowar::FK.Deckowar.CastleRenderer
+  castle: {fileID: 1757477749455403523}
+  spriteRenderer: {fileID: 8186544285436841001}
+--- !u!4 &9145141447530669288
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3693216002004559823}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 8873518190133809040}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &9145141449464432999
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3693216000599525952}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 8873518190859624991}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
-  - {fileID: 619394802}
-  - {fileID: 696014188}
-  - {fileID: 195277139}
-  - {fileID: 1495283800}
-  - {fileID: 752937553}
-  - {fileID: 1557200135}
-  - {fileID: 921433874271017308}
-  - {fileID: 1005697601}
-  - {fileID: 2734990105606783513}
-  - {fileID: 1232775507}
-  - {fileID: 832949013}
+  - {fileID: 1525117075}
+  - {fileID: 656546499}
+  - {fileID: 8479468799896408733}
+  - {fileID: 148539312}
+  - {fileID: 8873518190133809040}
+  - {fileID: 8873518190859624991}
+  - {fileID: 603045899}
   - {fileID: 1370546023}

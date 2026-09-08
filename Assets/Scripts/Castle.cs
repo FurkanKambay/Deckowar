@@ -5,26 +5,21 @@ using System.Runtime.CompilerServices;
 using FK.Deckowar.Core;
 using FK.Deckowar.Data;
 using UnityEngine;
-using UnityEngine.Assertions;
 
 namespace FK.Deckowar
 {
+    [DisallowMultipleComponent]
     public class Castle : MonoBehaviour, INotifyPropertyChanged
     {
         public event Action<Castle, UnitAsset> OnUnitEnqueued;
         public event Action<Castle, UnitAsset> OnUnitDequeued;
-
         public event PropertyChangedEventHandler PropertyChanged;
 
-        [Header("References")]
-        [SerializeField] private TurnTimeManager turnTimeManager;
+        [Header("Injected State")]
+        [SerializeField] private CastleStatsAsset statsAsset;
 
-        [Header("Config")]
-        [SerializeField] private Faction faction;
-        [SerializeField, Min(1)] private int maxHealth = 20;
-        [SerializeField, Min(0)] private float goldGainPerTurn = 1;
-
-        public Faction Faction => faction;
+        public CastleStatsAsset StatsAsset => statsAsset;
+        public Faction Faction => statsAsset?.Faction ?? Faction.None;
         public int SpawnQueueCount => spawnQueue.Count;
 
         public float Gold
@@ -40,15 +35,11 @@ namespace FK.Deckowar
 
         private void Awake()
         {
-            Assert.IsNotNull(turnTimeManager);
-            Vitality = new Vitality(maxHealth);
+            Vitality = new Vitality(statsAsset.MaxHealth);
         }
 
-        private void OnEnable() => turnTimeManager.OnTurnChanged += TurnTimeManager_TurnChanged;
-        private void OnDisable() => turnTimeManager.OnTurnChanged -= TurnTimeManager_TurnChanged;
-
         public void GainGold() =>
-            Gold = Mathf.Clamp(Gold + goldGainPerTurn, 0, max: 500);
+            Gold = Mathf.Clamp(Gold + statsAsset.GoldGainPerTurn, 0, max: 500);
 
         public void LoseGold(int amount) =>
             Gold = Mathf.Clamp(Gold - amount, 0, max: 500);
@@ -62,21 +53,13 @@ namespace FK.Deckowar
             OnUnitEnqueued?.Invoke(this, unit);
         }
 
-        public bool TryDequeueSpawnUnit(out UnitAsset unitAsset)
+        public bool TryDequeueSpawnUnit(out UnitAsset dequeuedUnitAsset)
         {
-            if (!spawnQueue.TryDequeue(out unitAsset))
+            if (!spawnQueue.TryDequeue(out dequeuedUnitAsset))
                 return false;
 
-            OnUnitDequeued?.Invoke(this, unitAsset);
+            OnUnitDequeued?.Invoke(this, dequeuedUnitAsset);
             return true;
-        }
-
-        private void TurnTimeManager_TurnChanged(TurnTimeManager sender)
-        {
-            if (sender.CurrentFaction == Faction)
-                GainGold();
-            else
-                TryDequeueSpawnUnit(out _);
         }
 
         private void RaisePropertyChanged([CallerMemberName] string propertyName = null)
