@@ -41,10 +41,10 @@ namespace FK.Deckowar
                 return false;
 
             Unit unit = GetUnitAtRank(faction, rank);
-            if (unit is null) return false;
+            if (!unit) return false;
 
             Unit blockingUnit = GetUnitInFront(faction, rank);
-            if (blockingUnit is not null)
+            if (blockingUnit)
                 return false;
 
             bool moveSuccess = SetUnitAtRank(faction, rank + 1, unit);
@@ -58,7 +58,7 @@ namespace FK.Deckowar
         public bool CanPushUnit(Faction faction)
         {
             Unit unit = GetUnitAtRank(faction, 0);
-            return unit == null;
+            return !unit;
         }
 
         public bool PushUnit(Faction faction, Unit unit)
