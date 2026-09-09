@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32aff96edc89436dac76aed1c3b9f011, type: 3}
   m_Name: Ground Unit S
   m_EditorClassIdentifier: FK.Deckowar::FK.Deckowar.Data.UnitAsset
-  spawnDelay: 3
+  spawnDelay: 0
   maxHealth: 1
   damage: 2
   attackRange: 1
