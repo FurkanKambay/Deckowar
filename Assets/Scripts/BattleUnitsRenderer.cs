@@ -32,13 +32,13 @@ namespace FK.Deckowar
             battleManager.OnUnitSpawned -= BattleManager_UnitSpawned;
         }
 
-        private void BattleManager_UnitSpawned(BattleManager sender, Heading heading, Unit unit)
+        private void BattleManager_UnitSpawned(BattleManager sender, Faction faction, Unit unit)
         {
-            Vector2 spawnPoint = heading switch
+            Vector2 spawnPoint = faction switch
             {
-                Heading.West => spawnPointEnemy,
-                Heading.East => spawnPointPlayer,
-                _ => throw new ArgumentOutOfRangeException(nameof(heading))
+                Faction.Player => spawnPointPlayer,
+                Faction.Enemy => spawnPointEnemy,
+                _ => throw new ArgumentOutOfRangeException(nameof(faction))
             };
 
             UnitAnimator spawnedUnit = Instantiate(unitPrefab, spawnPoint, Quaternion.identity, transform);
@@ -47,7 +47,7 @@ namespace FK.Deckowar
 
         private void LocateSpawnPoints()
         {
-            int x = battlefield.CellCount - 1; // ! coupled to the visuals
+            int x = battlefield.RankCount - 1;
             spawnPointPlayer = transform.TransformPoint(-x, 0, 0);
             spawnPointEnemy = transform.TransformPoint(+x, 0, 0);
         }

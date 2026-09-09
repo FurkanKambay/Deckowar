@@ -23,7 +23,7 @@ namespace FK.Deckowar
     public sealed class BattleManager : MonoBehaviour
     {
         public event Action<BattleManager, TurnInfo> OnTurnChanged;
-        public event Action<BattleManager, Heading, Unit> OnUnitSpawned;
+        public event Action<BattleManager, Faction, Unit> OnUnitSpawned;
 
         [Header("Input")]
         [SerializeField] private InputActionReference readyInput;
@@ -99,20 +99,19 @@ namespace FK.Deckowar
             OnTurnChanged?.Invoke(this, currentTurn);
         }
 
-        public void SpawnEastward(UnitAsset unitAsset) => TrySpawn(Heading.East, unitAsset);
-        public void SpawnWestward(UnitAsset unitAsset) => TrySpawn(Heading.West, unitAsset);
+        public void SpawnPlayerUnit(UnitAsset unitAsset) => TrySpawn(Faction.Player, unitAsset);
+        public void SpawnEnemyUnit(UnitAsset unitAsset) => TrySpawn(Faction.Enemy, unitAsset);
 
-        private bool TrySpawn(Heading heading, UnitAsset unitAsset)
+        private bool TrySpawn(Faction faction, UnitAsset unitAsset)
         {
-            if (!battlefield.CanPushUnit(heading))
+            if (!battlefield.CanPushUnit(faction))
                 return false;
 
-            Faction faction = heading.GetFaction();
             var spawnedUnit = new Unit(unitAsset, faction);
-            bool success = battlefield.PushUnit(heading, spawnedUnit);
+            bool success = battlefield.PushUnit(faction, spawnedUnit);
 
             if (success)
-                OnUnitSpawned?.Invoke(this, heading, spawnedUnit);
+                OnUnitSpawned?.Invoke(this, faction, spawnedUnit);
 
             return success;
         }
@@ -124,10 +123,10 @@ namespace FK.Deckowar
 
         private void Castle_UnitDequeued(Castle castle, UnitAsset unitAsset)
         {
-            Heading heading = castle.Faction.GetHeading();
+            Faction faction = castle.Faction;
+            TrySpawn(faction, unitAsset);
 
-            TrySpawn(heading, unitAsset);
-            Log.Info($"{heading} Castle spawned {unitAsset.name}", this);
+            Log.Info($"{faction} Castle spawned {unitAsset.name}", this);
         }
     }
 }

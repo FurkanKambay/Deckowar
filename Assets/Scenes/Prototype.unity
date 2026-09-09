@@ -2418,7 +2418,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b74d74fb09934fc787ab1b8c446584b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: FK.Deckowar::FK.Deckowar.Battlefield
-  cellCount: 8
+  rankCount: 8
+  units: []
 --- !u!4 &2443734616477231896
 Transform:
   m_ObjectHideFlags: 0

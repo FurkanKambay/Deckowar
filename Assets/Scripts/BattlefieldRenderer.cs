@@ -20,7 +20,7 @@ namespace FK.Deckowar
         private void ResizeSprite()
         {
             spriteRenderer.drawMode = SpriteDrawMode.Tiled;
-            spriteRenderer.size = new Vector2(battlefield.CellCount * multiplier, height);
+            spriteRenderer.size = new Vector2(battlefield.RankCount * multiplier, height);
         }
 
 #if UNITY_EDITOR

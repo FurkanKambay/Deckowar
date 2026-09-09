@@ -9,86 +9,86 @@ namespace FK.Deckowar
     public sealed class Battlefield : MonoBehaviour
     {
         [Header("Config")]
-        [SerializeField, Range(2, 10)] private int cellCount = 5;
+        [SerializeField, Range(2, 10)] private int rankCount = 5;
 
         [Header("Debug")]
         [SerializeField, ReadOnlyField, Inline] private Unit[] units;
 
-        public int CellCount => cellCount;
+        public int RankCount => rankCount;
 
         private void Awake()
         {
-            units = new Unit[cellCount];
+            units = new Unit[rankCount];
         }
 
 #region Advancing Units
         public void AdvanceAllUnits()
         {
             Log.Info("Advancing all units", this);
-            AdvanceUnits(Heading.East);
-            AdvanceUnits(Heading.West);
+            AdvanceUnits(Faction.Player);
+            AdvanceUnits(Faction.Enemy);
         }
 
-        private void AdvanceUnits(Heading heading)
+        private void AdvanceUnits(Faction faction)
         {
-            for (int cell = units.Length; cell >= 0; cell--)
-                AdvanceUnit(heading, cell);
+            for (int rank = units.Length; rank >= 0; rank--)
+                AdvanceUnit(faction, rank);
         }
 
-        private bool AdvanceUnit(Heading heading, int cell)
+        private bool AdvanceUnit(Faction faction, int rank)
         {
-            if (cell < 0 || cell >= units.Length)
+            if (rank < 0 || rank >= units.Length)
                 return false;
 
-            Unit unit = GetUnitAtCell(heading, cell);
+            Unit unit = GetUnitAtRank(faction, rank);
             if (unit is null) return false;
 
-            Unit blockingUnit = GetUnitInFront(heading, cell);
+            Unit blockingUnit = GetUnitInFront(faction, rank);
             if (blockingUnit is not null)
                 return false;
 
-            bool moveSuccess = SetUnitAtCell(heading, cell + 1, unit);
+            bool moveSuccess = SetUnitAtRank(faction, rank + 1, unit);
             if (!moveSuccess) return false;
 
-            bool success = SetUnitAtCell(heading, cell, null);
+            bool success = RemoveUnitAtRank(faction, rank);
             return success;
         }
 #endregion
 
-        public bool CanPushUnit(Heading heading)
+        public bool CanPushUnit(Faction faction)
         {
-            Unit unit = GetUnitAtCell(heading, 0);
+            Unit unit = GetUnitAtRank(faction, 0);
             return unit == null;
         }
 
-        public bool PushUnit(Heading heading, Unit unit)
+        public bool PushUnit(Faction faction, Unit unit)
         {
-            if (!CanPushUnit(heading))
+            if (!CanPushUnit(faction))
                 return false;
-            return SetUnitAtCell(heading, 0, unit);
+            return SetUnitAtRank(faction, 0, unit);
         }
 
-        private Unit GetUnitInFront(Heading heading, int cell) =>
-            GetUnitAtCell(heading, cell + 1);
+        private Unit GetUnitInFront(Faction faction, int rank) =>
+            GetUnitAtRank(faction, rank + 1);
 
-        private Unit GetUnitAtCell(Heading heading, int cell)
+        private Unit GetUnitAtRank(Faction faction, int rank)
         {
-            if (heading is Heading.None || cell < 0 || cell >= units.Length)
+            if (faction is Faction.None || rank < 0 || rank >= units.Length)
                 return null;
 
-            Index index = heading is Heading.East ? cell : ^(cell + 1);
+            Index index = faction is Faction.Player ? rank : ^(rank + 1);
             return units[index];
         }
 
-        private bool RemoveUnitAtCell(Heading heading, int cell) =>
-            SetUnitAtCell(heading, cell, null);
+        private bool RemoveUnitAtRank(Faction faction, int rank) =>
+            SetUnitAtRank(faction, rank, null);
 
-        private bool SetUnitAtCell(Heading heading, int cell, Unit unit)
+        private bool SetUnitAtRank(Faction faction, int rank, Unit unit)
         {
-            if (heading is Heading.None || cell < 0 || cell >= units.Length)
+            if (faction is Faction.None || rank < 0 || rank >= units.Length)
                 return false;
 
-            Index index = heading is Heading.East ? cell : ^(cell + 1);
+            Index index = faction is Faction.Player ? rank : ^(rank + 1);
             units[index] = unit;
             return true;
         }
