@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b074d813d82b4d94a9f2690989b6a3ac, type: 3}
-  m_Name: Units-Only Deck
+  m_Name: Deck with Only Units
   m_EditorClassIdentifier: 
   handSize: 5
   starterDeck:
