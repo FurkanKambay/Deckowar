@@ -8,15 +8,16 @@ using UnityEngine.InputSystem;
 
 namespace FK.Deckowar
 {
+    [Serializable]
     public struct TurnInfo
     {
-        public int TurnIndex;
-        public Faction Faction;
+        public int turnIndex;
+        public Faction faction;
 
         public void NextTurn()
         {
-            TurnIndex++;
-            Faction = TurnIndex % 2 == 0 ? Faction.Player : Faction.Enemy;
+            turnIndex++;
+            faction = turnIndex % 2 == 0 ? Faction.Player : Faction.Enemy;
         }
     }
 
@@ -33,7 +34,8 @@ namespace FK.Deckowar
         [SerializeField] private Castle castlePlayer;
         [SerializeField] private Castle castleEnemy;
 
-        private TurnInfo currentTurn;
+        [Header("Debug")]
+        [SerializeField] private TurnInfo currentTurn;
 
 #region Unity Callbacks
         private void Awake()
@@ -41,7 +43,7 @@ namespace FK.Deckowar
             Assert.IsNotNull(readyInput);
             readyInput.asset.Enable();
 
-            currentTurn = new TurnInfo { TurnIndex = -1, Faction = Faction.None };
+            currentTurn = new TurnInfo { turnIndex = -1, faction = Faction.None };
         }
 
         private void OnEnable()
@@ -76,14 +78,14 @@ namespace FK.Deckowar
         {
             currentTurn.NextTurn();
 
-            Castle castleToGainGold = currentTurn.Faction switch
+            Castle castleToGainGold = currentTurn.faction switch
             {
                 Faction.Player => castlePlayer,
                 Faction.Enemy => castleEnemy,
                 _ => null
             };
 
-            Castle castleToSpawnUnit = currentTurn.Faction switch
+            Castle castleToSpawnUnit = currentTurn.faction switch
             {
                 Faction.Player => castleEnemy,
                 Faction.Enemy => castlePlayer,

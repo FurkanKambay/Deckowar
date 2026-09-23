@@ -2379,6 +2379,9 @@ MonoBehaviour:
   battlefield: {fileID: 1836002045733111485}
   castlePlayer: {fileID: 1757477749455403523}
   castleEnemy: {fileID: 1757477750717945740}
+  currentTurn:
+    turnIndex: 0
+    faction: 0
 --- !u!1 &7048790436074646639
 GameObject:
   m_ObjectHideFlags: 0
