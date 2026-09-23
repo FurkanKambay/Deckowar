@@ -17,17 +17,13 @@ namespace FK.Deckowar
         public int RankCount => rankCount;
 
         private BattleTile[] tiles;
+        private Vector2 spawnPointPlayer;
+        private Vector2 spawnPointEnemy;
 
         private void Awake()
         {
             tiles = new BattleTile[rankCount];
             InitializeTiles();
-        }
-
-        private void OnValidate()
-        {
-            if (Application.isPlaying)
-                InitializeTiles();
         }
 
         private void InitializeTiles()
@@ -138,19 +134,46 @@ namespace FK.Deckowar
 
         private Vector3 GetTilePosition(int rank) => new Vector2((rank * 2) - rankCount + 1, 0);
 
+        private void LocateSpawnPoints()
+        {
+            int x = rankCount - 1;
+            spawnPointPlayer = transform.TransformPoint(-x, 0, 0);
+            spawnPointEnemy = transform.TransformPoint(+x, 0, 0);
+        }
+
+#if UNITY_EDITOR
+        private void OnValidate()
+        {
+            if (Application.isPlaying)
+                InitializeTiles();
+        }
+
         private void OnDrawGizmos()
         {
-            var size = new Vector2(rankCount * 2, 2);
-
+            // Battlefield bounds
+            var battlefieldSize = new Vector2(rankCount * 2, 2);
             Gizmos.color = Color.yellow;
-            Gizmos.DrawWireCube(transform.position, size);
+            Gizmos.DrawWireCube(transform.position, battlefieldSize);
+
+            // Tile ranks
+            GUIStyle labelStyle = GUI.skin.label;
+            labelStyle.alignment = TextAnchor.MiddleCenter;
+            labelStyle.fontSize = 20;
 
             for (int rank = 0; rank < rankCount; rank++)
             {
                 Vector3 center = GetTilePosition(rank);
                 Handles.DrawWireCube(center, Vector3.one * 2);
-                Handles.Label(center, rank.ToString());
+                Handles.Label(center, rank.ToString(), labelStyle);
             }
+
+            // Spawn points
+            LocateSpawnPoints();
+            Handles.color = Color.limeGreen;
+            Handles.DrawWireDisc(spawnPointPlayer, Vector3.forward, 0.35f);
+            Handles.color = Color.softRed;
+            Handles.DrawWireDisc(spawnPointEnemy, Vector3.forward, 0.35f);
         }
+#endif
     }
 }
