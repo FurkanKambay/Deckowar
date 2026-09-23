@@ -46,20 +46,13 @@ namespace FK.Deckowar
 
         public void EnqueueSpawnUnit(UnitAsset unit)
         {
-            if (!unit)
-                return;
-
-            spawnQueue.Enqueue(unit);
-            OnUnitEnqueued?.Invoke(this, unit);
+            if (unit)
+                spawnQueue.Enqueue(unit);
         }
 
         public bool TryDequeueSpawnUnit(out UnitAsset dequeuedUnitAsset)
         {
-            if (!spawnQueue.TryDequeue(out dequeuedUnitAsset))
-                return false;
-
-            OnUnitDequeued?.Invoke(this, dequeuedUnitAsset);
-            return true;
+            return spawnQueue.TryDequeue(out dequeuedUnitAsset);
         }
 
         private void RaisePropertyChanged([CallerMemberName] string propertyName = null)

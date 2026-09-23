@@ -1,5 +1,4 @@
 using FK.Common;
-using FK.Deckowar.Core;
 using FK.Deckowar.Deckbuilding;
 using UnityEngine;
 using UnityEngine.Assertions;

@@ -1,9 +1,8 @@
 using System;
-using FK.Common;
 using FK.Deckowar.Core;
 using FK.Deckowar.Data;
-using NUnit.Framework;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.InputSystem;
 
 namespace FK.Deckowar
@@ -46,22 +45,6 @@ namespace FK.Deckowar
             currentTurn = new TurnInfo { turnIndex = -1, faction = Faction.None };
         }
 
-        private void OnEnable()
-        {
-            castlePlayer.OnUnitEnqueued += Castle_UnitEnqueued;
-            castlePlayer.OnUnitDequeued += Castle_UnitDequeued;
-            castleEnemy.OnUnitEnqueued += Castle_UnitEnqueued;
-            castleEnemy.OnUnitDequeued += Castle_UnitDequeued;
-        }
-
-        private void OnDisable()
-        {
-            castlePlayer.OnUnitEnqueued -= Castle_UnitEnqueued;
-            castlePlayer.OnUnitDequeued -= Castle_UnitDequeued;
-            castleEnemy.OnUnitEnqueued -= Castle_UnitEnqueued;
-            castleEnemy.OnUnitDequeued -= Castle_UnitDequeued;
-        }
-
         private void Start()
         {
             ProceedToNextTurn();
@@ -74,33 +57,50 @@ namespace FK.Deckowar
         }
 #endregion
 
-        public void ProceedToNextTurn()
+        private void ProceedToNextTurn()
         {
+            EndCurrentTurn();
             currentTurn.NextTurn();
+            BeginCurrentTurn();
 
-            Castle castleToGainGold = currentTurn.faction switch
-            {
-                Faction.Player => castlePlayer,
-                Faction.Enemy => castleEnemy,
-                _ => null
-            };
-
-            Castle castleToSpawnUnit = currentTurn.faction switch
-            {
-                Faction.Player => castleEnemy,
-                Faction.Enemy => castlePlayer,
-                _ => null
-            };
-
-            if (castleToGainGold) castleToGainGold.GainGold();
-            if (castleToSpawnUnit) castleToSpawnUnit.TryDequeueSpawnUnit(out _);
-
-            battlefield.AdvanceAllUnits();
             OnTurnChanged?.Invoke(this, currentTurn);
         }
 
-        public void SpawnPlayerUnit(UnitAsset unitAsset) => TrySpawn(Faction.Player, unitAsset);
-        public void SpawnEnemyUnit(UnitAsset unitAsset) => TrySpawn(Faction.Enemy, unitAsset);
+        /// <summary>
+        /// Actualize the current turn's queued action(s).
+        /// </summary>
+        private void EndCurrentTurn()
+        {
+            Castle castle = GetCurrentCastle();
+            if (!castle) return;
+
+            if (battlefield.CanPushUnit(castle.Faction))
+            {
+                castle.TryDequeueSpawnUnit(out UnitAsset unitAsset);
+                TrySpawn(castle.Faction, unitAsset);
+            }
+        }
+
+        /// <summary>
+        /// Prepare the new turn before the castle can take any action.
+        /// </summary>
+        private void BeginCurrentTurn()
+        {
+            Castle castle = GetCurrentCastle();
+            if (!castle) return;
+
+            if (castle)
+                castle.GainGold();
+
+            battlefield.AdvanceAllUnits();
+        }
+
+        private Castle GetCurrentCastle() => currentTurn.faction switch
+        {
+            Faction.Player => castlePlayer,
+            Faction.Enemy => castleEnemy,
+            _ => null
+        };
 
         private bool TrySpawn(Faction faction, UnitAsset unitAsset)
         {
@@ -113,19 +113,6 @@ namespace FK.Deckowar
                 OnUnitSpawned?.Invoke(this, faction, unitAsset);
 
             return success;
-        }
-
-        private void Castle_UnitEnqueued(Castle castle, UnitAsset unitAsset)
-        {
-            Log.Info($"{castle.Faction} Castle queued up {unitAsset.name}", this);
-        }
-
-        private void Castle_UnitDequeued(Castle castle, UnitAsset unitAsset)
-        {
-            Faction faction = castle.Faction;
-            TrySpawn(faction, unitAsset);
-
-            Log.Info($"{faction} Castle spawned {unitAsset.name}", this);
         }
     }
 }
