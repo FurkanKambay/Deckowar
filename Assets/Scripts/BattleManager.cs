@@ -61,6 +61,7 @@ namespace FK.Deckowar
         {
             EndCurrentTurn();
             currentTurn.NextTurn();
+            battlefield.AdvanceAllUnits();
             BeginCurrentTurn();
 
             OnTurnChanged?.Invoke(this, currentTurn);
@@ -74,11 +75,11 @@ namespace FK.Deckowar
             Castle castle = GetCurrentCastle();
             if (!castle) return;
 
-            if (battlefield.CanPushUnit(castle.Faction))
-            {
-                castle.TryDequeueSpawnUnit(out UnitAsset unitAsset);
+            if (!battlefield.CanPushUnit(castle.Faction))
+                return;
+
+            if (castle.TryDequeueSpawnUnit(out UnitAsset unitAsset))
                 TrySpawn(castle.Faction, unitAsset);
-            }
         }
 
         /// <summary>
@@ -91,8 +92,6 @@ namespace FK.Deckowar
 
             if (castle)
                 castle.GainGold();
-
-            battlefield.AdvanceAllUnits();
         }
 
         private Castle GetCurrentCastle() => currentTurn.faction switch
