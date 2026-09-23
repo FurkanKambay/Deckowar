@@ -1,24 +1,67 @@
 using System;
 using FK.Common;
 using FK.Deckowar.Core;
+using UnityEditor;
 using UnityEngine;
-using Vertx.Attributes;
 
 namespace FK.Deckowar
 {
     public sealed class Battlefield : MonoBehaviour
     {
+        [Header("References")]
+        [SerializeField] private BattleTile battleTilePrefab;
+
         [Header("Config")]
         [SerializeField, Range(2, 10)] private int rankCount = 5;
 
-        [Header("Debug")]
-        [SerializeField, ReadOnlyField, Inline] private Unit[] units;
-
         public int RankCount => rankCount;
+
+        private BattleTile[] tiles;
 
         private void Awake()
         {
-            units = new Unit[rankCount];
+            tiles = new BattleTile[rankCount];
+            InitializeTiles();
+        }
+
+        private void OnValidate()
+        {
+            if (Application.isPlaying)
+                InitializeTiles();
+        }
+
+        private void InitializeTiles()
+        {
+            for (int i = transform.childCount - 1; i >= 0; i--)
+            {
+                Transform tileTransform = transform.GetChild(i);
+                if (!tileTransform) continue;
+
+                if (i >= rankCount)
+                    Destroy(tileTransform.gameObject);
+                else
+                {
+                    BattleTile tile = tileTransform.GetComponent<BattleTile>();
+                    InitializeTile(tile, rank: i);
+                }
+            }
+
+            Array.Resize(ref tiles, rankCount);
+
+            for (int rank = 0; rank < tiles.Length; rank++)
+            {
+                BattleTile tile = tiles[rank];
+                if (!tile) tile = Instantiate(battleTilePrefab, transform);
+                InitializeTile(tile, rank);
+            }
+        }
+
+        private void InitializeTile(BattleTile tile, int rank)
+        {
+            tiles[rank] = tile;
+            tile.name = $"Tile {rank}";
+            tile.transform.localPosition = GetTilePosition(rank);
+            tile.Init(rank);
         }
 
 #region Advancing Units
@@ -31,13 +74,13 @@ namespace FK.Deckowar
 
         private void AdvanceUnits(Faction faction)
         {
-            for (int rank = units.Length; rank >= 0; rank--)
+            for (int rank = tiles.Length; rank >= 0; rank--)
                 AdvanceUnit(faction, rank);
         }
 
         private bool AdvanceUnit(Faction faction, int rank)
         {
-            if (rank < 0 || rank >= units.Length)
+            if (rank < 0 || rank >= tiles.Length)
                 return false;
 
             Unit unit = GetUnitAtRank(faction, rank);
@@ -48,7 +91,7 @@ namespace FK.Deckowar
                 return false;
 
             bool moveSuccess = SetUnitAtRank(faction, rank + 1, unit);
-            if (!moveSuccess) return false;
+            // if (!moveSuccess) return false;
 
             bool success = RemoveUnitAtRank(faction, rank);
             return success;
@@ -73,11 +116,11 @@ namespace FK.Deckowar
 
         private Unit GetUnitAtRank(Faction faction, int rank)
         {
-            if (faction is Faction.None || rank < 0 || rank >= units.Length)
+            if (faction is Faction.None || rank < 0 || rank >= tiles.Length)
                 return null;
 
             Index index = faction is Faction.Player ? rank : ^(rank + 1);
-            return units[index];
+            return tiles[index].Unit;
         }
 
         private bool RemoveUnitAtRank(Faction faction, int rank) =>
@@ -85,12 +128,29 @@ namespace FK.Deckowar
 
         private bool SetUnitAtRank(Faction faction, int rank, Unit unit)
         {
-            if (faction is Faction.None || rank < 0 || rank >= units.Length)
+            if (faction is Faction.None || rank < 0 || rank >= tiles.Length)
                 return false;
 
             Index index = faction is Faction.Player ? rank : ^(rank + 1);
-            units[index] = unit;
+            tiles[index].SetUnit(unit);
             return true;
+        }
+
+        private Vector3 GetTilePosition(int rank) => new Vector2((rank * 2) - rankCount + 1, 0);
+
+        private void OnDrawGizmos()
+        {
+            var size = new Vector2(rankCount * 2, 2);
+
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireCube(transform.position, size);
+
+            for (int rank = 0; rank < rankCount; rank++)
+            {
+                Vector3 center = GetTilePosition(rank);
+                Handles.DrawWireCube(center, Vector3.one * 2);
+                Handles.Label(center, rank.ToString());
+            }
         }
     }
 }

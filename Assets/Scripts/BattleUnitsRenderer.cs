@@ -25,11 +25,13 @@ namespace FK.Deckowar
         private void OnEnable()
         {
             battleManager.OnUnitSpawned += BattleManager_UnitSpawned;
+            // battleManager.OnTurnChanged += BattleManager_TurnChanged;
         }
 
         private void OnDisable()
         {
             battleManager.OnUnitSpawned -= BattleManager_UnitSpawned;
+            // battleManager.OnTurnChanged -= BattleManager_TurnChanged;
         }
 
         private void BattleManager_UnitSpawned(BattleManager sender, Faction faction, Unit unit)
