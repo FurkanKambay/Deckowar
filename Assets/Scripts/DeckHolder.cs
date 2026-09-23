@@ -1,4 +1,5 @@
 using FK.Common;
+using FK.Deckowar.Core;
 using FK.Deckowar.Deckbuilding;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -7,8 +8,12 @@ namespace FK.Deckowar
 {
     public sealed class DeckHolder : MonoBehaviour
     {
+        [Header("References")]
         [SerializeField] private DeckConfigAsset deckConfigAsset;
         [SerializeField] private Castle castle;
+
+        [Header("Config")]
+        [SerializeField] private bool enableLogs;
 
         public Castle Castle => castle;
         public Deck Deck { get; private set; }
@@ -68,6 +73,10 @@ namespace FK.Deckowar
             card.CardAsset.Cost <= castle.Gold;
 
         [HideInCallstack]
-        private void PrintDeck() => Log.Info($"[Deck] {castle.Faction}: {Deck:E}");
+        private void PrintDeck()
+        {
+            if (enableLogs)
+                Log.Info($"[Deck] {castle.Faction}: {Deck:E}", this);
+        }
     }
 }

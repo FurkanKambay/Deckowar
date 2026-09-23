@@ -1199,6 +1199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deckConfigAsset: {fileID: 11400000, guid: f26a0cdab84024743b984e3f458880c6, type: 2}
   castle: {fileID: 1757477749455403523}
+  enableLogs: 0
 --- !u!1 &827657877
 GameObject:
   m_ObjectHideFlags: 0
@@ -1869,6 +1870,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deckConfigAsset: {fileID: 11400000, guid: f26a0cdab84024743b984e3f458880c6, type: 2}
   castle: {fileID: 1757477750717945740}
+  enableLogs: 0
 --- !u!4 &1557200135
 Transform:
   m_ObjectHideFlags: 0
