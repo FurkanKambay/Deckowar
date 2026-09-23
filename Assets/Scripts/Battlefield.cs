@@ -1,5 +1,6 @@
 using System;
 using FK.Common;
+using FK.Common.Extensions;
 using FK.Deckowar.Core;
 using FK.Deckowar.Data;
 using UnityEditor;
@@ -163,8 +164,14 @@ namespace FK.Deckowar
             for (int rank = 0; rank < rankCount; rank++)
             {
                 Vector3 center = GetTilePosition(rank);
+                Vector3 above = center + (Vector3.up * 1.5f);
+                Vector3 below = center + (Vector3.down * 1f);
+
                 Handles.DrawWireCube(center, Vector3.one * 2);
-                Handles.Label(center, rank.ToString(), labelStyle);
+                Handles.Label(below, rank.ToString(), labelStyle);
+
+                if (tiles[rank].Unit.Is(out Unit unit))
+                    Handles.Label(above, unit.UnitAsset.name, labelStyle);
             }
 
             // Spawn points
