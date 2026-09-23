@@ -71,27 +71,29 @@ namespace FK.Deckowar
 
         private void AdvanceUnits(Faction faction)
         {
-            for (int rank = tiles.Length; rank >= 0; rank--)
+            for (int rank = tiles.Length - 1; rank >= 0; rank--)
                 AdvanceUnit(faction, rank);
         }
 
-        private bool AdvanceUnit(Faction faction, int rank)
+        private void AdvanceUnit(Faction faction, int rank)
         {
             if (rank < 0 || rank >= tiles.Length)
-                return false;
+                return;
 
             Unit unit = GetUnitAtRank(faction, rank);
-            if (!unit) return false;
+            if (!unit) return;
+
+            // only move our own faction's units
+            if (unit.Faction != faction)
+                return;
 
             Unit blockingUnit = GetUnitInFront(faction, rank);
-            if (blockingUnit)
-                return false;
+            if (blockingUnit) return;
 
             bool moveSuccess = SetUnitAtRank(faction, rank + 1, unit);
-            // if (!moveSuccess) return false;
+            if (!moveSuccess) return;
 
             bool success = RemoveUnitAtRank(faction, rank);
-            return success;
         }
 #endregion
 

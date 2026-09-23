@@ -59,9 +59,10 @@ namespace FK.Deckowar
 
         private void ProceedToNextTurn()
         {
+            battlefield.AdvanceAllUnits();
+
             EndCurrentTurn();
             currentTurn.NextTurn();
-            battlefield.AdvanceAllUnits();
             BeginCurrentTurn();
 
             OnTurnChanged?.Invoke(this, currentTurn);
