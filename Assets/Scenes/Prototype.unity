@@ -780,6 +780,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &611029978
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 611029979}
+  m_Layer: 0
+  m_Name: Units
+  m_TagString: Untagged
+  m_Icon: {fileID: 2800000, guid: 1d8efe8a75b351d4d9aa8b28ddf93196, type: 3}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &611029979
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611029978}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &618940689
 GameObject:
   m_ObjectHideFlags: 0
@@ -1305,53 +1336,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 827657877}
   m_CullTransparentMesh: 1
---- !u!1 &913736800
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 913736801}
-  - component: {fileID: 913736802}
-  m_Layer: 0
-  m_Name: Battle Visuals
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &913736801
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 913736800}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &913736802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 913736800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 601c753d23d04f5b92a4a3553bf2715e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: FK.Deckowar::FK.Deckowar.BattleUnitsRenderer
-  battlefield: {fileID: 1836002045733111485}
-  battleManager: {fileID: 6343852223866294272}
-  unitPrefab: {fileID: 5322963584803246348, guid: 1750281a84fe3624cbefda897ef4df61, type: 3}
 --- !u!1001 &935708306
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2324,6 +2308,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: FK.Deckowar::FK.Deckowar.Battlefield
   battleTilePrefab: {fileID: 1124577064380621801, guid: 73833b94f7a781841b21879a14a0981c, type: 3}
+  unitPrefab: {fileID: 8526386527756739599, guid: 1750281a84fe3624cbefda897ef4df61, type: 3}
+  unitsParent: {fileID: 611029979}
   rankCount: 8
 --- !u!1 &3693216000599525952
 GameObject:
@@ -2664,11 +2650,11 @@ SceneRoots:
   - {fileID: 1525117075}
   - {fileID: 656546499}
   - {fileID: 178691129}
-  - {fileID: 913736801}
   - {fileID: 8479468799896408733}
   - {fileID: 148539312}
   - {fileID: 8873518190133809040}
   - {fileID: 8873518190859624991}
+  - {fileID: 611029979}
   - {fileID: 1548816633}
   - {fileID: 1370546023}
   - {fileID: 242441919}

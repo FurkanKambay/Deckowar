@@ -23,7 +23,7 @@ namespace FK.Deckowar
     public sealed class BattleManager : MonoBehaviour
     {
         public event Action<BattleManager, TurnInfo> OnTurnChanged;
-        public event Action<BattleManager, Faction, Unit> OnUnitSpawned;
+        public event Action<BattleManager, Faction, UnitAsset> OnUnitSpawned;
 
         [Header("Input")]
         [SerializeField] private InputActionReference readyInput;
@@ -47,18 +47,16 @@ namespace FK.Deckowar
         private void OnEnable()
         {
             castlePlayer.OnUnitEnqueued += Castle_UnitEnqueued;
-            castleEnemy.OnUnitEnqueued += Castle_UnitEnqueued;
-
             castlePlayer.OnUnitDequeued += Castle_UnitDequeued;
+            castleEnemy.OnUnitEnqueued += Castle_UnitEnqueued;
             castleEnemy.OnUnitDequeued += Castle_UnitDequeued;
         }
 
         private void OnDisable()
         {
             castlePlayer.OnUnitEnqueued -= Castle_UnitEnqueued;
-            castleEnemy.OnUnitEnqueued -= Castle_UnitEnqueued;
-
             castlePlayer.OnUnitDequeued -= Castle_UnitDequeued;
+            castleEnemy.OnUnitEnqueued -= Castle_UnitEnqueued;
             castleEnemy.OnUnitDequeued -= Castle_UnitDequeued;
         }
 
@@ -107,11 +105,10 @@ namespace FK.Deckowar
             if (!battlefield.CanPushUnit(faction))
                 return false;
 
-            var spawnedUnit = new Unit(unitAsset, faction);
-            bool success = battlefield.PushUnit(faction, spawnedUnit);
+            bool success = battlefield.PushUnit(faction, unitAsset);
 
             if (success)
-                OnUnitSpawned?.Invoke(this, faction, spawnedUnit);
+                OnUnitSpawned?.Invoke(this, faction, unitAsset);
 
             return success;
         }

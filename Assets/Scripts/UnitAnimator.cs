@@ -8,13 +8,12 @@ namespace FK.Deckowar
     public class UnitAnimator : MonoBehaviour
     {
         [Header("References")]
+        [SerializeField] private Unit unit;
         [SerializeField] private SpriteRenderer spriteRenderer;
         [SerializeField] private Animator animator;
 
         [Header("Config")]
         [SerializeField] private float hurtDuration;
-
-        public Unit Unit { get; private set; }
 
         private MaterialPropertyBlock propertyBlock;
 
@@ -31,28 +30,23 @@ namespace FK.Deckowar
             spriteRenderer.SetPropertyBlock(propertyBlock);
         }
 
-        public void Init(Unit unit)
-        {
-            Unit = unit;
-        }
-
         private void Start()
         {
-            Assert.IsNotNull(Unit);
+            Assert.IsNotNull(unit);
 
-            Unit.Vitality.OnDamageTaken += Vitality_DamageTaken;
-            Unit.Vitality.OnDied += Vitality_Died;
+            unit.Vitality.OnDamageTaken += Vitality_DamageTaken;
+            unit.Vitality.OnDied += Vitality_Died;
 
-            spriteRenderer.sprite = Unit.UnitAsset.Sprite;
-            spriteRenderer.flipX = Unit.Faction == Faction.Enemy;
+            spriteRenderer.sprite = unit.UnitAsset.Sprite;
+            spriteRenderer.flipX = unit.Faction == Faction.Enemy;
         }
 
         private void OnDestroy()
         {
-            Assert.IsNotNull(Unit);
+            Assert.IsNotNull(unit);
 
-            Unit.Vitality.OnDamageTaken -= Vitality_DamageTaken;
-            Unit.Vitality.OnDied -= Vitality_Died;
+            unit.Vitality.OnDamageTaken -= Vitality_DamageTaken;
+            unit.Vitality.OnDied -= Vitality_Died;
         }
 
         private void Vitality_DamageTaken() =>

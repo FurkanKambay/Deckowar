@@ -1,6 +1,7 @@
 using System;
 using FK.Common;
 using FK.Deckowar.Core;
+using FK.Deckowar.Data;
 using UnityEditor;
 using UnityEngine;
 
@@ -10,6 +11,8 @@ namespace FK.Deckowar
     {
         [Header("References")]
         [SerializeField] private BattleTile battleTilePrefab;
+        [SerializeField] private Unit unitPrefab;
+        [SerializeField] private Transform unitsParent;
 
         [Header("Config")]
         [SerializeField, Range(2, 10)] private int rankCount = 5;
@@ -17,8 +20,6 @@ namespace FK.Deckowar
         public int RankCount => rankCount;
 
         private BattleTile[] tiles;
-        private Vector2 spawnPointPlayer;
-        private Vector2 spawnPointEnemy;
 
         private void Awake()
         {
@@ -100,11 +101,15 @@ namespace FK.Deckowar
             return !unit;
         }
 
-        public bool PushUnit(Faction faction, Unit unit)
+        public bool PushUnit(Faction faction, UnitAsset unitAsset)
         {
-            if (!CanPushUnit(faction))
+            if (faction is Faction.None || !CanPushUnit(faction))
                 return false;
-            return SetUnitAtRank(faction, 0, unit);
+
+            Unit spawnedUnit = Instantiate(unitPrefab, unitsParent);
+            spawnedUnit.Init(unitAsset, faction);
+
+            return SetUnitAtRank(faction, 0, spawnedUnit);
         }
 
         private Unit GetUnitInFront(Faction faction, int rank) =>
@@ -132,14 +137,7 @@ namespace FK.Deckowar
             return true;
         }
 
-        private Vector3 GetTilePosition(int rank) => new Vector2((rank * 2) - rankCount + 1, 0);
-
-        private void LocateSpawnPoints()
-        {
-            int x = rankCount - 1;
-            spawnPointPlayer = transform.TransformPoint(-x, 0, 0);
-            spawnPointEnemy = transform.TransformPoint(+x, 0, 0);
-        }
+        private Vector3 GetTilePosition(int rank) => transform.TransformPoint((rank * 2) - rankCount + 1, 0f, 0f);
 
 #if UNITY_EDITOR
         private void OnValidate()
@@ -168,7 +166,8 @@ namespace FK.Deckowar
             }
 
             // Spawn points
-            LocateSpawnPoints();
+            Vector3 spawnPointPlayer = GetTilePosition(0);
+            Vector3 spawnPointEnemy = GetTilePosition(rankCount - 1);
             Handles.color = Color.limeGreen;
             Handles.DrawWireDisc(spawnPointPlayer, Vector3.forward, 0.35f);
             Handles.color = Color.softRed;

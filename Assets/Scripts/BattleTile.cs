@@ -1,4 +1,3 @@
-using FK.Deckowar.Core;
 using UnityEngine;
 using Vertx.Attributes;
 
@@ -19,7 +18,14 @@ namespace FK.Deckowar
             this.rank = rank;
         }
 
-        public void SetUnit(Unit unit) => this.unit = unit;
+        public void SetUnit(Unit unit)
+        {
+            this.unit = unit;
+
+            if (unit)
+                unit.transform.position = transform.position;
+        }
+
         public void ClearUnit() => this.unit = null;
     }
 }
