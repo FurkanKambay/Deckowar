@@ -170,7 +170,7 @@ namespace FK.Deckowar
                 Handles.DrawWireCube(center, Vector3.one * 2);
                 Handles.Label(below, rank.ToString(), labelStyle);
 
-                if (tiles[rank].Unit.Is(out Unit unit))
+                if (Application.isPlaying && tiles[rank].Unit.Is(out Unit unit))
                     Handles.Label(above, unit.UnitAsset.name, labelStyle);
             }
 
