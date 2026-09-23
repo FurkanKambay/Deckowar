@@ -306,7 +306,7 @@ GameObject:
   m_Component:
   - component: {fileID: 148539312}
   m_Layer: 0
-  m_Name: ----- Battlers -----
+  m_Name: ----- Entities -----
   m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -340,7 +340,7 @@ GameObject:
   m_Layer: 0
   m_Name: GodMode
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 2800000, guid: 748ae8b33df036b46a86e0387f1602cf, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -371,7 +371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e6ac3b8e008456e9c5e5d360e824c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: FK.Deckowar::FK.Deckowar.Debug.GodMode
-  deckHolder: {fileID: 752937554}
+  deckHolder: {fileID: 9116718526125328796}
   playerCastle: {fileID: 1757477749455403523}
   enemyCastle: {fileID: 1757477750717945740}
   unitAsset: {fileID: 11400000, guid: 14bbe442c2123f841b9efdf0dc83f8b3, type: 2}
@@ -792,7 +792,7 @@ GameObject:
   m_Layer: 0
   m_Name: Units
   m_TagString: Untagged
-  m_Icon: {fileID: 2800000, guid: 1d8efe8a75b351d4d9aa8b28ddf93196, type: 3}
+  m_Icon: {fileID: 2800000, guid: f1d766c90aeb37d4fb8c7d1ed3ba1378, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1153,53 +1153,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5288352784871998813, guid: ee54e9bf4d808f14094a369482f63f80, type: 3}
   m_PrefabInstance: {fileID: 744645122}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &752937552
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 752937553}
-  - component: {fileID: 752937554}
-  m_Layer: 0
-  m_Name: Player Deck Holder
-  m_TagString: Untagged
-  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &752937553
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 752937552}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8873518190133809040}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &752937554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 752937552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93b6ac5792124522a7fff907083b6b0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deckConfigAsset: {fileID: 11400000, guid: f26a0cdab84024743b984e3f458880c6, type: 2}
-  castle: {fileID: 1757477749455403523}
-  enableLogs: 0
 --- !u!1 &827657877
 GameObject:
   m_ObjectHideFlags: 0
@@ -1403,6 +1356,57 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5288352784871998813, guid: ee54e9bf4d808f14094a369482f63f80, type: 3}
   m_PrefabInstance: {fileID: 935708306}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1138257304
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1138257306}
+  - component: {fileID: 1138257305}
+  m_Layer: 0
+  m_Name: Battle Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 2800000, guid: 1f26945e970839e41ba35badd04237ef, type: 3}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1138257305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138257304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7187c661f9424170a88cd52664fc187e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FK.Deckowar::FK.Deckowar.BattleManager
+  readyInput: {fileID: -2099379676528639254, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  battlefield: {fileID: 1836002045733111485}
+  castlePlayer: {fileID: 1757477749455403523}
+  castleEnemy: {fileID: 1757477750717945740}
+  currentTurn:
+    turnIndex: 0
+    faction: 0
+--- !u!4 &1138257306
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138257304}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1312976319
 GameObject:
   m_ObjectHideFlags: 0
@@ -1563,7 +1567,7 @@ MonoBehaviour:
   enemyHUD: {fileID: 432828988}
   playerCastle: {fileID: 1757477749455403523}
   enemyCastle: {fileID: 1757477750717945740}
-  playerDeckHolder: {fileID: 752937554}
+  playerDeckHolder: {fileID: 9116718526125328796}
 --- !u!1 &1400948888
 GameObject:
   m_ObjectHideFlags: 0
@@ -1645,7 +1649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardVisualPrefab: {fileID: 6493637955391652454, guid: ee54e9bf4d808f14094a369482f63f80, type: 3}
-  deckHolder: {fileID: 752937554}
+  deckHolder: {fileID: 9116718526125328796}
   cardParent: {fileID: 1400948889}
   drawPileLabel: {fileID: 827657879}
   discardPileLabel: {fileID: 618940691}
@@ -1838,68 +1842,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1557200133
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1557200135}
-  - component: {fileID: 1557200134}
-  - component: {fileID: 1557200136}
-  m_Layer: 0
-  m_Name: Enemy Deck Holder
-  m_TagString: Untagged
-  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1557200134
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1557200133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93b6ac5792124522a7fff907083b6b0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deckConfigAsset: {fileID: 11400000, guid: f26a0cdab84024743b984e3f458880c6, type: 2}
-  castle: {fileID: 1757477750717945740}
-  enableLogs: 0
---- !u!4 &1557200135
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1557200133}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8873518190859624991}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1557200136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1557200133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b1ad4d503b84262b4797122444d5a1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: FK.Deckowar::FK.Deckowar.EnemyAI
-  deckHolder: {fileID: 1557200134}
-  strategySO: {fileID: 11400000, guid: 3cd7086d1f769d940a0a2f3a87a88efa, type: 2}
 --- !u!1001 &1736814645
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2357,33 +2299,13 @@ GameObject:
   m_Component:
   - component: {fileID: 8479468799896408733}
   - component: {fileID: 1836002045733111485}
-  - component: {fileID: 6343852223866294272}
   m_Layer: 0
-  m_Name: "\u2694\uFE0F Battle Manager"
+  m_Name: Battlefield
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 2800000, guid: 2d35623559ffd044682af7e09affdcc8, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &6343852223866294272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5337820798582989267}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7187c661f9424170a88cd52664fc187e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: FK.Deckowar::FK.Deckowar.BattleManager
-  readyInput: {fileID: -2099379676528639254, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-  battlefield: {fileID: 1836002045733111485}
-  castlePlayer: {fileID: 1757477749455403523}
-  castleEnemy: {fileID: 1757477750717945740}
-  currentTurn:
-    turnIndex: 0
-    faction: 0
 --- !u!1 &7048790436074646639
 GameObject:
   m_ObjectHideFlags: 0
@@ -2395,10 +2317,11 @@ GameObject:
   - component: {fileID: 8873518190133809040}
   - component: {fileID: 1757477749455403523}
   - component: {fileID: 9116718526125328795}
+  - component: {fileID: 9116718526125328796}
   m_Layer: 6
-  m_Name: Player
+  m_Name: Player Castle
   m_TagString: Untagged
-  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2413,10 +2336,12 @@ GameObject:
   - component: {fileID: 8873518190859624991}
   - component: {fileID: 1757477750717945740}
   - component: {fileID: 9116718524301009940}
+  - component: {fileID: 9116718524301009942}
+  - component: {fileID: 9116718524301009941}
   m_Layer: 6
-  m_Name: Enemy
+  m_Name: Enemy Castle
   m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2568,7 +2493,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 752937553}
   - {fileID: 9145141447530669288}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2585,7 +2509,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 1557200135}
   - {fileID: 9145141449464432999}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2603,6 +2526,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: FK.Deckowar::FK.Deckowar.CastleRenderer
   castle: {fileID: 1757477750717945740}
   spriteRenderer: {fileID: 8186544285105299878}
+--- !u!114 &9116718524301009941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7048790436280091104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b1ad4d503b84262b4797122444d5a1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FK.Deckowar::FK.Deckowar.EnemyAI
+  deckHolder: {fileID: 9116718524301009942}
+  strategySO: {fileID: 11400000, guid: 3cd7086d1f769d940a0a2f3a87a88efa, type: 2}
+--- !u!114 &9116718524301009942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7048790436280091104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93b6ac5792124522a7fff907083b6b0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deckConfigAsset: {fileID: 11400000, guid: f26a0cdab84024743b984e3f458880c6, type: 2}
+  castle: {fileID: 1757477750717945740}
+  enableLogs: 0
 --- !u!114 &9116718526125328795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2617,6 +2569,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: FK.Deckowar::FK.Deckowar.CastleRenderer
   castle: {fileID: 1757477749455403523}
   spriteRenderer: {fileID: 8186544285436841001}
+--- !u!114 &9116718526125328796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7048790436074646639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93b6ac5792124522a7fff907083b6b0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deckConfigAsset: {fileID: 11400000, guid: f26a0cdab84024743b984e3f458880c6, type: 2}
+  castle: {fileID: 1757477749455403523}
+  enableLogs: 0
 --- !u!4 &9145141447530669288
 Transform:
   m_ObjectHideFlags: 0
@@ -2656,6 +2623,7 @@ SceneRoots:
   - {fileID: 656546499}
   - {fileID: 178691129}
   - {fileID: 8479468799896408733}
+  - {fileID: 1138257306}
   - {fileID: 148539312}
   - {fileID: 8873518190133809040}
   - {fileID: 8873518190859624991}
