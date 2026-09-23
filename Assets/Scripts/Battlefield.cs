@@ -103,15 +103,15 @@ namespace FK.Deckowar
             return !unit;
         }
 
-        public bool PushUnit(Faction faction, UnitAsset unitAsset)
+        public bool PushUnit(Castle castle, UnitAsset unitAsset)
         {
-            if (faction is Faction.None || !CanPushUnit(faction))
+            if (!castle || castle.Faction is Faction.None || !CanPushUnit(castle.Faction))
                 return false;
 
             Unit spawnedUnit = Instantiate(unitPrefab, unitsParent);
-            spawnedUnit.Init(unitAsset, faction);
+            spawnedUnit.Init(unitAsset, castle);
 
-            return SetUnitAtRank(faction, 0, spawnedUnit);
+            return SetUnitAtRank(castle.Faction, 0, spawnedUnit);
         }
 
         private Unit GetUnitInFront(Faction faction, int rank) =>

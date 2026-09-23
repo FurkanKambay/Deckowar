@@ -80,7 +80,7 @@ namespace FK.Deckowar
                 return;
 
             if (castle.TryDequeueSpawnUnit(out UnitAsset unitAsset))
-                TrySpawn(castle.Faction, unitAsset);
+                TrySpawn(castle, unitAsset);
         }
 
         /// <summary>
@@ -102,15 +102,15 @@ namespace FK.Deckowar
             _ => null
         };
 
-        private bool TrySpawn(Faction faction, UnitAsset unitAsset)
+        private bool TrySpawn(Castle castle, UnitAsset unitAsset)
         {
-            if (!battlefield.CanPushUnit(faction))
+            if (!battlefield.CanPushUnit(castle.Faction))
                 return false;
 
-            bool success = battlefield.PushUnit(faction, unitAsset);
+            bool success = battlefield.PushUnit(castle, unitAsset);
 
             if (success)
-                OnUnitSpawned?.Invoke(this, faction, unitAsset);
+                OnUnitSpawned?.Invoke(this, castle.Faction, unitAsset);
 
             return success;
         }

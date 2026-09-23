@@ -23,7 +23,7 @@ namespace FK.Deckowar
             this.unit = unit;
 
             if (unit)
-                unit.transform.position = transform.position;
+                unit.MoveTo(transform.position);
         }
 
         public void ClearUnit() => this.unit = null;

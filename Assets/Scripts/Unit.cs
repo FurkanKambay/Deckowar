@@ -15,13 +15,28 @@ namespace FK.Deckowar
         public Faction Faction => faction;
         public Vitality Vitality { get; private set; }
 
-        internal void Init(UnitAsset unitAsset, Faction faction)
+        private Vector3 destination;
+
+        internal void Init(UnitAsset unitAsset, Castle castle)
         {
             this.unitAsset = unitAsset ? unitAsset : throw new ArgumentNullException(nameof(unitAsset));
-            this.faction = faction;
+            this.faction = castle?.Faction ?? throw new ArgumentNullException(nameof(castle));
             Vitality = new Vitality(unitAsset.MaxHealth);
 
             name = $"{faction}[{unitAsset.name}]";
+
+            destination = castle.transform.position;
+            transform.position = destination;
+        }
+
+        private void Update()
+        {
+            transform.position = Vector3.MoveTowards(transform.position, destination, Time.deltaTime * 10f);
+        }
+
+        public void MoveTo(Vector2 targetPosition)
+        {
+            destination = targetPosition;
         }
 
         public static implicit operator bool([MaybeNullWhen(false), NotNullWhen(true)] Unit self)
